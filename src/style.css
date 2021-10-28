@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Assistant', sans-serif;
+    font-size: 10px;
+    background: #eef5db;
+}
+nav{
+    background: #eef5db;
+    
+    
+}
+nav .container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container{
+    padding: 5px 50px;
+}
+.logo{
+    width: 170px;
+    height: 80px;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+.menu ul{
+    display: flex;
+}
+.menu ul li{
+    list-style: none;
+    
+}
+.menu li:hover a{
+    color: #0196e9;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: #1d3354;
+    transition: color 0.3s linear;
+    font-size: 1.2rem;
+    margin: 0 20px;
+}
+section.portada{
+    width: 100%;
+    height: 500px;
+}
+.portada img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.history .container{
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-around;
+}
+.author{
+    width: 200px;
+    height: 300px;
+}
+.author img{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+.author img:hover{
+    filter: grayscale(0%);
+}
+.datos{
+    display: flex;
+    justify-content: space-between;
+}
+.dato{
+    width: 200px;
+
+    background: #9cc42d65;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 5px;
+    
+}
+.dato:hover i{
+    color: #0196e9;
+}
+.dato i{
+    padding: 10px;
+    font-size: 2.3rem;
+    color: #1d3354;
+    transition: all 0.3s linear;
+}
+
+.dato p{
+    font-size: 1.2rem;
+}
