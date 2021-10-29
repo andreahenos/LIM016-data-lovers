@@ -81,8 +81,8 @@ nav .container{
     padding: 5px 100px;
 }
 .logo{
-    width: 170px;
-    height: 80px;
+    width: 130px;
+    height: 60px;
 }
 .logo img{
     width: 100%;
@@ -159,9 +159,31 @@ section.portada{
 .dato p{
     font-size: 1.2rem;
 }
-/* ---------------------------------------------------------- */
 
-/* ---------------------------------------------------------- */
+/*Movies.html*/
+
+section.movies{
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.movie{
+    overflow: hidden;
+    background: #0196e9;
+}
+.img-movie{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    margin: 10px;
+    transition: transform 0.3s linear;
+    
+}
+.img-movie:hover{
+    transform: scale(1.1);
+
+}
 footer{
     background-color: #1D3354;
     width: 100%;
