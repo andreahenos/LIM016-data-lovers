@@ -1,7 +1,7 @@
 import { example } from './data.js';
 // import data from './data/lol/lol.js';
-import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
+import data from './data/ghibli/ghibli.js';
+
 
 console.log(example, data);
 addEventListener('DOMContentLoaded', ()=>{
@@ -46,3 +46,18 @@ addEventListener('DOMContentLoaded', ()=>{
     }
     setInterval(slideshow,4000)
 })
+
+/*Cargar Data */
+const sectionMovies = document.querySelector('.movies');
+let displayMovies = data.films.map((movie)=>{
+    
+    return `
+    <article class="movie">
+        <img src="${movie.poster}" class="img-movie">
+    </article
+    ` 
+
+});
+displayMovies = displayMovies.join("");
+sectionMovies.innerHTML = displayMovies;
+/* console.log(data.films[0]); */
