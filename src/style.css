@@ -160,6 +160,7 @@ section.portada{
     font-size: 1.2rem;
 }
 
+
 /*Movies.html*/
 
 section.movies{
@@ -182,4 +183,37 @@ section.movies{
 }
 .img-movie:hover{
     transform: scale(1.1);
+
+}
+footer{
+    background-color: #1D3354;
+    width: 100%;
+    height: 8em;
+    margin: 0%;
+    display: flex;
+    justify-content: space-between;
+}
+footer > p{
+    color: #EEF5DB;
+    text-align: left;
+    width: 14em;
+    font-size: 15px;
+    padding: 1em; 
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 5em;
+    margin-left: 5em;
+}
+footer > div{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 8em;
+    margin-left: 8em;
+}
+.footerIcon{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 1em;
+
 }
