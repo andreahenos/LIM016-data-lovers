@@ -160,6 +160,8 @@ section.portada{
     font-size: 1.2rem;
 }
 /* ---------------------------------------------------------- */
+
+/* ---------------------------------------------------------- */
 footer{
     background-color: #1D3354;
     width: 100%;
@@ -168,7 +170,7 @@ footer{
     display: flex;
     justify-content: space-between;
 }
-footer > p{
+footer p{
     color: #EEF5DB;
     text-align: left;
     width: 14em;
@@ -179,7 +181,7 @@ footer > p{
     margin-right: 5em;
     margin-left: 5em;
 }
-footer > div{
+footer div{
     margin-top: 1em;
     margin-bottom: 1em;
     margin-right: 8em;
