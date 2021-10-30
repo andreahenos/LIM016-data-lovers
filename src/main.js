@@ -53,8 +53,26 @@ let displayMovies = data.films.map((movie)=>{
     
     return `
     <article class="movie">
-        <img src="${movie.poster}" class="img-movie">
-    </article
+        <div class="figure">
+            <img src="${movie.poster}" class="img-movie">
+            <div class="capa">
+                <div class="cont-title">
+                <h3>${movie.title}</h3>
+                </div>
+                
+                <div class="cont-span">
+                    <p>⭐ ${movie.rt_score}</p>
+                    <p>🎥 ${movie.release_date}</p>
+                </div>
+                <div class="description">
+                <p>${movie.description}</p>
+                </div>
+                <button class="btn-mas">See more</button>
+            </div>
+            
+        </div>
+        
+    </article>
     ` 
 
 });
