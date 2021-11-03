@@ -1,9 +1,11 @@
+/*------General------*/
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
     box-sizing: border-box;
 }
-/*Carrousel images*/
+
+/*------Carrousel images------*/
 #slideshow-principal{
     position: relative;
     overflow: hidden;
@@ -25,7 +27,7 @@
 #slideshow{
     position: relative;
     z-index: 998;
-    height: 550px;
+    height: 538px;
 }
 #slideshow img{
     position: absolute;
@@ -62,15 +64,16 @@
     transition: background-color 0.8s;
 }
 
+/* ------Body------ */
 body{
     font-family: 'Assistant', sans-serif;
     font-size: 10px;
     background: #eef5db;
 }
+
+/* ------Nav------ */
 nav{
     background: #1d3354;
-    
-    
 }
 nav .container{
     display: flex;
@@ -106,6 +109,8 @@ nav .container{
     margin: 0 20px;
     font-weight: 400;
 }
+
+/* ------Intro------ */
 section.portada{
     width: 100%;
     height: 500px;
@@ -116,17 +121,21 @@ section.portada{
     object-fit: cover;
 }
 .history .container{
-    padding: 50px 0;
+    width: 100%;
+    padding: 90px 0;
     display: flex;
     justify-content: space-around;
 }
 .author{
     width: 200px;
     height: 300px;
+    margin: 30px;
 }
 .author img{
     width: 100%;
     height: 100%;
+    cursor: pointer;
+    border-radius: 5px;
     filter: grayscale(100%);
     transition: all 0.3s ease;
 }
@@ -136,16 +145,16 @@ section.portada{
 .datos{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .dato{
     width: 200px;
-
-    background: #9cc42d65;
+    height: 250px;
+    background: #D6E7A9;
     padding: 10px;
     margin: 20px;
     text-align: center;
     border-radius: 5px;
-    
 }
 .dato:hover i{
     color: #0196e9;
@@ -156,20 +165,133 @@ section.portada{
     color: #1d3354;
     transition: all 0.3s linear;
 }
-
 .dato p{
     font-size: 1.2rem;
     font-weight: 100;
 }
 
-/*Movies.html*/
-
-section.movies{
-    background: #fff;
+/* ------Movies slider------*/
+main{
+    width: 85vw;
+    height: auto;
+    background: #D6E7A9;
+    margin: auto;
+    margin-bottom: 8%;
+    border-radius: 5px;
+    position: relative;
+}
+#container{
+    width: 100%;
+    height: auto;
     display: flex;
+    transform: translateX(0%);
+}
+#slider{
+    align-items: center;
+    padding: 3% 0 1% 0;
+    margin: 0 auto 0 auto;
+    width: 72vw;
+    height: auto;
+    overflow: hidden;
+}
+.slideBox{
+    position: relative;
+    width: 210px;
+    height: 370px;
+    align-items: center;
+    margin: 2em 1em 2em 1em;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+.slideBox:hover{
+    transform: scale(1.1);
+}
+.slideBox:hover .movieTitle{
+    background-color: #0196e9;
+}
+.slideBox:hover .movieTitle>p{
+    color: #1d3354;
+}
+.moviePoster{
+    width: 210px;
+    height: 320px;
+    transition: all .3s ease-out;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.selectionPoster{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: 220px;
+    height: 370px;
+}
+.selectionPoster:hover{
+    background-color: rgba(206, 242, 245, 0.3);
+}
+.movieTitle{
+    background-color: #D64045;
+    width: 210px;
+    height: 50px;
+    margin-top: -1.5%;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.movieTitle > p{
+    color: #EEF5DB;
+    font-size: 13.5px;
+    text-align: center;
+    padding: 1.1em;
+}
+.sliderArrow{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-style: none;
+    background-color: #1d3354;
+    color: #EEF5DB;
+    font-size: 25px;
+}
+.sliderArrow:hover{
+    background-color: #0196e9;
+}
+#rightArrow{
+    position: absolute;
+    top: 38%;
+    right: 1%;
+    margin: 1%;
+}
+#leftArrow{
+    position: absolute;
+    top: 38%;
+    left: 1%;
+    margin: 1%;
+}
+#anchor-Movies{
+    text-align: center;
+    padding-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#anchor-Movies a{
+    font-size: 15px;
+    text-decoration: none;
+    color: #1d3354;
+}
+#anchor-Movies a:hover{
+    color: #0196e9;
+}
+
+/*------Movies.html------*/
+section.movies{
+    display: flex;
+    background: #eef5db;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px 0;       
+    padding: 20px 0;
+    width: 100%;
+    height: auto;   
+    margin: 30px 0 30px 0;    
 }
 .movie{
     display: flex;
@@ -181,6 +303,7 @@ section.movies{
     position: relative;
     width: 200px;
     height: 300px;
+    border-radius: 3%;
     overflow: hidden;
     cursor:pointer
 }
@@ -197,13 +320,11 @@ section.movies{
     padding: 15px;
     font-size: 1.3em;
 }
-
 .img-movie{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: all 0.2s linear;
-    
+    transition: all 0.2s linear; 
 }
 .movie .figure:hover .img-movie{
     transform: scale(1.1);
@@ -245,7 +366,7 @@ section.movies{
     background: #EEF5DB;
 }
 
-
+/*------Footer------*/
 footer{
     background-color: #1D3354;
     width: 100%;

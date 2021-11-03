@@ -1,10 +1,10 @@
 import { example } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
-
-
 console.log(example, data);
-addEventListener('DOMContentLoaded', ()=>{
+
+//Carousel images
+document.addEventListener('DOMContentLoaded', ()=>{
     const imagenes = ['./images/portada1.jpg', './images/portada2.jpg', './images/portada3.jpg', './images/portada4.jpg', './images/portada5.jpg']
     let i=1;
     const img1 = document.querySelector("#img1");
@@ -42,39 +42,72 @@ addEventListener('DOMContentLoaded', ()=>{
             img1.src = img2.src
             img2.classList.remove('active')
         },1000)
-        
     }
     setInterval(slideshow,4000)
 })
 
-/*Cargar Data */
+// Movie slider
+window.addEventListener("load", function(){
+const container = document.getElementById("container");
+const titles = data.films.map((item)=>{
+    return `
+    <section class="slideBox">
+        <img class="moviePoster" src="${item.poster}">
+        <div class="selectionPoster">
+        </div>
+        <div class="movieTitle">
+            <p>${item.title}</p>
+        </div>
+    </section>
+    `
+}).join("");
+console.log(titles);
+container.innerHTML = titles;
+
+let position = 0;
+const leftArrwBtn = document.getElementById("leftArrow");
+leftArrwBtn.addEventListener("click", function(){
+    position += 25;
+    if(position >= 25){
+        position = -400;
+    };
+    container.style.transform = `translateX(${position}%)`;
+});
+const rightArrBtn = document.getElementById("rightArrow");
+rightArrBtn.addEventListener("click", function(){
+    position += -25;
+    if(position < -400){
+        position = 0;
+    };
+    container.style.transform = `translateX(${position}%)`;
+});
+});
+
+//Load Data
 const sectionMovies = document.querySelector('.movies');
 let displayMovies = data.films.map((movie)=>{
-    
     return `
     <article class="movie">
         <div class="figure">
             <img src="${movie.poster}" class="img-movie">
             <div class="capa">
                 <div class="cont-title">
-                <h3>${movie.title}</h3>
+                 <h3>${movie.title}</h3>
                 </div>
                 
                 <div class="cont-span">
                     <p>⭐ ${movie.rt_score}</p>
                     <p>🎥 ${movie.release_date}</p>
                 </div>
+
                 <div class="description">
-                <p>${movie.description}</p>
+                 <p>${movie.description}</p>
                 </div>
                 <button class="btn-mas">See more</button>
-            </div>
-            
-        </div>
-        
+            </div>  
+        </div> 
     </article>
     ` 
-
 });
 displayMovies = displayMovies.join("");
 sectionMovies.innerHTML = displayMovies;
