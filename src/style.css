@@ -164,8 +164,79 @@ section.portada{
 
 /*Movies.html*/
 
-section.movies{
+.cont-btns-filter{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+}
+.cont-btns-filter .label-title {
+    margin: 20px;
     background: #fff;
+    padding: 5px 15px;
+    box-shadow: 0 2px 3px 2px rgba(0,0,0,.2);
+    
+}
+.cont-btns-filter .label-title:hover {
+    cursor: pointer;
+}
+.cont-btns-filter .label{
+    position: relative;
+
+    padding-bottom: 10px;
+}
+.cont-btns-filter .label:hover .btns {
+    display: block;
+    
+    
+}
+.cont-btns-filter .btns{
+    display: none;
+    position: absolute;
+    top: 45px;
+    z-index: 1;
+    width: 200px;
+    background: #fff;
+    padding: 5px 15px;  
+}
+.btns p{
+    transition: all 0.2s linear;
+}
+.btns p:hover{
+    cursor: pointer;
+    transform: translateX(5px);
+}
+
+.cont-btns-filter .label p i{
+    color: #D64045;
+    font-size: 1.3em;
+    padding: 5px;
+    transition: all 0.2s linear;
+}
+
+.cont-btns-filter .label:hover i{
+    transform: translateY(-3px);
+}
+.cont-btns-filter .label:active i{
+    transform: translateY(0);
+}
+
+
+
+
+
+.icono-filter{
+    margin: 0 20px;
+    
+}
+.icono-filter p{
+    display: inline-block;
+    background-color: #D64045;
+    padding: 5px 15px;
+    color: #EEF5DB;
+}
+section.movies{
+    background: #EEF5DB;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -188,7 +259,7 @@ section.movies{
     position: absolute;
     top: 0;
     background-color: #0196e9;
-    color: #fff;
+    color: #EEF5DB;
     height: 100%;
     transition: all 0.3s linear;
     opacity: 0;
@@ -230,6 +301,8 @@ section.movies{
     text-align: justify;
 }
 .capa .btn-mas{
+    text-decoration: none;
+    display: inline-block;
     margin: 20px 0;
     padding: 5px 15px;
     font-weight: 700;

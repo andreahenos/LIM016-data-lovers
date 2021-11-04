@@ -1,9 +1,12 @@
-import { example } from './data.js';
+/* import { example } from './data.js'; */
 // import data from './data/lol/lol.js';
+import { filterData, showData } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 
-console.log(example, data);
+/* console.log(example, data); */
+
+/*Images Carrousel */
 addEventListener('DOMContentLoaded', ()=>{
     const imagenes = ['./images/portada1.jpg', './images/portada2.jpg', './images/portada3.jpg', './images/portada4.jpg', './images/portada5.jpg']
     let i=1;
@@ -47,35 +50,31 @@ addEventListener('DOMContentLoaded', ()=>{
     setInterval(slideshow,4000)
 })
 
-/*Cargar Data */
-const sectionMovies = document.querySelector('.movies');
-let displayMovies = data.films.map((movie)=>{
-    
-    return `
-    <article class="movie">
-        <div class="figure">
-            <img src="${movie.poster}" class="img-movie">
-            <div class="capa">
-                <div class="cont-title">
-                <h3>${movie.title}</h3>
-                </div>
-                
-                <div class="cont-span">
-                    <p>⭐ ${movie.rt_score}</p>
-                    <p>🎥 ${movie.release_date}</p>
-                </div>
-                <div class="description">
-                <p>${movie.description}</p>
-                </div>
-                <button class="btn-mas">See more</button>
-            </div>
-            
-        </div>
-        
-    </article>
-    ` 
 
-});
-displayMovies = displayMovies.join("");
-sectionMovies.innerHTML = displayMovies;
+/*Cargar Data */
+
+const {films} = data;
+
+const filterBtnsDirector = document.querySelectorAll('.filter-btn');
+filterBtnsDirector.forEach((btn)=>{
+    btn.addEventListener('click', e=>{
+        filterData(films, e);
+        
+    })
+})
+
+window.addEventListener('DOMContentLoaded', ()=>{
+    displayMenuMovies(films);
+})
+
+
+function displayMenuMovies(menuItems){
+    showData(menuItems);
+      
+}
+
+
+
 /* console.log(data.films[0]); */
+
+
