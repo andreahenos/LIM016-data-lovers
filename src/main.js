@@ -1,10 +1,20 @@
-import { example } from './data.js';
+/* import { example } from './data.js'; */
 // import data from './data/lol/lol.js';
+import { filterData, showData } from './data.js';
 import data from './data/ghibli/ghibli.js';
-console.log(example, data);
+
+
 
 //Carousel images
 document.addEventListener('DOMContentLoaded', ()=>{
+
+
+
+/* console.log(example, data); */
+
+/*Images Carrousel */
+addEventListener('DOMContentLoaded', ()=>{
+
     const imagenes = ['./images/portada1.jpg', './images/portada2.jpg', './images/portada3.jpg', './images/portada4.jpg', './images/portada5.jpg']
     let i=1;
     const img1 = document.querySelector("#img1");
@@ -111,4 +121,33 @@ let displayMovies = data.films.map((movie)=>{
 });
 displayMovies = displayMovies.join("");
 sectionMovies.innerHTML = displayMovies;
+
+
+/*Cargar Data */
+
+const {films} = data;
+
+const filterBtnsDirector = document.querySelectorAll('.filter-btn');
+filterBtnsDirector.forEach((btn)=>{
+    btn.addEventListener('click', e=>{
+        filterData(films, e);
+        
+    })
+})
+
+window.addEventListener('DOMContentLoaded', ()=>{
+    displayMenuMovies(films);
+})
+
+
+function displayMenuMovies(menuItems){
+    showData(menuItems);
+      
+}
+
+
+
+
 /* console.log(data.films[0]); */
+
+
