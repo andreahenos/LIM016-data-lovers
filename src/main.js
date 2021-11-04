@@ -1,13 +1,7 @@
-/* import { example } from './data.js'; */
-// import data from './data/lol/lol.js';
+
 import { filterData, showData } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
-
-
-//Carousel images
-
-/* console.log(example, data); */
 
 /*Images Carrousel */
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -117,4 +111,4 @@ function displayMenuMovies(menuItems){
 
 
 
-/* console.log(data.films[0]); */
+
