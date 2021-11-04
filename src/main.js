@@ -6,14 +6,11 @@ import data from './data/ghibli/ghibli.js';
 
 
 //Carousel images
-document.addEventListener('DOMContentLoaded', ()=>{
-
-
 
 /* console.log(example, data); */
 
 /*Images Carrousel */
-addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', ()=>{
 
     const imagenes = ['./images/portada1.jpg', './images/portada2.jpg', './images/portada3.jpg', './images/portada4.jpg', './images/portada5.jpg']
     let i=1;
@@ -93,34 +90,7 @@ rightArrBtn.addEventListener("click", function(){
 });
 });
 
-//Load Data
-const sectionMovies = document.querySelector('.movies');
-let displayMovies = data.films.map((movie)=>{
-    return `
-    <article class="movie">
-        <div class="figure">
-            <img src="${movie.poster}" class="img-movie">
-            <div class="capa">
-                <div class="cont-title">
-                 <h3>${movie.title}</h3>
-                </div>
-                
-                <div class="cont-span">
-                    <p>⭐ ${movie.rt_score}</p>
-                    <p>🎥 ${movie.release_date}</p>
-                </div>
 
-                <div class="description">
-                 <p>${movie.description}</p>
-                </div>
-                <button class="btn-mas">See more</button>
-            </div>  
-        </div> 
-    </article>
-    ` 
-});
-displayMovies = displayMovies.join("");
-sectionMovies.innerHTML = displayMovies;
 
 
 /*Cargar Data */
@@ -147,7 +117,4 @@ function displayMenuMovies(menuItems){
 
 
 
-
 /* console.log(data.films[0]); */
-
-

@@ -76,13 +76,13 @@ nav{
     background: #1d3354;
 }
 nav .container{
+    width: 85vw;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.container{
-    padding: 5px 100px;
-}
+
 .logo{
     width: 130px;
     height: 60px;
@@ -121,14 +121,15 @@ section.portada{
     object-fit: cover;
 }
 .history .container{
-    width: 100%;
-    padding: 90px 0;
+    width: 85vw;
+
+    margin: 0 auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .author{
-    width: 200px;
-    height: 300px;
+    
+    height: 250px;
     margin: 30px;
 }
 .author img{
@@ -149,16 +150,19 @@ section.portada{
 }
 .dato{
     width: 200px;
-    height: 250px;
+    height: 270px;
     background: #D6E7A9;
     padding: 10px;
     margin: 20px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
 }
-.dato:hover i{
-    color: #0196e9;
+.dato:hover{
+    transform: translateY(-10px) scale(1.03);
+    
 }
+
 .dato i{
     padding: 10px;
     font-size: 2.3rem;
@@ -168,6 +172,11 @@ section.portada{
 .dato p{
     font-size: 1.2rem;
     font-weight: 100;
+}
+.dato p span{
+    display: block;
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 /* ------Movies slider------*/
@@ -193,6 +202,7 @@ main{
     width: 72vw;
     height: auto;
     overflow: hidden;
+
 }
 .slideBox{
     position: relative;
@@ -202,6 +212,7 @@ main{
     margin: 2em 1em 2em 1em;
     flex-direction: column;
     transition: all 0.3s ease;
+
 }
 .slideBox:hover{
     transform: scale(1.1);
@@ -218,6 +229,7 @@ main{
     transition: all .3s ease-out;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    
 }
 .selectionPoster{
     cursor: pointer;
@@ -225,6 +237,7 @@ main{
     top: 0;
     width: 220px;
     height: 370px;
+
 }
 .selectionPoster:hover{
     background-color: rgba(206, 242, 245, 0.3);
@@ -260,12 +273,14 @@ main{
     top: 38%;
     right: 1%;
     margin: 1%;
+
 }
 #leftArrow{
     position: absolute;
     top: 38%;
     left: 1%;
     margin: 1%;
+    z-index: 2;
 }
 #anchor-Movies{
     text-align: center;
@@ -405,6 +420,10 @@ section.movies{
 .movie .figure:hover .img-movie{
     transform: scale(1.1);
 }
+.movie .figure:active .capa{
+    opacity: 1;
+    visibility: visible;
+}
 .movie .figure:hover  .capa{
     opacity: 1;
     visibility: visible;
@@ -455,24 +474,99 @@ footer{
 }
 footer p{
     color: #EEF5DB;
-    text-align: left;
+
     width: 14em;
     font-size: 15px;
-    padding: 1em; 
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-right: 5em;
-    margin-left: 5em;
+
 }
-footer div{
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-right: 8em;
-    margin-left: 8em;
+footer .container{
+    margin: 0 auto;
+    width: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .footerIcon{
-    display: inline-block;
     width: 40px;
     height: 40px;
     margin: 1em;
 }
+
+/*Media Queries*/
+@media only screen and (max-width:1080px) {
+    .history .container{
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+    .datos{
+        width: 100%;
+
+        margin-bottom: 30px;
+    }
+    .dato{
+        height: 250px;
+        margin: 0;
+    }
+    .dato p{
+        font-size: 1.1rem;
+        font-weight: 100;
+    }
+ }
+ @media only screen and (max-width:768px){
+     /*datos ghibli*/
+    .datos{
+        flex-direction: column;
+        width: 100%;
+
+    }
+    .dato{
+        height: auto;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    /*scroll home parte inferior*/
+    main{
+   
+        padding: 0;
+    }
+    #container{
+
+        padding: 2px;
+        height: 250px;
+    }
+    .selectionPoster:hover{
+  
+        width: 160px;
+        height: 200px;
+    }
+    .slideBox{
+        width: 160px;
+        height: 250px;
+    }
+    .movieTitle{
+        width: 153px;
+        height: 30px;
+    }
+    .movieTitle p{
+        padding: 5px;
+    }
+    .moviePoster{
+        width: 153px;
+        height: 180px;
+    }
+    /*scroll parte superior*/
+    #slideshow{
+        height: 300px;
+    }
+    nav .container{
+        flex-direction: column;
+    }
+    footer .container{
+
+        text-align: center;
+        flex-direction: column;
+        
+    }
+    
+ }
