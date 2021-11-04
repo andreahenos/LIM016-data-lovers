@@ -2,18 +2,10 @@
 // import data from './data/lol/lol.js';
 import { filterData, showData } from './data.js';
 import data from './data/ghibli/ghibli.js';
-
-
-
-//Carousel images
-document.addEventListener('DOMContentLoaded', ()=>{
-
-
-
 /* console.log(example, data); */
 
 /*Images Carrousel */
-addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', ()=>{
 
     const imagenes = ['./images/portada1.jpg', './images/portada2.jpg', './images/portada3.jpg', './images/portada4.jpg', './images/portada5.jpg']
     let i=1;
@@ -149,5 +141,3 @@ function displayMenuMovies(menuItems){
 
 
 /* console.log(data.films[0]); */
-
-
