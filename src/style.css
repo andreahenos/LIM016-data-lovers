@@ -108,6 +108,9 @@ nav .container{
     margin: 0 20px;
     font-weight: 400;
 }
+#movSection{
+    display: none;
+}
 
 /* ------Intro------ */
 section.portada{
@@ -266,18 +269,18 @@ main{
     margin: 1%;
     z-index: 2;
 }
-#anchor-Movies{
+#viewAll-Movies{
     text-align: center;
     padding-bottom: 2%;
     margin-left: auto;
     margin-right: auto;
 }
-#anchor-Movies a{
-    font-size: 15px;
+#viewAll-Movies p{
+    font-size: 13px;
     text-decoration: none;
     color: #1d3354;
 }
-#anchor-Movies a:hover{
+#viewAll-Movies p:hover{
     color: #0196e9;
 }
 
