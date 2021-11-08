@@ -2,6 +2,22 @@
 import { filterData, showData } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
+/*Nav*/
+const homeSection = document.getElementById("homeSection");
+const movSection = document.getElementById("movSection");
+
+document.getElementById("navHome").addEventListener("click", function(){
+    movSection.style.display="none";
+    homeSection.style.display="block";
+})
+document.getElementById("navMovies").addEventListener("click", function(){
+    homeSection.style.display="none";
+    movSection.style.display="block";
+})
+document.getElementById("viewAll").addEventListener("click", function(){
+    homeSection.style.display="none";
+    movSection.style.display="block";
+})
 
 /*Images Carrousel */
 document.addEventListener('DOMContentLoaded', ()=>{
