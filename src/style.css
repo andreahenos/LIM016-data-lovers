@@ -171,12 +171,12 @@ section.portada{
 }
 .dato p{
     font-size: 1.2rem;
-    font-weight: 100;
+    font-weight: 400;
 }
 .dato p span{
     display: block;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 /* ------Movies slider------*/
@@ -441,9 +441,11 @@ section.movies{
     overflow: scroll;
     overflow-y: visible;
     overflow-x:hidden ;
+    
 }
 .capa .description p{
     text-align: justify;
+    margin-right: 15px;
 }
 .capa .btn-mas{
     text-decoration: none;

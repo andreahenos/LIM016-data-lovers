@@ -1,5 +1,5 @@
 
-import { filterData, showData } from './data.js';
+import { filterDataDirector, filterDataYear, showData } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         div.classList.add('circles')
         div.id = index;
         divIndicadores.appendChild(div);
+        
     }
     progresssBar.style.width = `${porcentaje_base}%`
     img1.src = imagenes[0];
@@ -62,7 +63,7 @@ const titles = data.films.map((item)=>{
     </section>
     `
 }).join("");
-console.log(titles);
+
 container.innerHTML = titles;
 
 let position = 0;
@@ -71,7 +72,7 @@ leftArrwBtn.addEventListener("click", function(){
     position += 25;
     if(position >= 25){
         position = -400;
-    };
+    }
     container.style.transform = `translateX(${position}%)`;
 });
 const rightArrBtn = document.getElementById("rightArrow");
@@ -79,7 +80,7 @@ rightArrBtn.addEventListener("click", function(){
     position += -25;
     if(position < -400){
         position = 0;
-    };
+    }
     container.style.transform = `translateX(${position}%)`;
 });
 });
@@ -88,26 +89,38 @@ rightArrBtn.addEventListener("click", function(){
 
 
 /*Cargar Data */
+const sectionMovies = document.querySelector('.movies');
+const filterBtnsDirector = document.querySelectorAll('.filter-btn-director');
+const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
 
 const {films} = data;
 
-const filterBtnsDirector = document.querySelectorAll('.filter-btn');
+window.addEventListener('DOMContentLoaded', ()=>{
+    
+    sectionMovies.innerHTML = showData(films);
+
+})
+
+/*Filtrar Data */
 filterBtnsDirector.forEach((btn)=>{
     btn.addEventListener('click', e=>{
-        filterData(films, e);
+        const condition = e.currentTarget.dataset.id;
+        sectionMovies.innerHTML = filterDataDirector(films, condition);
         
     })
-})
+});
 
-window.addEventListener('DOMContentLoaded', ()=>{
-    displayMenuMovies(films);
-})
+filterBtnsYear.forEach((btn)=>{
+    btn.addEventListener('click', e=>{
+        const conditionMayor = e.currentTarget.dataset.mayor;
+        const conditionMenor = e.currentTarget.dataset.menor;
+        
+        sectionMovies.innerHTML = filterDataYear(films, conditionMayor, conditionMenor);
+        
+    })
+});
 
 
-function displayMenuMovies(menuItems){
-    showData(menuItems);
-      
-}
 
 
 

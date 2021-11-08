@@ -1,7 +1,8 @@
 // estas funciones son de ejemplo
-const sectionMovies = document.querySelector('.movies');
+
 export const showData = (menuItems) =>{
-  let displayMovies = menuItems.map((movie)=>{
+    
+    let displayMovies = menuItems.map((movie)=>{
     
     return `
     <article class="movie">
@@ -25,25 +26,42 @@ export const showData = (menuItems) =>{
     </article>
     ` 
     
-});
- displayMovies = displayMovies.join("");
-    sectionMovies.innerHTML = displayMovies;  
+}); 
+
+displayMovies = displayMovies.join(""); 
+ return displayMovies
+    
 }
-export const filterData = (data, condition) => {
-  const director = condition.currentTarget.dataset.id 
+export const filterDataDirector = (data, condition) => {
         const movieDirector = data.filter(movieItem=>{
-            if(movieItem.director === director){
+            if(movieItem.director === condition){
                 return movieItem
             }
         })
-        if (director === 'all'){
-            showData(data);
+        if (condition == 'all'){
+            return showData(data);
         }
         else {
-            showData(movieDirector);
+            
+            return showData(movieDirector);
         }
 };
+export const filterDataYear = (data, conditionMayor, conditionMenor) => {
 
-/*export const anotherExample = () => {
+    const movieScore = data.filter(movieItem=>{
+        if( movieItem.rt_score >= parseInt(conditionMenor) && movieItem.rt_score <= parseInt(conditionMayor)){
+            return movieItem
+        }
+    })
+    if(conditionMayor == 'all'){
+        return showData(data);
+    }
+    else {
+        return showData(movieScore)
+    } 
+};
+
+/* export const anotherExample = () => {
   return 'OMG';
-}; */
+}; 
+ */
