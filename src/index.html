@@ -10,85 +10,141 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;700&display=swap" rel="stylesheet"> 
   </head>
+
   <body>
+
     <nav>
       <div class="container">
         <div class="logo">
-          <img src="./images/logo_gold.png" alt="">
+          <img src="./images/logo_gold.png">
         </div>
         <div class="menu">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="./movies.html">Movies</a></li>
+            <li><a id="navHome" href="#homeSection">Home</a></li>
+            <li><a id="navMovies" href="#movSection">Movies</a></li>
             <li><a href="#">Creators</a></li>
           </ul>
         </div>
       </div>
     </nav>
-    <div id="slideshow-principal">
-      <div id="progress-bar-container">
-        <div id="progress-bar"></div>
-      </div>
-      <div id="slideshow">
-        <img src="hola" alt="hola" id="img1">
-        <img src="hola" alt="hola" id="img2">
-      </div>
-      <div id="indicadores">
 
+    <section id="homeSection">
+      <div id="slideshow-principal">
+
+        <div id="progress-bar-container">
+           <div id="progress-bar"></div>
+        </div>
+  
+        <div id="slideshow">
+          <img src="" alt="" id="img1">
+          <img src="" alt="" id="img2">
+        </div>
+  
+        <div id="indicadores">
+
+        </div>
       </div>
-    </div>
-    <!-- <section class="portada" >
-        <img src="./images/portada1.jpg" alt="">
-    </section> -->
-    <section class="history">
-      <div class="container">
-        <div class="author">
-          <img src="images/creador.jpg" alt="">
+  
+      <!-- <section class="portada" >
+          <img src="./images/portada1.jpg" alt="">
+      </section> -->
+  
+      <section class="history">
+        <div class="container">
+          <div class="author">
+            <img src="images/creador.jpg" alt="">
+          </div>
+  
+          <div class="datos">
+            <div class="dato">
+              <i class="fas fa-book"></i>
+              <p>
+                <span>Foundation</span>
+                Studio Ghibli was founded in 1985 by directors Isao Takahata, Hayao Miyazaki, and Toshio Suzuki.
+              </p>
+            </div>
+  
+            <div class="dato">
+              <i class="fas fa-bookmark"></i>
+              <p>
+                <span>Movies</span>
+                There are 22 movies, but there is an additional one that is
+                considered to be Miyazaki's first film.
+              </p>
+            </div>
+  
+            <div class="dato">
+              <i class="fas fa-award"></i>
+              <p>
+                <span>Awards</span>
+                6 of his films are the highest grossing in Japanese cinema and 5 have been nominated for an Oscar.
+              </p>
+            </div>
+  
+          </div>
+        </div>    
+      </section>
+  
+      <main>
+        <input type="button" class="sliderArrow" id="leftArrow" value="<">
+  
+        <section id="slider">
+          <section id="container">
+          </section>
+        </section>
+  
+        <input type="button" class="sliderArrow" id="rightArrow" value=">">
+  
+        <div id="viewAll-Movies">
+          <p id="viewAll">View all</p>
         </div>
-        <div class="datos">
-          <div class="dato">
-            <i class="fas fa-book"></i>
-            <p>
-              <span>Foundation</span>
-              Studio Ghibli was founded in 1985 by directors Isao Takahata, Hayao Miyazaki, and Toshio Suzuki.
-            </p>
-          </div>
-          <div class="dato">
-            <i class="fas fa-bookmark"></i>
-            <p>
-              <span>Movies</span>
-              There are 22 movies, but there is an additional one that is
-              considered to be Miyazaki's first film.
-            </p>
-          </div>
-          <div class="dato">
-            <i class="fas fa-award"></i>
-            <p>
-              <span>Awards</span>
-              6 of his films are the highest grossing in Japanese cinema and 5 have been nominated for an Oscar.
-            </p>
-          </div>
-        </div>
-      </div>    
+      </main>
     </section>
 
+    <section id="movSection">
+      <section class="cont-btns-filter">
+      
+        <div class="cont-filter-directors">
+          <div class="label" id="label-director">
+            <p class="label-title">Director<i class="fas fa-sort-down"></i></p>
+            <div class="btns" id="btns-director">
+              <p class="filter-btn" data-id="all"><i class="fas fa-long-arrow-alt-right"></i>All</p>
+              <p class="filter-btn" data-id="Hayao Miyazaki"><i class="fas fa-long-arrow-alt-right"></i>Hayao Miyazaki</p>
+              <p class="filter-btn" data-id="Isao Takahata"><i class="fas fa-long-arrow-alt-right"></i>Isao Takahata</p>
+              <p class="filter-btn" data-id="Gorō Miyazaki"><i class="fas fa-long-arrow-alt-right"></i>Gorō Miyazaki</p>
+              <p class="filter-btn" data-id="Hiromasa Yonebayashi"><i class="fas fa-long-arrow-alt-right"></i>Hiromasa Yonebayashi</p>
+              <p class="filter-btn" data-id="Hiroyuki Morita"><i class="fas fa-long-arrow-alt-right"></i>Hiroyuki Morita</p>
+              <p class="filter-btn" data-id="Yoshifumi Kondō"><i class="fas fa-long-arrow-alt-right"></i>Yoshifumi Kondō</p>
+            </div>
+         </div>
+        </div>
 
-
-    <main>
-      <input type="button" class="sliderArrow" id="leftArrow" value="<">
-      <section id="slider">
-        <section id="container">
-        </section>
+        <div class="cont-filter-year">
+          <div class="label" id="label-year">
+            <p class="label-title">Year<i class="fas fa-sort-down"></i></p>
+            <div class="btns" id="btns-year">
+              <p><i class="fas fa-long-arrow-alt-right"></i>1985</p>
+              <p><i class="fas fa-long-arrow-alt-right"></i>1993</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="icono-filter">
+          <p><i class="fas fa-filter"></i> Filtros</p>
+        </div>   
       </section>
-      <input type="button" class="sliderArrow" id="rightArrow" value=">">
-      <div id="anchor-Movies">
-        <a href="./movies.html">View all</a>
-      </div>
-    </main>
+
+      <section class="movies">
+
+      </section>
+      
+    </section>
 
     <footer>
+
       <div class="container">
         <p>© 2021 Ghibli Proyect</p>
+
         <div>
           <img class="footerIcon" src="./images/facebook.png">
           <img class="footerIcon" src="./images/instagram.png">
@@ -96,6 +152,7 @@
         </div>
       </div>
     </footer>
+
     <script src="main.js" type="module"></script>
   </body>
 </html>
