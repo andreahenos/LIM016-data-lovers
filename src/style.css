@@ -457,13 +457,146 @@ section.movies{
     background: #EEF5DB;
 }
 
+/*Movies Inf Section*/
+#movInfSection{
+    display: none;
+}
+#movGeneralInf{
+    width: 100%;
+    height: auto;
+}
+.background{
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    z-index: 1;
+}
+#infContent{
+    position: relative;
+    top: -30vh;
+    width: 90%;
+    height: auto;
+    margin: 0 auto 5em auto;
+    display: flex;
+    z-index: 2;
+}
+.poster{
+    width: 27em;
+    height: 40em;
+    object-fit: cover;
+    z-index: 2;
+    margin: 0.5em;
+    border-radius: 5px;
+}
+#infBox{
+    background-color: #D6E7A9;
+    width: 100%;
+    height: auto;
+    margin: auto 0.5em 0.5em 0.5em;
+    border-radius: 5px;
+}
+#textInf{
+    margin: 1em;
+    align-items: center;
+}
+#textInf h2{
+    padding: 0.2em;
+    font-size: 42px;
+}
+#infIcons{
+    padding: 0.6em;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+#infIcons div{
+    display: flex;
+    height: auto;
+    width: 60%;
+}
+#InfIcons p{
+    font-size: 14px;
+} 
+.icon{
+    background-color: linen;
+    width: 26px;
+    height: 26px;
+}
+#infBox p{
+    padding: 0.6em;
+    font-size: 14px;
+}
+#creators{
+    padding: 0.6em;
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+}
+#director, #producer{
+    width: 70%;
+    height: auto;
+}
+#director h3, #producer h3{
+    font-size: 13px;
+}
+#director p, #producer p{
+    padding: 0;
+    font-size: 14px;
+}
+@media only screen and (max-width:768px){
+    #infContent{
+        flex-direction: column;
+        align-items: center;
+    }
+    #infBox{
+        width: 95%;
+        left: 1em;
+        right: 1em;
+        margin: 1em auto 1em auto;
+    }
+    #infIcons{
+        width: 90%;
+    }
+    #infIcons div{
+        width: 100%;
+    }
+    #infIcons p{
+        width: 100%;
+    }
+    #director h3, #producer h3{
+        margin: 0.5em 0 0.5em 0;
+    }
+}
+
+@media only screen and (max-width:1080px){
+    #infContent{
+        width: 90vw;
+    }
+    #background{
+        height: 10vh;
+    }
+}
+@media only screen and (max-width:2560px){
+    #infContent{
+        width: 76vw;
+    }
+    #background{
+        height: 10vw;
+    }
+    #infIcons{
+        width: 60%;
+    }
+    #creators{
+        width: 50%;
+    }
+}
+
 /*------Footer------*/
 footer{
     background-color: #1D3354;
     width: 100%;
     height: 8em;
     margin: 0%;
-
 }
 footer p{
     color: #EEF5DB;
