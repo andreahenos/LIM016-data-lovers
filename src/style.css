@@ -287,10 +287,48 @@ main{
 
 
 /*------Movies.html------*/
-.cont-btns-filter{
-    
-    background: #D64045;
 
+#cont-label-filter{
+    background-color: #D64045;
+    display: flex;
+    width: 100vw;
+    padding: 0 30px;
+    align-items: center;
+}
+.icono-filter{
+    background-color:darkgray;
+    margin: 8px;
+    padding: 5px;
+    width: 60px;
+    text-align: center;
+    align-content: center;
+}
+.label-title{
+    position: relative;
+    background-color: ghostwhite;
+    margin: 8px;
+    padding: 2px 5px;
+    width: 65px;
+    text-align: center;
+    cursor: pointer;
+}
+.label-title i{
+    padding-left: 6px;
+}
+
+#cont-options-filter{
+    background-color: #f1f2f6;
+    text-align: center;
+    padding: 5px 0;
+    display: none;
+}
+#cont-options-filter p{
+    margin: 3px 0;
+}
+
+/*.cont-btns-filter{
+   
+    background: #D64045;
     display: flex;
     align-items: center;
     font-size: 1.6em;
@@ -355,7 +393,6 @@ main{
     cursor: pointer;
     background: #fff;
     color: #D64045;
-    
 }
 #label-year{
     background: #0196e9;
@@ -367,7 +404,7 @@ main{
 }
 #btns-year p{
     display: inline-block;
-}
+} */
 
 section.movies{
     background: #EEF5DB;
