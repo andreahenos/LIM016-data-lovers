@@ -102,7 +102,7 @@ rightArrBtn.addEventListener("click", function(){
 /*Cargar Data */
 const sectionMovies = document.querySelector('.movies');
 const filterBtnsDirector = document.querySelectorAll('.filter-btn-director');
-const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
+const filterBtnsYear = document.querySelectorAll('.filter-btn-score');
 
 const {films} = data;
 

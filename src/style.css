@@ -334,7 +334,6 @@ main{
     display: none;
     position: absolute;
     top: 50px;
-
     z-index: 1;
     width: 200px;
     background: #fff;
@@ -358,11 +357,17 @@ main{
     color: #D64045;
     
 }
-
-
-
-
-
+#label-year{
+    background: #0196e9;
+}
+#btns-year{
+    width: 100vw;
+    left: -410px;
+    text-align: center;
+}
+#btns-year p{
+    display: inline-block;
+}
 
 section.movies{
     background: #EEF5DB;
