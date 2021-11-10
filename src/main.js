@@ -113,7 +113,54 @@ window.addEventListener('DOMContentLoaded', ()=>{
     sectionMovies.innerHTML = showData(data.films);
 
 })
+sectionMovies.addEventListener('click', (e)=>{
+    if(e.target.className.includes('btn-mas')){
+        const movie = e.target.parentElement
+        const title = movie.children[0].innerText;
+        const titleMovieSelected = title.trim()
 
+        let peli = data.films.map((movie)=>{
+            if(movie.title === titleMovieSelected){
+                
+                    return `
+                    <img class="background" src="${movie.background}">
+                    <section id="infContent">
+                        <img class="poster" src="${movie.poster}">
+                        <section id="infBox">
+                            <div id="textInf">
+                                <h2>${movie.title}</h2>
+                                <div id="infIcons">
+                                <div><img class="icon" src="#"><p>${movie.duration}</p></div>
+                                <div><img class="icon" src="#"><p>${movie.release_date}</p></div>
+                                <div><img class="icon" src="#"><p>${movie.rt_score}</p></div>
+                                </div>
+                                <p>${movie.description}</p>
+                                
+                                <section id="creators">
+                                <div id="director">
+                                <h3>Director</h3>
+                                <p>${movie.director}</p>
+                                </div>
+                                <div id="producer">
+                                <h3>Producer</h3>
+                                <p>${movie.producer}</p>
+                                </div>
+                                </section>
+                            </div>
+                        </section>
+                    </section>
+                    `
+                
+            }
+        }).join("");
+        document.getElementById("movGeneralInf").innerHTML = peli;
+        homeSection.style.display="none";
+        movSection.style.display="none";
+        movInfSection.style.display="block";  
+        
+    }
+    
+})
 /*Filtrar Data */
 filterBtnsDirector.forEach((btn)=>{
     btn.addEventListener('click', e=>{
@@ -133,62 +180,6 @@ filterBtnsYear.forEach((btn)=>{
     })
 });
 
-/*Movie's Information*/
-
-//Carga la página y se debe poder usar los items de nav
-window.addEventListener("load", function(){
-    
-    //Al hacer click en los botones o en los posters, te lleva a la información de la película
-    const moviePoster = document.querySelectorAll(".moviePoster");
-    const btnMas = document.querySelectorAll(".btn-mas");
-    
-    console.log(data.films[1].description)
-    console.log(data.films[19].background)
-
-    for(let i=0; i<moviePoster.length || i<btnMas.length; i++){
-        moviePoster[i].addEventListener("click", displayInf);
-        btnMas[i].addEventListener("click", displayInf);
-    }
-
-    //La información se muestra dependiendo de la película escogida
-    function displayInf(){
-        const dataFilms = data.films.map( (item) =>{
-            return `
-            <img class="background" src="${item.background}">
-            <section id="infContent">
-                <img class="poster" src="${item.poster}">
-                <section id="infBox">
-                    <div id="textInf">
-                        <h2>${item.title}</h2>
-                        <div id="infIcons">
-                        <div><img class="icon" src="#"><p>${item.duration}</p></div>
-                        <div><img class="icon" src="#"><p>${item.release_date}</p></div>
-                        <div><img class="icon" src="#"><p>${item.rt_score}</p></div>
-                        </div>
-                        <p>${item.description}</p>
-                        
-                        <section id="creators">
-                        <div id="director">
-                        <h3>Director</h3>
-                        <p>${item.director}</p>
-                        </div>
-                        <div id="producer">
-                        <h3>Producer</h3>
-                        <p>${item.producer}</p>
-                        </div>
-                        </section>
-                    </div>
-                </section>
-            </section>
-            `
-        }).join("");
-        document.getElementById("movGeneralInf").innerHTML = dataFilms;
-
-        homeSection.style.display="none";
-        movSection.style.display="none";
-        movInfSection.style.display="block";  
-     }
-})
 
 
 
