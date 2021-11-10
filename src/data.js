@@ -42,7 +42,6 @@ export const filterDataDirector = (data, condition) => {
             return showData(data);
         }
         else {
-            
             return showData(movieDirector);
         }
 };

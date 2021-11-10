@@ -5,19 +5,24 @@ import data from './data/ghibli/ghibli.js';
 /*Nav*/
 const homeSection = document.getElementById("homeSection");
 const movSection = document.getElementById("movSection");
+const movInfSection = document.getElementById("movInfSection");
 
 document.getElementById("navHome").addEventListener("click", function(){
     movSection.style.display="none";
+    movInfSection.style.display="none";
     homeSection.style.display="block";
 })
 document.getElementById("navMovies").addEventListener("click", function(){
     homeSection.style.display="none";
+    movInfSection.style.display="none";
     movSection.style.display="block";
 })
 document.getElementById("viewAll").addEventListener("click", function(){
     homeSection.style.display="none";
+    movInfSection.style.display="none";
     movSection.style.display="block";
 })
+
 
 /*Images Carrousel */
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -97,18 +102,15 @@ rightArrBtn.addEventListener("click", function(){
 });
 
 
-
-
 /*Cargar Data */
 const sectionMovies = document.querySelector('.movies');
 const filterBtnsDirector = document.querySelectorAll('.filter-btn-director');
 const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
 
-const {films} = data;
 
 window.addEventListener('DOMContentLoaded', ()=>{
-    
-    sectionMovies.innerHTML = showData(films);
+
+    sectionMovies.innerHTML = showData(data.films);
 
 })
 
@@ -130,6 +132,67 @@ filterBtnsYear.forEach((btn)=>{
         
     })
 });
+
+/*Movie's Information*/
+
+//Carga la página y se debe poder usar los items de nav
+window.addEventListener("load", function(){
+    
+    //Al hacer click en los botones o en los posters, te lleva a la información de la película
+    const moviePoster = document.querySelectorAll(".moviePoster");
+    const btnMas = document.querySelectorAll(".btn-mas");
+    
+    console.log(data.films[1].description)
+    console.log(data.films[19].background)
+
+    for(let i=0; i<moviePoster.length || i<btnMas.length; i++){
+        moviePoster[i].addEventListener("click", displayInf);
+        btnMas[i].addEventListener("click", displayInf);
+    }
+
+    //La información se muestra dependiendo de la película escogida
+    function displayInf(){
+        const dataFilms = data.films.map( (item) =>{
+            return `
+            <img class="background" src="${item.background}">
+            <section id="infContent">
+                <img class="poster" src="${item.poster}">
+                <section id="infBox">
+                    <div id="textInf">
+                        <h2>${item.title}</h2>
+                        <div id="infIcons">
+                        <div><img class="icon" src="#"><p>${item.duration}</p></div>
+                        <div><img class="icon" src="#"><p>${item.release_date}</p></div>
+                        <div><img class="icon" src="#"><p>${item.rt_score}</p></div>
+                        </div>
+                        <p>${item.description}</p>
+                        
+                        <section id="creators">
+                        <div id="director">
+                        <h3>Director</h3>
+                        <p>${item.director}</p>
+                        </div>
+                        <div id="producer">
+                        <h3>Producer</h3>
+                        <p>${item.producer}</p>
+                        </div>
+                        </section>
+                    </div>
+                </section>
+            </section>
+            `
+        }).join("");
+        document.getElementById("movGeneralInf").innerHTML = dataFilms;
+
+        homeSection.style.display="none";
+        movSection.style.display="none";
+        movInfSection.style.display="block";  
+     }
+})
+
+
+
+
 
 
 
