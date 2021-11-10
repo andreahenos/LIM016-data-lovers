@@ -180,6 +180,22 @@ filterBtnsYear.forEach((btn)=>{
     })
 });
 
+/*------*/
+
+window.addEventListener("load", function(){
+    const contOptionsFilter = document.getElementById("cont-options-filter");
+    const labelTitle = document.querySelectorAll(".label-title");
+    labelTitle.forEach((label) => {
+        label.addEventListener("click", function(){
+            if(contOptionsFilter.style.display == "block"){
+                contOptionsFilter.style.display="none";
+            } else {
+                contOptionsFilter.style.display == "block"
+            }
+        })
+    })
+})
+
 
 
 
