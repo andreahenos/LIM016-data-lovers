@@ -76,15 +76,16 @@ window.addEventListener('DOMContentLoaded', ()=>{
     sectionMovies.innerHTML = showData(data.films);
     movSection.style.display="none";
 })
+
 sectionMovies.addEventListener('click', (e)=>{
-    if(e.target.className.includes('btn-mas')){
+    if(e.target.className.includes('btn-mas' ||'moviePoster')){
         const movie = e.target.parentElement
         const title = movie.children[0].innerText;
         const titleMovieSelected = title.trim()
 
-        let peli = data.films.map((movie)=>{
+        let movInf = data.films.map((movie)=>{
             if(movie.title === titleMovieSelected){
-                
+                const icon = data.icons
                     return `
                     <img class="background" src="${movie.background}">
                     <section id="infContent">
@@ -93,9 +94,9 @@ sectionMovies.addEventListener('click', (e)=>{
                             <div id="textInf">
                                 <h2>${movie.title}</h2>
                                 <div id="infIcons">
-                                <div><img class="icon" src="#"><p>${movie.duration}</p></div>
-                                <div><img class="icon" src="#"><p>${movie.release_date}</p></div>
-                                <div><img class="icon" src="#"><p>${movie.rt_score}</p></div>
+                                <div><img class="icon" src="${icon.clock}"><p>${movie.duration}</p></div>
+                                <div><img class="icon" src="${icon.calendar}"><p>${movie.release_date}</p></div>
+                                <div><img class="icon" src="${icon.star}"><p>${movie.rt_score}</p></div>
                                 </div>
                                 <p>${movie.description}</p>
                                 
@@ -116,14 +117,13 @@ sectionMovies.addEventListener('click', (e)=>{
                 
             }
         }).join("");
-        document.getElementById("movGeneralInf").innerHTML = peli;
+        document.getElementById("movGeneralInf").innerHTML = movInf;
         homeSection.style.display="none";
         movSection.style.display="none";
-        movInfSection.style.display="block";  
-        
+        movInfSection.style.display="block";    
     }
-    
 })
+
 /*Filtrar Data */
 filterBtnsDirector.forEach((btn)=>{
     btn.addEventListener('click', e=>{
