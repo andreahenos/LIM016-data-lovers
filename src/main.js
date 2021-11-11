@@ -17,11 +17,7 @@ document.getElementById("navMovies").addEventListener("click", function(){
     movInfSection.style.display="none";
     movSection.style.display="block";
 })
-document.getElementById("viewAll").addEventListener("click", function(){
-    homeSection.style.display="none";
-    movInfSection.style.display="none";
-    movSection.style.display="block";
-})
+
 
 
 /*Images Carrousel */
@@ -65,41 +61,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 // Movie slider
-window.addEventListener("load", function(){
-const container = document.getElementById("container");
-const titles = data.films.map((item)=>{
-    return `
-    <section class="slideBox">
-        <img class="moviePoster" src="${item.poster}">
-        <div class="selectionPoster">
-        </div>
-        <div class="movieTitle">
-            <p>${item.title}</p>
-        </div>
-    </section>
-    `
-}).join("");
 
-container.innerHTML = titles;
-
-let position = 0;
-const leftArrwBtn = document.getElementById("leftArrow");
-leftArrwBtn.addEventListener("click", function(){
-    position += 25;
-    if(position >= 25){
-        position = -400;
-    }
-    container.style.transform = `translateX(${position}%)`;
-});
-const rightArrBtn = document.getElementById("rightArrow");
-rightArrBtn.addEventListener("click", function(){
-    position += -25;
-    if(position < -400){
-        position = 0;
-    }
-    container.style.transform = `translateX(${position}%)`;
-});
-});
 
 
 /*Cargar Data */
@@ -110,9 +72,9 @@ const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
 
 
 window.addEventListener('DOMContentLoaded', ()=>{
-
+    movSection.style.display = "none"
     sectionMovies.innerHTML = showData(data.films);
-
+    movSection.style.display="none";
 })
 sectionMovies.addEventListener('click', (e)=>{
     if(e.target.className.includes('btn-mas')){
@@ -182,7 +144,7 @@ filterBtnsScore.forEach((btn)=>{
 });
 filterBtnsYear.forEach((btn)=>{
     btn.addEventListener('click', e=>{
-        const condition = e.currentTarget.dataset.anio;
+        const condition = e.currentTarget.dataset.a;
         sectionMovies.innerHTML = filterDataYear(data.films, condition)
     })
 })
