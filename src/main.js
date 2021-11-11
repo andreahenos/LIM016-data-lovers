@@ -141,7 +141,7 @@ filterBtnsScore.forEach((btn)=>{
 });
 filterBtnsYear.forEach((btn)=>{
     btn.addEventListener('click', e=>{
-        const condition = e.currentTarget.dataset.a;
+        const condition = e.currentTarget.dataset.anio;
         sectionMovies.innerHTML = filterDataYear(data.films, condition)
     })
 })
