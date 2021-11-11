@@ -1,5 +1,11 @@
 export default {
   "studio": "Studio Ghibli Inc.",
+  "icons": 
+  {
+    "clock": "./images/clock.png",
+    "calendar": "./images/calendar.png",
+    "star": "./images/star.png",
+  },
   "films": [
     {
       "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
@@ -357,7 +363,7 @@ export default {
     },
     {
       "id": "ea660b10-85c4-4ae3-8a5f-41cea3648e3e",
-      "background": "https://www.ghibli.jp/gallery/majo008.jpg",
+      "background": "https://www.ghibli.jp/gallery/majo040.jpg",
       "title": "Kiki's Delivery Service",
       "description": "A young witch, on her mandatory year of independent life, finds fitting into a new community difficult while she supports herself by running an air courier service.",
       "director": "Hayao Miyazaki",
@@ -485,7 +491,7 @@ export default {
     },
     {
       "id": "12cfb892-aac0-4c5b-94af-521852e46d6a",
-      "background": "",
+      "background": "https://www.animeclick.it/immagini/anime/Hotaru_no_Haka/gallery_original/Hotaru_no_Haka-5f4518c36376c.jpg",
       "title": "Grave of the Fireflies",
       "description": "In the latter part of World War II, a boy and his sister, orphaned when their mother is killed in the firebombing of Tokyo, are left to survive on their own in what remains of civilian life in Japan. The plot follows this boy and his sister as they do their best to survive in the Japanese countryside, battling hunger, prejudice, and pride in their own quiet, personal battle.",
       "director": "Isao Takahata",
@@ -1891,7 +1897,7 @@ export default {
     },
     {
       "id": "2de9426b-914a-4a06-a3a0-5e6d9d3886f6",
-      "background": "https://www.ghibli.jp/gallery/karigurashi009.jpg",
+      "background": "https://www.ghibli.jp/gallery/karigurashi032.jpg",
       "title": "The Secret World of Arrietty",
       "description": "14-year-old Arrietty and the rest of the Clock family live in peaceful anonymity as they make their own home from items 'borrowed' from the house's human inhabitants. However, life changes for the Clocks when a human boy discovers Arrietty.",
       "director": "Hiromasa Yonebayashi",
