@@ -1,5 +1,5 @@
 
-import { filterDataDirector, filterDataYear, showData } from './data.js';
+import { filterDataDirector, filterDataScore, filterDataYear, showData } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 /*Nav*/
@@ -105,7 +105,8 @@ rightArrBtn.addEventListener("click", function(){
 /*Cargar Data */
 const sectionMovies = document.querySelector('.movies');
 const filterBtnsDirector = document.querySelectorAll('.filter-btn-director');
-const filterBtnsYear = document.querySelectorAll('.filter-btn-score');
+const filterBtnsScore = document.querySelectorAll('.filter-btn-score');
+const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
 
 
 window.addEventListener('DOMContentLoaded', ()=>{
@@ -164,37 +165,59 @@ sectionMovies.addEventListener('click', (e)=>{
 /*Filtrar Data */
 filterBtnsDirector.forEach((btn)=>{
     btn.addEventListener('click', e=>{
-        const condition = e.currentTarget.dataset.id;
-        sectionMovies.innerHTML = filterDataDirector(films, condition);
+        const condition = e.currentTarget.dataset.director;
+        sectionMovies.innerHTML = filterDataDirector(data.films, condition);
         
     })
 });
 
-filterBtnsYear.forEach((btn)=>{
+filterBtnsScore.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const conditionMayor = e.currentTarget.dataset.mayor;
         const conditionMenor = e.currentTarget.dataset.menor;
         
-        sectionMovies.innerHTML = filterDataYear(films, conditionMayor, conditionMenor);
+        sectionMovies.innerHTML = filterDataScore(data.films, conditionMayor, conditionMenor);
         
     })
 });
-
-/*------*/
-
-window.addEventListener("load", function(){
-    const contOptionsFilter = document.getElementById("cont-options-filter");
-    const labelTitle = document.querySelectorAll(".label-title");
-    labelTitle.forEach((label) => {
-        label.addEventListener("click", function(){
-            if(contOptionsFilter.style.display == "block"){
-                contOptionsFilter.style.display="none";
-            } else {
-                contOptionsFilter.style.display == "block"
-            }
-        })
+filterBtnsYear.forEach((btn)=>{
+    btn.addEventListener('click', e=>{
+        const condition = e.currentTarget.dataset.anio;
+        sectionMovies.innerHTML = filterDataYear(data.films, condition)
     })
 })
+
+/*------*/
+const btns = document.querySelectorAll('.tab-btn');
+const about = document.querySelector('#cont-filter');
+const divs = document.querySelectorAll('.btns');
+const iconClose = document.querySelectorAll('.icon-close');
+about.addEventListener('click', (e)=>{
+    const id = e.target.dataset.id;
+    if(id){
+        btns.forEach((btn)=>{
+            btn.classList.remove("active"); 
+            e.target.classList.add("active"); 
+        })
+        divs.forEach((div)=>{
+           div.classList.remove("active"); 
+        }) 
+         const element = document.getElementById(id);
+        element.classList.add("active"); 
+    }
+})
+iconClose.forEach((icon)=>{
+    icon.addEventListener('click', ()=>{
+        divs.forEach((div)=>{
+            div.classList.remove("active"); 
+         })
+    })
+})
+
+
+
+    
+
 
 
 

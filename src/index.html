@@ -96,79 +96,63 @@
     </section>
 
     <section id="movSection">
-      <section id="cont-label-filter">
-        <div class="icono-filter">
-          <p><i class="fas fa-filter"></i> Filtros</p>
+      <div id="cont-filter">
+        <p class="icon-filter"><i class="fas fa-filter"></i> Filtros</p>
+        <div id="cont-label-filter">
+          <button class="tab-btn" data-id="director">Director</button>
+          <button class="tab-btn" data-id="score">Score</button>
+          <button class="tab-btn" data-id="year">Year</button>
         </div>
-        <div>
-          <p class="label-title">Director<i class="fas fa-sort-down"></i></p>
-        </div>
-        <div>
-          <p class="label-title">Score<i class="fas fa-sort-down"></i></p>
-        </div>
-        <div>
-          <p class="label-title">Year<i class="fas fa-sort-down"></i></p>
-        </div>
-      </section>
 
-      <section id="cont-options-filter">
-        <p>Hayao Miyazaki</p>
-        <p>Isao Takahata</p>
-        <p>Gorō Miyazaki</p>
-      </section>
-      <!-- 
-      <section class="cont-btns-filter">
-        <div class="container">
-          <div class="icono-filter">
-            <p><i class="fas fa-filter"></i> Filtros</p>
+        <section id="cont-options-filter">
+          <div class="btns" id="director">
+            <p class="filter-btn-director" data-director="all">All</p>
+            <p class="filter-btn-director" data-director="Hayao Miyazaki">Hayao Miyazaki</p>
+            <p class="filter-btn-director" data-director="Isao Takahata">Isao Takahata</p>
+            <p class="filter-btn-director" data-director="Gorō Miyazaki">Gorō Miyazaki</p>
+            <p class="filter-btn-director" data-director="Hiromasa Yonebayashi">Hiromasa Yonebayashi</p>
+            <p class="filter-btn-director" data-director="Hiroyuki Morita">Hiroyuki Morita</p>
+            <p class="filter-btn-director" data-director="Yoshifumi Kondō">Yoshifumi Kondō</p>
+            <i  class="fas fa-times icon-close"></i>
           </div>
-          <div class="cont-filter-directors">
-            <div class="label" id="label-director">
-              <p class="label-title">Director<i class="fas fa-sort-down"></i></p>
-              <div class="btns" id="btns-director">
-                <p class="filter-btn-director" data-id="all">All</p>
-                <p class="filter-btn-director" data-id="Hayao Miyazaki">Hayao Miyazaki</p>
-                <p class="filter-btn-director" data-id="Isao Takahata">Isao Takahata</p>
-                <p class="filter-btn-director" data-id="Gorō Miyazaki">Gorō Miyazaki</p>
-                <p class="filter-btn-director" data-id="Hiromasa Yonebayashi">Hiromasa Yonebayashi</p>
-                <p class="filter-btn-director" data-id="Hiroyuki Morita">Hiroyuki Morita</p>
-                <p class="filter-btn-director" data-id="Yoshifumi Kondō">Yoshifumi Kondō</p>
-              </div>
+          <div class="btns" id="score">
+            <p class="filter-btn-score" data-mayor="all">⭐ All</p>
+            <p class="filter-btn-score" data-mayor=100 data-menor=95>⭐ 100-95</p>
+            <p class="filter-btn-score" data-mayor=94 data-menor=90>⭐ 94-90</p>
+            <p class="filter-btn-score" data-mayor=89 data-menor=85>⭐ 89-85</p>
+            <p class="filter-btn-score" data-mayor=84 data-menor=80>⭐ 84-80</p>
+            <p class="filter-btn-score" data-mayor=79 data-menor=75>⭐ 79-75</p>
+            <p class="filter-btn-score" data-mayor=74 data-menor=41>⭐ Less than 75 </p>
+            <i  class="fas fa-times icon-close"></i>
+          </div>
+          <div class="btns" id="year">
+            <div class="cont-year">
+              <button class="filter-btn-year" data-anio="1986">1986</button>
+              <button class="filter-btn-year" data-anio="1988">1988</button>
+              <button class="filter-btn-year" data-anio="1989">1989</button>
+              <button class="filter-btn-year" data-anio="1991">1991</button>
+              <button class="filter-btn-year" data-anio="1992">1992</button>
+              <button class="filter-btn-year" data-anio="1994">1994</button>
+              <button class="filter-btn-year" data-anio="1995">1995</button>
+              <button class="filter-btn-year" data-anio="1997">1997</button>
+              <button class="filter-btn-year" data-anio="1999">1999</button>
+              <button class="filter-btn-year" data-anio="2001">2001</button>
+              <button class="filter-btn-year" data-anio="2002">2002</button>
+              <button class="filter-btn-year" data-anio="2004">2004</button>
+              <button class="filter-btn-year" data-anio="2006">2006</button>
+              <button class="filter-btn-year" data-anio="2008">2008</button>
+              <button class="filter-btn-year" data-anio="2010">2010</button>
+              <button class="filter-btn-year" data-anio="2011">2011</button>
+              <button class="filter-btn-year" data-anio="2013">2013</button>
+              <button class="filter-btn-year" data-anio="2014">2014</button>
             </div>
-            
-            
+            <i  class="fas fa-times icon-close"></i>
           </div>
-          <div class="cont-filter-score">
-            <div class="label" id="label-score">
-              <p class="label-title">Score<i class="fas fa-sort-down"></i></p>
-              <div class="btns" id="btns-score">
-                <p class="filter-btn-score" data-mayor="all">All</p>
-                <p class="filter-btn-score" data-mayor=100 data-menor=95>⭐ 100-95</p>
-                <p class="filter-btn-score" data-mayor=94 data-menor=90>⭐ 94-90</p>
-                <p class="filter-btn-score" data-mayor=89 data-menor=85>⭐ 89-85</p>
-                <p class="filter-btn-score" data-mayor=84 data-menor=80>⭐ 84-80</p>
-                <p class="filter-btn-score" data-mayor=79 data-menor=75>⭐ 79-75</p>
-                <p class="filter-btn-score" data-mayor=74 data-menor=41>⭐ Less than 75 </p>
-              </div>
-            </div>  
-          </div>
-          <div class="cont-filter-year">
-            <div class="label" id="label-year">
-              <p class="label-title">Year<i class="fas fa-sort-down"></i></p>
-              
-              <div class="btns" id="btns-year">
-                <p class="filter-btn-year" data-mayor="all">All</p>
-                <p class="filter-btn-year" data-mayor=100 data-menor=95>1986</p>
-                <p class="filter-btn-year" data-mayor=94 data-menor=90>2021</p>
-                <p class="filter-btn-year" data-mayor=89 data-menor=85>2021</p>
-                <p class="filter-btn-year" data-mayor=84 data-menor=80>2021</p>
-                <p class="filter-btn-year" data-mayor=79 data-menor=75>2021</p>
-                <p class="filter-btn-year" data-mayor=74 data-menor=41>2020</p>
-              </div>
-            </div>  
-          </div>
-        </div> -->
-             
+        </div>
+      </section>
+      
+      
+
         <section class="movies">
     
         </section>

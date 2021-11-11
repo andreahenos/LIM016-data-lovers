@@ -288,123 +288,111 @@ main{
 
 /*------Movies.html------*/
 
-#cont-label-filter{
+#cont-filter{
     background-color: #D64045;
-    display: flex;
-    width: 100vw;
-    padding: 0 30px;
+    width: 99.1vw;
     align-items: center;
+    font-size: 1rem;
 }
-.icono-filter{
-    background-color:darkgray;
-    margin: 8px;
-    padding: 5px;
-    width: 60px;
+#cont-filter #cont-label-filter{
     text-align: center;
-    align-content: center;
+    display: flex;
+    justify-content: space-between;
+    
 }
-.label-title{
-    position: relative;
-    background-color: ghostwhite;
-    margin: 8px;
-    padding: 2px 5px;
-    width: 65px;
-    text-align: center;
+.icon-filter{
+    color: #EEF5DB;
+    width: 80px;
+    padding: 15px 0;
+    margin: 0 auto;
+}
+.tab-btn{
+    background: #D64045;
+    border: none;
+    font-size: 1rem;
+    width: 33.2%;
+    color: #EEF5DB;
+    padding: 5px 0;
+
+}
+.tab-btn:hover {
     cursor: pointer;
 }
-.label-title i{
-    padding-left: 6px;
+
+.active{
+    background: #f1f2f6;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, .3);
+}
+#cont-label-filter .active{
+    color: #D64045;
+}
+.icon-close{
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 1.5em;
+    color: #D64045;
+    transition: all 0.3s linear;
+
+}
+.icon-close:hover{
+    cursor: pointer;
+    transform: rotate(180deg);
 }
 
-#cont-options-filter{
-    background-color: #f1f2f6;
-    text-align: center;
-    padding: 5px 0;
-    display: none;
-}
-#cont-options-filter p{
-    margin: 3px 0;
-}
-
-/*.cont-btns-filter{
-   
-    background: #D64045;
-    display: flex;
-    align-items: center;
-    font-size: 1.6em;
-}
-.container{
-    margin: 0 auto;
-    width: 85vw;
-    display: flex;
-    align-items: center;
-}
-.cont-btns-filter .label-title {
+#cont-options-filter .active{
+    width: 99.1vw;
+    padding-top: 35px;
+    position: relative;
     
-    padding: 13px 20px; 
-    color: #EEF5DB;
 }
-.label-title i{
-    padding-left: 10px;
+#cont-options-filter .active p{
+    padding: 5px 0;
+    font-size: 1rem;
+}
+
+#cont-options-filter p{
+    text-align: center;
     transition: all 0.3s ease-in-out;
 }
-
-.cont-btns-filter .label-title:hover {
-    cursor: pointer;
-    color: #fff;
-    background: rgba(255,255,255,.3);
-    
+#cont-options-filter p:hover{
+    cursor: pointer;   
+    color: #D64045;
+    background-color: #fff;
 }
-.cont-btns-filter .label-title:hover i{
-    transform: translateY(-2px);
-    
-}
-.cont-btns-filter .label{
-    position: relative;
-    
-
-}
-.cont-btns-filter .label:hover .btns {
-    display: block;
-}
-.cont-btns-filter .btns{
-
+.btns:not(.active){
     display: none;
-    position: absolute;
-    top: 50px;
-    z-index: 1;
-    width: 200px;
+}
+.cont-year{
+    margin: 0 auto;
+    
+
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cont-year button{
     background: #fff;
-      
+    font-size: 1rem;
+    border: 1.5px solid rgb(170, 170, 170);
+    border-radius: 5px;
+    width: 100px;
+    padding: 7px 12px;
+    margin: 5px;
+    transition:all 0.3s linear;
 }
-.icono-filter {
-    padding:  5px 10px;
-    background: #EEF5DB;
-    color: #D64045;
-    margin-right: 25px;
-}
-.btns p{
-    background: #f1f2f3;
-    padding: 5px;
-    padding-left: 15px;
-    transition: all 0.2s linear;
-}
-.btns p:hover{
+.cont-year button:hover{
     cursor: pointer;
-    background: #fff;
-    color: #D64045;
+    background: #D64045;
+    border: #D64045;
+    color:#fff;
 }
-#label-year{
-    background: #0196e9;
-}
-#btns-year{
-    width: 100vw;
-    left: -410px;
-    text-align: center;
-}
-#btns-year p{
+.cont-year .active{
     display: inline-block;
-} */
+    width: 100px;
+    background: #D6E7A9;
+}
 
 section.movies{
     background: #EEF5DB;
