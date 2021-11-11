@@ -45,7 +45,7 @@ export const filterDataDirector = (data, condition) => {
             return showData(movieDirector);
         }
 };
-export const filterDataYear = (data, conditionMayor, conditionMenor) => {
+export const filterDataScore = (data, conditionMayor, conditionMenor) => {
 
     const movieScore = data.filter(movieItem=>{
         if( movieItem.rt_score >= parseInt(conditionMenor) && movieItem.rt_score <= parseInt(conditionMayor)){
@@ -58,6 +58,19 @@ export const filterDataYear = (data, conditionMayor, conditionMenor) => {
     else {
         return showData(movieScore)
     } 
+};
+export const filterDataYear = (data, condition) => {
+    const movieYear = data.filter(movieItem=>{
+        if(movieItem.release_date === condition){
+            return movieItem
+        }
+    })
+    if (condition == 'all'){
+        return showData(data);
+    }
+    else {
+        return showData(movieYear);
+    }
 };
 
 /* export const anotherExample = () => {

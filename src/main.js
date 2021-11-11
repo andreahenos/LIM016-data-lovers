@@ -1,5 +1,5 @@
 
-import { filterDataDirector, filterDataYear, showData } from './data.js';
+import { filterDataDirector, filterDataScore, filterDataYear, showData } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 /*Nav*/
@@ -17,11 +17,7 @@ document.getElementById("navMovies").addEventListener("click", function(){
     movInfSection.style.display="none";
     movSection.style.display="block";
 })
-document.getElementById("viewAll").addEventListener("click", function(){
-    homeSection.style.display="none";
-    movInfSection.style.display="none";
-    movSection.style.display="block";
-})
+
 
 
 /*Images Carrousel */
@@ -65,53 +61,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 // Movie slider
-window.addEventListener("load", function(){
-const container = document.getElementById("container");
-const titles = data.films.map((item)=>{
-    return `
-    <section class="slideBox">
-        <img class="moviePoster" src="${item.poster}">
-        <div class="selectionPoster">
-        </div>
-        <div class="movieTitle">
-            <p>${item.title}</p>
-        </div>
-    </section>
-    `
-}).join("");
 
-container.innerHTML = titles;
-
-let position = 0;
-const leftArrwBtn = document.getElementById("leftArrow");
-leftArrwBtn.addEventListener("click", function(){
-    position += 25;
-    if(position >= 25){
-        position = -400;
-    }
-    container.style.transform = `translateX(${position}%)`;
-});
-const rightArrBtn = document.getElementById("rightArrow");
-rightArrBtn.addEventListener("click", function(){
-    position += -25;
-    if(position < -400){
-        position = 0;
-    }
-    container.style.transform = `translateX(${position}%)`;
-});
-});
 
 
 /*Cargar Data */
 const sectionMovies = document.querySelector('.movies');
 const filterBtnsDirector = document.querySelectorAll('.filter-btn-director');
-const filterBtnsYear = document.querySelectorAll('.filter-btn-score');
+const filterBtnsScore = document.querySelectorAll('.filter-btn-score');
+const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
 
 
 window.addEventListener('DOMContentLoaded', ()=>{
-
+    movSection.style.display = "none"
     sectionMovies.innerHTML = showData(data.films);
-
+    movSection.style.display="none";
 })
 
 sectionMovies.addEventListener('click', (e)=>{
@@ -164,37 +127,59 @@ sectionMovies.addEventListener('click', (e)=>{
 /*Filtrar Data */
 filterBtnsDirector.forEach((btn)=>{
     btn.addEventListener('click', e=>{
-        const condition = e.currentTarget.dataset.id;
-        sectionMovies.innerHTML = filterDataDirector(films, condition);
+        const condition = e.currentTarget.dataset.director;
+        sectionMovies.innerHTML = filterDataDirector(data.films, condition);
         
     })
 });
 
-filterBtnsYear.forEach((btn)=>{
+filterBtnsScore.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const conditionMayor = e.currentTarget.dataset.mayor;
         const conditionMenor = e.currentTarget.dataset.menor;
         
-        sectionMovies.innerHTML = filterDataYear(films, conditionMayor, conditionMenor);
+        sectionMovies.innerHTML = filterDataScore(data.films, conditionMayor, conditionMenor);
         
     })
 });
-
-/*------*/
-
-window.addEventListener("load", function(){
-    const contOptionsFilter = document.getElementById("cont-options-filter");
-    const labelTitle = document.querySelectorAll(".label-title");
-    labelTitle.forEach((label) => {
-        label.addEventListener("click", function(){
-            if(contOptionsFilter.style.display == "block"){
-                contOptionsFilter.style.display="none";
-            } else {
-                contOptionsFilter.style.display == "block"
-            }
-        })
+filterBtnsYear.forEach((btn)=>{
+    btn.addEventListener('click', e=>{
+        const condition = e.currentTarget.dataset.a;
+        sectionMovies.innerHTML = filterDataYear(data.films, condition)
     })
 })
+
+/*------*/
+const btns = document.querySelectorAll('.tab-btn');
+const about = document.querySelector('#cont-filter');
+const divs = document.querySelectorAll('.btns');
+const iconClose = document.querySelectorAll('.icon-close');
+about.addEventListener('click', (e)=>{
+    const id = e.target.dataset.id;
+    if(id){
+        btns.forEach((btn)=>{
+            btn.classList.remove("active"); 
+            e.target.classList.add("active"); 
+        })
+        divs.forEach((div)=>{
+           div.classList.remove("active"); 
+        }) 
+         const element = document.getElementById(id);
+        element.classList.add("active"); 
+    }
+})
+iconClose.forEach((icon)=>{
+    icon.addEventListener('click', ()=>{
+        divs.forEach((div)=>{
+            div.classList.remove("active"); 
+         })
+    })
+})
+
+
+
+    
+
 
 
 
