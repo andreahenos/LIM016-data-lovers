@@ -512,6 +512,7 @@ section.movies{
     height: 60vh;
     object-fit: cover;
     z-index: 1;
+    mix-blend-mode: multiply;
 }
 #infContent{
     position: relative;
@@ -539,39 +540,41 @@ section.movies{
 }
 #textInf{
     margin: 1em;
-    align-items: center;
+    width: auto;
 }
 #textInf h2{
     padding: 0.2em;
     font-size: 42px;
 }
 #infIcons{
+    position: relative;
     padding: 0.6em;
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    row-gap: 40px;
 }
 #infIcons div{
     display: flex;
+    align-items: center;
     height: auto;
-    width: 60%;
+    width: 100%;
 }
 #InfIcons p{
     font-size: 14px;
 } 
 .icon{
-    background-color: linen;
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
 }
 #infBox p{
     padding: 0.6em;
-    font-size: 14px;
+    font-size: 12px;
 }
 #creators{
+    position: relative;
     padding: 0.6em;
     display: flex;
-    width: 70%;
+    width: 100%;
     justify-content: space-between;
 }
 #director, #producer{
@@ -583,9 +586,12 @@ section.movies{
 }
 #director p, #producer p{
     padding: 0;
-    font-size: 14px;
-}
+    font-size: 12px;
+}  */
 @media only screen and (max-width:768px){
+    #textInf{
+        text-align: center;
+    }
     #infContent{
         flex-direction: column;
         align-items: center;
@@ -595,15 +601,31 @@ section.movies{
         left: 1em;
         right: 1em;
         margin: 1em auto 1em auto;
+        text-align: center;
     }
     #infIcons{
-        width: 90%;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center; 
     }
     #infIcons div{
-        width: 100%;
+        margin: 0 3%;
+        width: 30%;
+        flex-direction: column;
     }
     #infIcons p{
+        width: 60px;
+    }
+    #creators{
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+    }
+    #director, #producer{
         width: 100%;
+        align-items: center;
+        margin-bottom: 1em;  
     }
     #director h3, #producer h3{
         margin: 0.5em 0 0.5em 0;
