@@ -32,6 +32,22 @@ displayMovies = displayMovies.join("");
  return displayMovies
     
 }
+export const showMovieCarrousel = (data)=>{
+    let displayMovies = data.map((movie)=>{
+    
+        return `
+
+            <div class="slide">
+                <img src=${movie.poster} alt=${movie.title}>
+            </div>
+
+        ` 
+        
+    }); 
+    
+    displayMovies = displayMovies.join(""); 
+     return displayMovies
+}
 export const filterDataDirector = (data, condition) => {
         const movieDirector = data.filter(movieItem=>{
             if(movieItem.director === condition){

@@ -1,14 +1,17 @@
 
-import { filterDataDirector, filterDataScore, filterDataYear, showData } from './data.js';
+import { filterDataDirector, filterDataScore, filterDataYear, showData, showMovieCarrousel } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 /*Nav*/
 const homeSection = document.getElementById("homeSection");
 const movSection = document.getElementById("movSection");
 const movInfSection = document.getElementById("movInfSection");
+const movCarrousel = document.querySelector(".slide-track");
+const sectionMovies = document.querySelector('.movies');
 window.addEventListener('DOMContentLoaded', ()=>{
     sectionMovies.innerHTML = showData(data.films);
-    movSection.style.display = "none"
+    movSection.style.display = "none";
+    movCarrousel.innerHTML = showMovieCarrousel(data.films)
 })
 document.getElementById("navHome").addEventListener("click", function(){
     movSection.style.display="none";
@@ -20,7 +23,11 @@ document.getElementById("navMovies").addEventListener("click", function(){
     movInfSection.style.display="none";
     movSection.style.display="block";
 })
-
+document.getElementById("btnViewAll").addEventListener("click", ()=>{
+    homeSection.style.display="none";
+    movInfSection.style.display="none";
+    movSection.style.display="block";
+})
 
 
 /*Images Carrousel */
@@ -65,10 +72,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 // Movie slider
 
-
-
 /*Cargar Data */
-const sectionMovies = document.querySelector('.movies');
+
 const filterBtnsDirector = document.querySelectorAll('.filter-btn-director');
 const filterBtnsScore = document.querySelectorAll('.filter-btn-score');
 const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
@@ -146,7 +151,7 @@ filterBtnsYear.forEach((btn)=>{
     })
 })
 
-/*------*/
+/*---Filtros---*/
 const btns = document.querySelectorAll('.tab-btn');
 const about = document.querySelector('#cont-filter');
 const divs = document.querySelectorAll('.btns');
