@@ -6,7 +6,10 @@ import data from './data/ghibli/ghibli.js';
 const homeSection = document.getElementById("homeSection");
 const movSection = document.getElementById("movSection");
 const movInfSection = document.getElementById("movInfSection");
-
+window.addEventListener('DOMContentLoaded', ()=>{
+    sectionMovies.innerHTML = showData(data.films);
+    movSection.style.display = "none"
+})
 document.getElementById("navHome").addEventListener("click", function(){
     movSection.style.display="none";
     movInfSection.style.display="none";
@@ -70,12 +73,6 @@ const filterBtnsDirector = document.querySelectorAll('.filter-btn-director');
 const filterBtnsScore = document.querySelectorAll('.filter-btn-score');
 const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
 
-
-window.addEventListener('DOMContentLoaded', ()=>{
-    movSection.style.display = "none"
-    sectionMovies.innerHTML = showData(data.films);
-    movSection.style.display="none";
-})
 
 sectionMovies.addEventListener('click', (e)=>{
     if(e.target.className.includes('btn-mas' ||'moviePoster')){
