@@ -1,18 +1,14 @@
-
-import { filterDataDirector, filterDataScore, filterDataYear, showData, showMovieCarrousel } from './data.js';
+import { filterDataDirector, filterDataScore, filterDataYear} from './data.js';
 import data from './data/ghibli/ghibli.js';
 
-/*Nav*/
+
+/*Nav items*/
 const homeSection = document.getElementById("homeSection");
 const movSection = document.getElementById("movSection");
 const movInfSection = document.getElementById("movInfSection");
 const movCarrousel = document.querySelector(".slide-track");
 const sectionMovies = document.querySelector('.movies');
-window.addEventListener('DOMContentLoaded', ()=>{
-    sectionMovies.innerHTML = showData(data.films);
-    movSection.style.display = "none";
-    movCarrousel.innerHTML = showMovieCarrousel(data.films)
-})
+
 document.getElementById("navHome").addEventListener("click", function(){
     movSection.style.display="none";
     movInfSection.style.display="none";
@@ -70,17 +66,58 @@ document.addEventListener('DOMContentLoaded', ()=>{
     setInterval(slideshow,3000)
 })
 
-// Movie slider
 
-/*Cargar Data */
+/*Carousel of poster movies*/
+const showMovieCarrousel = (data)=>{
+    let displayMovies = data.map((movie)=>{
+        return `
+            <div class="slide">
+                <img src=${movie.poster} alt=${movie.title}>
+            </div>
+        `    
+    }); 
+    
+    displayMovies = displayMovies.join(""); 
+     return displayMovies
+}
+movCarrousel.innerHTML = showMovieCarrousel(data.films)
 
-const filterBtnsDirector = document.querySelectorAll('.filter-btn-director');
-const filterBtnsScore = document.querySelectorAll('.filter-btn-score');
-const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
+
+/*Mov section Information*/
+const showData = (menuItems) =>{
+    let displayMovies = menuItems.map((movie)=>{
+    return `
+    <article class="movie">
+        <div class="figure">
+            <img src="${movie.poster}" class="img-movie">
+            <div class="capa">
+                <div class="cont-title">
+                <h3>${movie.title}</h3>
+                </div>
+                
+                <div class="cont-span">
+                    <p>⭐ ${movie.rt_score}</p>
+                    <p>🎥 ${movie.release_date}</p>
+                </div>
+                <div class="description">
+                <p>${movie.description}</p>
+                </div>
+                <a class="btn-mas">See more</a>
+            </div>    
+        </div>
+    </article>
+    ` 
+    }); 
+
+    displayMovies = displayMovies.join(""); 
+    return displayMovies  
+}
+sectionMovies.innerHTML = showData(data.films);
 
 
+/*More Information Section*/
 sectionMovies.addEventListener('click', (e)=>{
-    if(e.target.className.includes('btn-mas' ||'moviePoster')){
+    if(e.target.className.includes('btn-mas')){
         const movie = e.target.parentElement
         const title = movie.children[0].innerText;
         const titleMovieSelected = title.trim()
@@ -126,7 +163,12 @@ sectionMovies.addEventListener('click', (e)=>{
     }
 })
 
-/*Filtrar Data */
+
+/*Filter data*/
+const filterBtnsDirector = document.querySelectorAll('.filter-btn-director');
+const filterBtnsScore = document.querySelectorAll('.filter-btn-score');
+const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
+
 filterBtnsDirector.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const condition = e.currentTarget.dataset.director;
@@ -151,7 +193,7 @@ filterBtnsYear.forEach((btn)=>{
     })
 })
 
-/*---Filtros---*/
+/*---Filters---*/
 const btns = document.querySelectorAll('.tab-btn');
 const about = document.querySelector('#cont-filter');
 const divs = document.querySelectorAll('.btns');
