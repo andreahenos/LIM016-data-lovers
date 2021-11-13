@@ -1,11 +1,5 @@
 export default {
   "studio": "Studio Ghibli Inc.",
-  "icons": 
-  {
-    "clock": "./images/clock.png",
-    "calendar": "./images/calendar.png",
-    "star": "./images/star.png",
-  },
   "films": [
     {
       "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
