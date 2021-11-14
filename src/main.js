@@ -200,10 +200,11 @@ sectionMovies.addEventListener('click', (e)=>{
                          </div>
                     </section>
                      `
-                }).join("");    
-            return characterData
+                }).join(""); 
+                return characterData
             }        
-        })
+        }).join(""); 
+        console.log(peopleData)     
     
         document.getElementById("peopleInf").innerHTML = peopleData;
 
