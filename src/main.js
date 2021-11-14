@@ -163,26 +163,26 @@ sectionMovies.addEventListener('click', (e)=>{
             if(movie.title === titleMovieSelected){
                 let characterData = movie.people.map((character)=>{
                     return `
-                     <div>
+                     <section class="character">
                          <img class="photo" src="${character.img}">
                          <h4>${character.name}</h4>
-                     </div>
+                     </section>
      
-                     <div>
+                     <section class="characterData">
                          <div>
-                             <img class="" src="#">
+                            <i class="fas fa-venus-mars"></i>
                              <h4>Gender</h4>
                              <p>${character.gender}</p>
                          </div>
      
                          <div>
-                             <img class="" src="#">
+                            <i class="fas fa-user-clock"></i>
                              <h4>Age</h4>
                              <p>${character.age}</p>
                          </div>
      
                          <div>
-                             <img class="" src="#">
+                             <i class="fas fa-eye"></i>
                              <h4>Eye color</h4>
                              <p>${character.eye_color}</p>
                          </div>
@@ -194,13 +194,12 @@ sectionMovies.addEventListener('click', (e)=>{
                          </div>
      
                          <div>
-                             <img class="" src="#">
+                             <i class="fas fa-user-tag"></i>
                              <h4>Specie</h4>
                              <p>${character.specie}</p>
                          </div>
-                    </div>
+                    </section>
                      `
-
                 }).join("");    
             return characterData
             }        
