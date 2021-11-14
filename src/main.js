@@ -121,41 +121,93 @@ sectionMovies.addEventListener('click', (e)=>{
         const movie = e.target.parentElement
         const title = movie.children[0].innerText;
         const titleMovieSelected = title.trim()
-
+        
         let movInf = data.films.map((movie)=>{
             if(movie.title === titleMovieSelected){
                     return `
                     <img class="background" src="${movie.background}">
                     <section id="infContent">
-                        <img class="poster" src="${movie.poster}">
-                        <section id="infBox">
-                            <div id="textInf">
-                                <h2>${movie.title}</h2>
-                                <div id="infIcons">
-                                <div><img class="icon" src="./images/clock.png"><p>${movie.duration}</p></div>
-                                <div><img class="icon" src="./images/calendar.png"><p>${movie.release_date}</p></div>
-                                <div><img class="icon" src="./images/star.png"><p>${movie.rt_score}</p></div>
-                                </div>
-                                <p>${movie.description}</p>
+                     <img class="poster" src="${movie.poster}">
+                      <section id="infBox">
+                          <div id="textInf">
+                             <h2>${movie.title}</h2>
+                             <div id="infIcons">
+                                 <div><img class="icon" src="./images/clock.png"><p>${movie.duration}</p></div>
+                                 <div><img class="icon" src="./images/calendar.png"><p>${movie.release_date}</p></div>
+                                 <div><img class="icon" src="./images/star.png"><p>${movie.rt_score}</p></div>
+                             </div>
+                             <p>${movie.description}</p>
                                 
-                                <section id="creators">
-                                <div id="director">
-                                <h3>Director</h3>
-                                <p>${movie.director}</p>
-                                </div>
-                                <div id="producer">
-                                <h3>Producer</h3>
-                                <p>${movie.producer}</p>
-                                </div>
-                                </section>
-                            </div>
-                        </section>
+
+                             <section id="creators">
+                                 <div id="director">
+                                     <h3>Director</h3>
+                                     <p>${movie.director}</p>
+                                 </div>
+
+                                 <div id="producer">
+                                     <h3>Producer</h3>
+                                     <p>${movie.producer}</p>
+                                 </div>
+                             </section>
+                           </div>
+                       </section>
                     </section>
                     `
-                
             }
         }).join("");
         document.getElementById("movGeneralInf").innerHTML = movInf;
+
+        
+        let peopleData =  data.films.map((movie)=>{
+            if(movie.title === titleMovieSelected){
+                let characterData = movie.people.map((character)=>{
+                    return `
+                     <div>
+                         <img class="photo" src="${character.img}">
+                         <h4>${character.name}</h4>
+                     </div>
+     
+                     <div>
+                         <div>
+                             <img class="" src="#">
+                             <h4>Gender</h4>
+                             <p>${character.gender}</p>
+                         </div>
+     
+                         <div>
+                             <img class="" src="#">
+                             <h4>Age</h4>
+                             <p>${character.age}</p>
+                         </div>
+     
+                         <div>
+                             <img class="" src="#">
+                             <h4>Eye color</h4>
+                             <p>${character.eye_color}</p>
+                         </div>
+                             
+                         <div>
+                             <img class="" src="#">
+                             <h4>Hair color</h4>
+                             <p>${character.hair_color}</p>
+                         </div>
+     
+                         <div>
+                             <img class="" src="#">
+                             <h4>Specie</h4>
+                             <p>${character.specie}</p>
+                         </div>
+                    </div>
+                     `
+
+                }).join("");    
+            return characterData
+            }        
+        })
+    
+        document.getElementById("peopleInf").innerHTML = peopleData;
+
         homeSection.style.display="none";
         movSection.style.display="none";
         movInfSection.style.display="block";    
@@ -218,9 +270,6 @@ iconClose.forEach((icon)=>{
          })
     })
 })
-
-
-
     
 
 
