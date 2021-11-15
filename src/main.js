@@ -164,40 +164,54 @@ sectionMovies.addEventListener('click', (e)=>{
                 let characterData = movie.people.map((character)=>{
                     return `
                      <section class="character">
-                         <img class="photo" src="${character.img}">
-                         <h4>${character.name}</h4>
-                     </section>
-     
-                     <section class="characterData">
-                         <div>
-                            <i class="fas fa-venus-mars"></i>
-                             <h4>Gender</h4>
-                             <p>${character.gender}</p>
-                         </div>
-     
-                         <div>
-                            <i class="fas fa-user-clock"></i>
-                             <h4>Age</h4>
-                             <p>${character.age}</p>
-                         </div>
-     
-                         <div>
-                             <i class="fas fa-eye"></i>
-                             <h4>Eye color</h4>
-                             <p>${character.eye_color}</p>
-                         </div>
-                             
-                         <div>
-                             <img class="" src="#">
-                             <h4>Hair color</h4>
-                             <p>${character.hair_color}</p>
-                         </div>
-     
-                         <div>
-                             <i class="fas fa-user-tag"></i>
-                             <h4>Specie</h4>
-                             <p>${character.specie}</p>
-                         </div>
+                         <section class="characterName">
+                            <img class="photo" src="${character.img}">
+                            <h4>${character.name}</h4>
+                         </section>
+                        
+                         <section class="characterData">
+                            <section>
+                            <div>
+                                <img class="iconInf" src="./images/gender.png">
+                                <div class="category">
+                                    <h4>Gender</h4>
+                                    <p>${character.gender}</p>
+                                </div>
+                            </div>   
+                            <hr/>
+                            <div>
+                                <img class="iconInf" src="./images/age.png">
+                                <div class="category">
+                                    <h4>Age</h4>
+                                    <p>${character.age}</p>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div>
+                                <img class="iconInf" src="./images/eye.png">
+                                <div class="category">
+                                    <h4>Eye color</h4>
+                                    <p>${character.eye_color}</p>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div>
+                                <img class="iconInf" src="./images/hair.png">
+                                <div class="category">
+                                    <h4>Hair color</h4>
+                                    <p>${character.hair_color}</p>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div>
+                                <img class="iconInf" src="./images/specie.png">
+                                <div class="category">
+                                    <h4>Specie</h4>
+                                    <p>${character.specie}</p>
+                                </div>
+                            </div>
+                            </section>
+                         </section> 
                     </section>
                      `
                 }).join("");     
