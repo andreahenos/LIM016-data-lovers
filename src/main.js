@@ -1,18 +1,14 @@
-
-import { filterDataDirector, filterDataScore, filterDataYear, showData, showMovieCarrousel } from './data.js';
+import { filterDataDirector, filterDataScore, filterDataYear} from './data.js';
 import data from './data/ghibli/ghibli.js';
 
-/*Nav*/
+
+/*Nav items*/
 const homeSection = document.getElementById("homeSection");
 const movSection = document.getElementById("movSection");
 const movInfSection = document.getElementById("movInfSection");
 const movCarrousel = document.querySelector(".slide-track");
 const sectionMovies = document.querySelector('.movies');
-window.addEventListener('DOMContentLoaded', ()=>{
-    sectionMovies.innerHTML = showData(data.films);
-    movSection.style.display = "none";
-    movCarrousel.innerHTML = showMovieCarrousel(data.films)
-})
+
 document.getElementById("navHome").addEventListener("click", function(){
     movSection.style.display="none";
     movInfSection.style.display="none";
@@ -70,63 +66,159 @@ document.addEventListener('DOMContentLoaded', ()=>{
     setInterval(slideshow,3000)
 })
 
-// Movie slider
 
-/*Cargar Data */
+/*Carousel of poster movies*/
+const showMovieCarrousel = (data)=>{
+    let displayMovies = data.map((movie)=>{
+        return `
+            <div class="slide">
+                <img src=${movie.poster} alt=${movie.title}>
+            </div>
+        `    
+    }); 
+    
+    displayMovies = displayMovies.join(""); 
+     return displayMovies
+}
+movCarrousel.innerHTML = showMovieCarrousel(data.films)
 
-const filterBtnsDirector = document.querySelectorAll('.filter-btn-director');
-const filterBtnsScore = document.querySelectorAll('.filter-btn-score');
-const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
+
+/*Mov section Information*/
+const showData = (menuItems) =>{
+    let displayMovies = menuItems.map((movie)=>{
+    return `
+    <article class="movie">
+        <div class="figure">
+            <img src="${movie.poster}" class="img-movie">
+            <div class="capa">
+                <div class="cont-title">
+                <h3>${movie.title}</h3>
+                </div>
+                
+                <div class="cont-span">
+                    <p>⭐ ${movie.rt_score}</p>
+                    <p>🎥 ${movie.release_date}</p>
+                </div>
+                <div class="description">
+                <p>${movie.description}</p>
+                </div>
+                <a class="btn-mas">See more</a>
+            </div>    
+        </div>
+    </article>
+    ` 
+    }); 
+
+    displayMovies = displayMovies.join(""); 
+    return displayMovies  
+}
+sectionMovies.innerHTML = showData(data.films);
 
 
+/*More Information Section*/
 sectionMovies.addEventListener('click', (e)=>{
-    if(e.target.className.includes('btn-mas' ||'moviePoster')){
+    if(e.target.className.includes('btn-mas')){
         const movie = e.target.parentElement
         const title = movie.children[0].innerText;
         const titleMovieSelected = title.trim()
-
+        
         let movInf = data.films.map((movie)=>{
             if(movie.title === titleMovieSelected){
-                const icon = data.icons
                     return `
                     <img class="background" src="${movie.background}">
                     <section id="infContent">
-                        <img class="poster" src="${movie.poster}">
-                        <section id="infBox">
-                            <div id="textInf">
-                                <h2>${movie.title}</h2>
-                                <div id="infIcons">
-                                <div><img class="icon" src="${icon.clock}"><p>${movie.duration}</p></div>
-                                <div><img class="icon" src="${icon.calendar}"><p>${movie.release_date}</p></div>
-                                <div><img class="icon" src="${icon.star}"><p>${movie.rt_score}</p></div>
-                                </div>
-                                <p>${movie.description}</p>
+                     <img class="poster" src="${movie.poster}">
+                      <section id="infBox">
+                          <div id="textInf">
+                             <h2>${movie.title}</h2>
+                             <div id="infIcons">
+                                 <div><img class="icon" src="./images/clock.png"><p>${movie.duration}</p></div>
+                                 <div><img class="icon" src="./images/calendar.png"><p>${movie.release_date}</p></div>
+                                 <div><img class="icon" src="./images/star.png"><p>${movie.rt_score}</p></div>
+                             </div>
+                             <p>${movie.description}</p>
                                 
-                                <section id="creators">
-                                <div id="director">
-                                <h3>Director</h3>
-                                <p>${movie.director}</p>
-                                </div>
-                                <div id="producer">
-                                <h3>Producer</h3>
-                                <p>${movie.producer}</p>
-                                </div>
-                                </section>
-                            </div>
-                        </section>
+
+                             <section id="creators">
+                                 <div id="director">
+                                     <h3>Director</h3>
+                                     <p>${movie.director}</p>
+                                 </div>
+
+                                 <div id="producer">
+                                     <h3>Producer</h3>
+                                     <p>${movie.producer}</p>
+                                 </div>
+                             </section>
+                           </div>
+                       </section>
                     </section>
                     `
-                
             }
         }).join("");
         document.getElementById("movGeneralInf").innerHTML = movInf;
+
+        
+        let peopleData =  data.films.map((movie)=>{
+            if(movie.title === titleMovieSelected){
+                let characterData = movie.people.map((character)=>{
+                    return `
+                     <section class="character">
+                         <img class="photo" src="${character.img}">
+                         <h4>${character.name}</h4>
+                     </section>
+     
+                     <section class="characterData">
+                         <div>
+                            <i class="fas fa-venus-mars"></i>
+                             <h4>Gender</h4>
+                             <p>${character.gender}</p>
+                         </div>
+     
+                         <div>
+                            <i class="fas fa-user-clock"></i>
+                             <h4>Age</h4>
+                             <p>${character.age}</p>
+                         </div>
+     
+                         <div>
+                             <i class="fas fa-eye"></i>
+                             <h4>Eye color</h4>
+                             <p>${character.eye_color}</p>
+                         </div>
+                             
+                         <div>
+                             <img class="" src="#">
+                             <h4>Hair color</h4>
+                             <p>${character.hair_color}</p>
+                         </div>
+     
+                         <div>
+                             <i class="fas fa-user-tag"></i>
+                             <h4>Specie</h4>
+                             <p>${character.specie}</p>
+                         </div>
+                    </section>
+                     `
+                }).join("");    
+            return characterData
+            }        
+        })
+    
+        document.getElementById("peopleInf").innerHTML = peopleData;
+
         homeSection.style.display="none";
         movSection.style.display="none";
         movInfSection.style.display="block";    
     }
 })
 
-/*Filtrar Data */
+
+/*Filter data*/
+const filterBtnsDirector = document.querySelectorAll('.filter-btn-director');
+const filterBtnsScore = document.querySelectorAll('.filter-btn-score');
+const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
+
 filterBtnsDirector.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const condition = e.currentTarget.dataset.director;
@@ -151,7 +243,7 @@ filterBtnsYear.forEach((btn)=>{
     })
 })
 
-/*---Filtros---*/
+/*---Filters---*/
 const btns = document.querySelectorAll('.tab-btn');
 const about = document.querySelector('#cont-filter');
 const divs = document.querySelectorAll('.btns');
@@ -177,9 +269,6 @@ iconClose.forEach((icon)=>{
          })
     })
 })
-
-
-
     
 
 

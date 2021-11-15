@@ -252,7 +252,6 @@ section.portada{
 }
 
 
-
 /*------Movies.html------*/
 
 #cont-filter{
@@ -363,7 +362,6 @@ section.portada{
 
 section.movies{
     background: #EEF5DB;
-
     display: flex;
     background: #eef5db;
     flex-wrap: wrap;
@@ -429,7 +427,7 @@ section.movies{
     height: 158px;
     overflow: scroll;
     overflow-y: visible;
-    overflow-x:hidden ;
+    overflow-x:hidden;
     
 }
 .capa .description p{
@@ -482,7 +480,6 @@ section.movies{
     width: 27em;
     height: 40em;
     object-fit: cover;
-    z-index: 2;
     margin: 0.5em;
     border-radius: 5px;
 }
@@ -543,71 +540,66 @@ section.movies{
     padding: 0;
     font-size: 12px;
 }  
-@media only screen and (max-width:768px){
-    #textInf{
-        text-align: center;
-    }
-    #infContent{
-        flex-direction: column;
-        align-items: center;
-    }
-    #infBox{
-        width: 95%;
-        left: 1em;
-        right: 1em;
-        margin: 1em auto 1em auto;
-        text-align: center;
-    }
-    #infIcons{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        align-content: center; 
-    }
-    #infIcons div{
-        margin: 0 3%;
-        width: 30%;
-        flex-direction: column;
-    }
-    #infIcons p{
-        width: 60px;
-    }
-    #creators{
-        margin-left: auto;
-        margin-right: auto;
-        flex-direction: column;
-    }
-    #director, #producer{
-        width: 100%;
-        align-items: center;
-        margin-bottom: 1em;  
-    }
-    #director h3, #producer h3{
-        margin: 0.5em 0 0.5em 0;
-    }
+
+
+/*Mov Inf of Characters*/
+.subtitle{
+    background-color: #1D3354;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    top: -30vh;
+    margin-left: auto;
+    margin-right: auto;
+    height: 3.2em;
+    width: 85%;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+}
+.subtitle h3{
+    line-height: 32px;
+    font-size: 15px;
+    color: #EEF5DB;
+    margin-left: 3em;
+}
+.subtitle .icon-arrow{
+    color: #EEF5DB;
+    margin-right: 3em;
+}
+.subtitle:hover{
+    background-color: #0196e9;
+    color: #1D3354;
 }
 
-@media only screen and (max-width:1080px){
-    #infContent{
-        width: 90vw;
-    }
-    #background{
-        height: 10vh;
-    }
+#peopleInf{
+    background-color: darkgrey;
+    position: relative;
+    top: -25vh;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0;
+    height: auto;   
 }
-@media only screen and (max-width:2560px){
-    #infContent{
-        width: 76vw;
-    }
-    #background{
-        height: 10vw;
-    }
-    #infIcons{
-        width: 60%;
-    }
-    #creators{
-        width: 50%;
-    }
+.character{
+    background-color: gainsboro;
+    width: 150px;
+    height: 235px;
+    margin: 3%;
+    border-radius: 3px;
+}
+.photo{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 3px 3px 0px 0px;
+}
+.characterData{
+    display: none;
 }
 
 /*------Footer------*/
@@ -711,5 +703,66 @@ footer .container{
         text-align: center;
         flex-direction: column;
         
+    }
+    #infContent{
+        width: 90vw;
+    }
+    #background{
+        height: 10vh;
+    }
+    #textInf{
+        text-align: center;
+    }
+    #infContent{
+        flex-direction: column;
+        align-items: center;
+    }
+    #infBox{
+        width: 95%;
+        left: 1em;
+        right: 1em;
+        margin: 1em auto 1em auto;
+        text-align: center;
+    }
+    #infIcons{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center; 
+    }
+    #infIcons div{
+        margin: 0 3%;
+        width: 30%;
+        flex-direction: column;
+    }
+    #infIcons p{
+        width: 60px;
+    }
+    #creators{
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+    }
+    #director, #producer{
+        width: 100%;
+        align-items: center;
+        margin-bottom: 1em;  
+    }
+    #director h3, #producer h3{
+        margin: 0.5em 0 0.5em 0;
     } 
  }
+ @media only screen and (max-width:2560px){
+    #infContent{
+        width: 76vw;
+    }
+    #background{
+        height: 10vw;
+    }
+    #infIcons{
+        width: 60%;
+    }
+    #creators{
+        width: 50%;
+    } 
+}

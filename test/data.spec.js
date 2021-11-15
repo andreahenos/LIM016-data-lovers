@@ -22,6 +22,7 @@ describe('anotherExample', () => {
   });
 }); 
  */
+
 import {filterDataDirector,filterDataScore, filterDataYear, showData} from '../src/data';
 
 describe('showData', ()=>{
