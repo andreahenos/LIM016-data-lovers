@@ -561,12 +561,18 @@ section.movies{
     color: #EEF5DB;
     margin-left: 3em;
 }
-#showCharacters .icon-arrow{
+#showCharacters #icon-arrow{
     color: #EEF5DB;
     margin-right: 3em;
 }
 #showCharacters:hover{
     background-color: #42bdf7;
+}
+#showCharacters:hover h3{
+    color: #1D3354;
+}
+#showCharacters:hover #icon-arrow{
+    transform: rotate(0deg);
     color: #1D3354;
 }
 
@@ -623,6 +629,7 @@ section.movies{
     top: 0;
     width: 100%;
     height: 235px;
+    display: flex;
     align-content: center;
     background-color: #42bdf7;
     border-radius: 4px;
@@ -630,7 +637,7 @@ section.movies{
     transition: all 0.3s linear;
 }
 .characterData > section{
-    width: 80%;
+    width: 86%;
     height: auto;
     margin: auto;
     /* background-color: turquoise; */
@@ -641,7 +648,7 @@ section.movies{
     margin: 5px;
 }
 hr{
-    width: 80%;
+    width: 86%;
     margin-left: auto;
     margin-right: auto;
     color: #EEF5DB;
@@ -650,7 +657,7 @@ hr{
     /* background-color: rgb(180, 233, 164); */
     display: flex;
     margin: 0.3em;
-    width: 80%;
+    width: 86%;
     height: auto;
     margin: 2px auto;
 }

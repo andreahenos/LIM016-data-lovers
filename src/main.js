@@ -227,6 +227,16 @@ sectionMovies.addEventListener('click', (e)=>{
     }
 })
 
+document.getElementById("showCharacters").addEventListener("click", function() {
+    const contPeopleInf = document.getElementById("contPeopleInf");
+    if (contPeopleInf.style.display === "none") {
+     contPeopleInf.style.display = "block";
+     document.getElementById("icon-arrow").style.transform = "rotate(180deg)";
+    } else {
+     contPeopleInf.style.display = "none";
+     document.getElementById("icon-arrow").style.transform = "rotate(0deg)";
+    };
+})
 
 /*Filter data*/
 const filterBtnsDirector = document.querySelectorAll('.filter-btn-director');
