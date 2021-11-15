@@ -7,10 +7,10 @@ export const filterDataDirector = (data, condition) => {
             }
         })
         if (condition == 'all'){
-            return showData(data);
+            return data;
         }
         else {
-            return showData(movieDirector);
+            return movieDirector;
         }
 };
 
@@ -22,10 +22,10 @@ export const filterDataScore = (data, conditionMayor, conditionMenor) => {
         }
     })
     if(conditionMayor == 'all'){
-        return showData(data);
+        return data;
     }
     else {
-        return showData(movieScore)
+        return movieScore;
     } 
 };
 
@@ -36,10 +36,10 @@ export const filterDataYear = (data, condition) => {
         }
     })
     if (condition == 'all'){
-        return showData(data);
+        return data;
     }
     else {
-        return showData(movieYear);
+        return movieYear;
     }
 };
 

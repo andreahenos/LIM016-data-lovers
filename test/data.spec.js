@@ -44,6 +44,7 @@ describe('filterData', ()=>{
   })
   
 })
+
 describe('filterData', ()=>{
   it('is a function', ()=>{
     expect(typeof filterDataScore).toBe('function');
@@ -53,6 +54,7 @@ describe('filterData', ()=>{
   })
   
 })
+
 describe('filterData', ()=>{
   it('is a function', ()=>{
     expect(typeof filterDataYear).toBe('function');

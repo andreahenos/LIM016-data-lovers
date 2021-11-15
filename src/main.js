@@ -75,7 +75,7 @@ const showMovieCarrousel = (data)=>{
                 <img src=${movie.poster} alt=${movie.title}>
             </div>
         `    
-    }); 
+    }) 
     
     displayMovies = displayMovies.join(""); 
      return displayMovies
@@ -107,10 +107,10 @@ const showData = (menuItems) =>{
         </div>
     </article>
     ` 
-    }); 
+    }) 
 
     displayMovies = displayMovies.join(""); 
-    return displayMovies  
+    return displayMovies;  
 }
 sectionMovies.innerHTML = showData(data.films);
 
@@ -227,6 +227,7 @@ sectionMovies.addEventListener('click', (e)=>{
     }
 })
 
+/*Get People Data*/
 document.getElementById("showCharacters").addEventListener("click", function() {
     const contPeopleInf = document.getElementById("contPeopleInf");
     if (contPeopleInf.style.display === "none") {
@@ -235,7 +236,7 @@ document.getElementById("showCharacters").addEventListener("click", function() {
     } else {
      contPeopleInf.style.display = "none";
      document.getElementById("icon-arrow").style.transform = "rotate(0deg)";
-    };
+    }
 })
 
 /*Filter data*/
@@ -246,28 +247,32 @@ const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
 filterBtnsDirector.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const condition = e.currentTarget.dataset.director;
-        sectionMovies.innerHTML = filterDataDirector(data.films, condition);
-        
+
+        const filterDirector = filterDataDirector(data.films, condition);
+        sectionMovies.innerHTML = showData(filterDirector);    
     })
-});
+})
 
 filterBtnsScore.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const conditionMayor = e.currentTarget.dataset.mayor;
         const conditionMenor = e.currentTarget.dataset.menor;
         
-        sectionMovies.innerHTML = filterDataScore(data.films, conditionMayor, conditionMenor);
+        const filterScore = filterDataScore(data.films, conditionMayor, conditionMenor);
+        sectionMovies.innerHTML = showData(filterScore);
         
     })
-});
+})
 filterBtnsYear.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const condition = e.currentTarget.dataset.anio;
-        sectionMovies.innerHTML = filterDataYear(data.films, condition)
+
+        const filterYear = filterDataYear(data.films, condition);
+        sectionMovies.innerHTML = showData(filterYear);
     })
 })
 
-/*---Filters---*/
+/*---Filter bottons---*/
 const btns = document.querySelectorAll('.tab-btn');
 const about = document.querySelector('#cont-filter');
 const divs = document.querySelectorAll('.btns');
