@@ -165,6 +165,7 @@ sectionMovies.addEventListener('click', (e)=>{
         let movInf = data.films.map((movie)=>{
             if(movie.title === titleMovieSelected){
                     return `
+                    <i class="fas fa-times btn-close"></i>
                     <img class="background" src="${movie.background}">
                     <section id="infContent">
                      <img class="poster" src="${movie.poster}">
@@ -251,6 +252,14 @@ sectionMovies.addEventListener('click', (e)=>{
         movSection.style.display="none";
         movInfSection.style.display="block";    
     }
+
+/*Cerrar Detalles pelicula */
+const btnClose = document.querySelector('.btn-close');
+btnClose.addEventListener('click', ()=>{
+    movInfSection.style.display = "none";
+
+    movSection.style.display="block";
+})
 })
 
 
