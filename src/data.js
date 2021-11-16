@@ -8,8 +8,17 @@ export const filterDataDirector = (data, condition) => {
             }
         })
 
+        if (condition == 'all'){
+            return data;
+        }
+        else {
             return movieDirector;
+        }
+
+
+            
         
+
 };
 
 export const filterDataScore = (data, conditionMayor, conditionMenor) => {
@@ -19,19 +28,36 @@ export const filterDataScore = (data, conditionMayor, conditionMenor) => {
             return movieItem
         }
     })
+
+    if(conditionMayor == 'all'){
+        return data;
+    }
+    else {
+        return movieScore;
+    } 
+
     
-        return movieScore
+
  
+
 };
 
 export const filterDataYear = (data, condition) => {
-    const movieYear = data.filter(movieItem=>{
+    const movieYear = data.filter(movieItem =>{
         if(movieItem.release_date === condition){
             return movieItem
         }
     })
+
+    if (condition == 'all'){
+        return data;
+    }
+    else {
         return movieYear;
+    }
+
     
+
 };
 
 /* export const anotherExample = () => {

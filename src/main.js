@@ -115,7 +115,7 @@ function showMovieCarrousel(data){
                 <img src=${movie.poster} alt=${movie.title}>
             </div>
         `    
-    }); 
+    }) 
     
     displayMovies = displayMovies.join(""); 
      return displayMovies
@@ -147,10 +147,10 @@ const showData = (menuItems) =>{
         </div>
     </article>
     ` 
-    }); 
+    }) 
 
     displayMovies = displayMovies.join(""); 
-    return displayMovies  
+    return displayMovies;  
 }
 sectionMovies.innerHTML = showData(data.films);
 
@@ -205,46 +205,60 @@ sectionMovies.addEventListener('click', (e)=>{
                 let characterData = movie.people.map((character)=>{
                     return `
                      <section class="character">
-                         <img class="photo" src="${character.img}">
-                         <h4>${character.name}</h4>
-                     </section>
-     
-                     <section class="characterData">
-                         <div>
-                            <i class="fas fa-venus-mars"></i>
-                             <h4>Gender</h4>
-                             <p>${character.gender}</p>
-                         </div>
-     
-                         <div>
-                            <i class="fas fa-user-clock"></i>
-                             <h4>Age</h4>
-                             <p>${character.age}</p>
-                         </div>
-     
-                         <div>
-                             <i class="fas fa-eye"></i>
-                             <h4>Eye color</h4>
-                             <p>${character.eye_color}</p>
-                         </div>
-                             
-                         <div>
-                             <img class="" src="#">
-                             <h4>Hair color</h4>
-                             <p>${character.hair_color}</p>
-                         </div>
-     
-                         <div>
-                             <i class="fas fa-user-tag"></i>
-                             <h4>Specie</h4>
-                             <p>${character.specie}</p>
-                         </div>
+                         <section class="characterName">
+                            <img class="photo" src="${character.img}">
+                            <h4>${character.name}</h4>
+                         </section>
+                        
+                         <section class="characterData">
+                            <section>
+                            <div>
+                                <img class="iconInf" src="./images/gender.png">
+                                <div class="category">
+                                    <h4>Gender</h4>
+                                    <p>${character.gender}</p>
+                                </div>
+                            </div>   
+                            <hr/>
+                            <div>
+                                <img class="iconInf" src="./images/age.png">
+                                <div class="category">
+                                    <h4>Age</h4>
+                                    <p>${character.age}</p>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div>
+                                <img class="iconInf" src="./images/eye.png">
+                                <div class="category">
+                                    <h4>Eye color</h4>
+                                    <p>${character.eye_color}</p>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div>
+                                <img class="iconInf" src="./images/hair.png">
+                                <div class="category">
+                                    <h4>Hair color</h4>
+                                    <p>${character.hair_color}</p>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div>
+                                <img class="iconInf" src="./images/specie.png">
+                                <div class="category">
+                                    <h4>Specie</h4>
+                                    <p>${character.specie}</p>
+                                </div>
+                            </div>
+                            </section>
+                         </section> 
                     </section>
                      `
-                }).join("");    
-            return characterData
+                }).join("");     
+             return characterData;
             }        
-        })
+        }).join(""); 
     
         document.getElementById("peopleInf").innerHTML = peopleData;
 
@@ -262,6 +276,17 @@ btnClose.addEventListener('click', ()=>{
 })
 })
 
+/*Get People Data*/
+document.getElementById("showCharacters").addEventListener("click", function() {
+    const contPeopleInf = document.getElementById("contPeopleInf");
+    if (contPeopleInf.style.display === "none") {
+     contPeopleInf.style.display = "block";
+     document.getElementById("icon-arrow").style.transform = "rotate(180deg)";
+    } else {
+     contPeopleInf.style.display = "none";
+     document.getElementById("icon-arrow").style.transform = "rotate(0deg)";
+    }
+})
 
 /*Filter data*/
 const filterBtnsDirector = document.querySelectorAll('.filter-btn-director');
@@ -271,51 +296,39 @@ const filterBtnsYear = document.querySelectorAll('.filter-btn-year');
 filterBtnsDirector.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const condition = e.currentTarget.dataset.director;
-        if(condition == "all"){
-            sectionMovies.innerHTML = showDataMain(data.films);
-        }
-        else{
 
-            let directorsMovies = filterDataDirector(data.films, condition);
-            sectionMovies.innerHTML = showDataMain(directorsMovies);
-        }
-        
+
+        const filterDirector = filterDataDirector(data.films, condition);
+        sectionMovies.innerHTML = showData(filterDirector);    
+
     })
-});
+})
 
 filterBtnsScore.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const conditionMayor = e.currentTarget.dataset.mayor;
         const conditionMenor = e.currentTarget.dataset.menor;
-        if(conditionMayor == "all"){
-            sectionMovies.innerHTML = showDataMain(data.films);
-        }
-        else{
 
-            let scoreMovies = filterDataScore(data.films, conditionMayor, conditionMenor)
-            sectionMovies.innerHTML = showDataMain(scoreMovies);
-        }
+        
+        const filterScore = filterDataScore(data.films, conditionMayor, conditionMenor);
+        sectionMovies.innerHTML = showData(filterScore);
 
         
     })
-});
+})
+
 filterBtnsYear.forEach((btn)=>{
     btn.addEventListener('click', e=>{
-        const condition = e.currentTarget.dataset.anio;
 
-        if(condition == "all"){
-            sectionMovies.innerHTML = showDataMain(data.films);
-        }
-        else{
+        const condition = e.currentTarget.dataset.year;
+        
+        const filterYear = filterDataYear(data.films, condition);
+        sectionMovies.innerHTML = showData(filterYear);
 
-            let yearMovies = filterDataYear(data.films, condition);
-
-            sectionMovies.innerHTML = showDataMain(yearMovies);
-        }
     })
 })
 
-/*---Filters---*/
+/*---Filter bottons---*/
 const btns = document.querySelectorAll('.tab-btn');
 const about = document.querySelector('#cont-filter');
 const divs = document.querySelectorAll('.btns');

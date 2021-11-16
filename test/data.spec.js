@@ -1,12 +1,11 @@
 
-
 import {filterDataDirector,filterDataScore, filterDataYear} from '../src/data';
-
 
 describe('filterDataDirector', ()=>{
   it('is a function', ()=>{
     expect(typeof filterDataDirector).toBe('function');
   });
+
 
   it('should throw TypeError when invoked with wrong argument types', () => {
     expect(() => filterDataDirector()).toThrow(TypeError);
@@ -14,10 +13,15 @@ describe('filterDataDirector', ()=>{
     expect(() => filterDataDirector(null, [])).toThrow(TypeError);
     expect(() => filterDataDirector(0, 0)).toThrow(TypeError);
   });
-  it('should return string ', () => {
+
+  it('should return string ', ()=>{
     expect(filterDataDirector([])).toStrictEqual([]);
-  }); 
+  })
+  
 })
+
+
+
 describe('filterDataScore', ()=>{
   it('is a function', ()=>{
     expect(typeof filterDataScore).toBe('function');
@@ -49,3 +53,4 @@ describe('filterDataYear', ()=>{
   });
  
 })
+
