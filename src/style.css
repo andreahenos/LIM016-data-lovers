@@ -553,6 +553,7 @@ section.movies{
     width: 85%;
     z-index: 3;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 #showCharacters h3{
@@ -564,6 +565,7 @@ section.movies{
 #showCharacters #icon-arrow{
     color: #EEF5DB;
     margin-right: 3em;
+    font-size: 18px;
 }
 #showCharacters:hover{
     background-color: #42bdf7;
