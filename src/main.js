@@ -262,6 +262,30 @@ sectionMovies.addEventListener('click', (e)=>{
     
         document.getElementById("peopleInf").innerHTML = peopleData;
 
+        let locationsData =  data.films.map((movie)=>{
+            if(movie.title === titleMovieSelected){
+                let locationData = movie.locations.map((location)=>{
+                    return `
+                     <div class="card-location">
+                        <div class="card-image-location">
+                            <img src=${location.img}/>
+                        </div>
+                        <div class="card-text-location">
+                            <h3>${location.name}</h3>
+                            <p><span>Climate: </span>${location.climate}<p/>
+                            <p><span>Terrain: </span>${location.terrain}<p/>
+                            <p><span>Surface: </span>${location.surface_water}<p/>
+                            <p><span>Residents: </span>${location.residents[0]}<p/>
+                        </div>
+                     </div>
+                     `
+                }).join("");     
+             return locationData;
+            }        
+        }).join(""); 
+    
+        document.getElementById("locationsInf").innerHTML = locationsData;
+
         homeSection.style.display="none";
         movSection.style.display="none";
         movInfSection.style.display="block";    
@@ -279,12 +303,23 @@ btnClose.addEventListener('click', ()=>{
 /*Get People Data*/
 document.getElementById("showCharacters").addEventListener("click", function() {
     const contPeopleInf = document.getElementById("contPeopleInf");
-    if (contPeopleInf.style.display === "none") {
-     contPeopleInf.style.display = "block";
-     document.getElementById("icon-arrow").style.transform = "rotate(180deg)";
-    } else {
+    if (contPeopleInf.style.display === "block") {
      contPeopleInf.style.display = "none";
      document.getElementById("icon-arrow").style.transform = "rotate(0deg)";
+    } else {
+     contPeopleInf.style.display = "block";
+     document.getElementById("icon-arrow").style.transform = "rotate(180deg)";
+    }
+})
+/*Get Locations Data*/
+document.getElementById("showLocations").addEventListener("click", function() {
+    const contLocationsInf = document.getElementById("contLocationsInf");
+    if (contLocationsInf.style.display === "block") {
+     contLocationsInf.style.display = "none";
+     document.getElementById("icon-arrow-location").style.transform = "rotate(0deg)";
+    } else {
+     contLocationsInf.style.display = "block";
+     document.getElementById("icon-arrow-location").style.transform = "rotate(180deg)";
     }
 })
 

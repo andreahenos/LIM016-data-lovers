@@ -466,11 +466,13 @@ section.movies{
 }
 #movInfSection{
     display: none;
+    overflow: scroll;
     position: relative;
 }
 #movGeneralInf{
     width: 100%;
-    height: auto;
+
+    height: 600px;
 }
 .background{
     width: 100%;
@@ -478,21 +480,23 @@ section.movies{
     object-fit: cover;
     z-index: 1;
     mix-blend-mode: multiply;
+
 }
 #infContent{
     position: relative;
     top: -30vh;
     width: 90%;
     height: auto;
-    margin: 0 auto 5em auto;
+    margin: 5px auto;
     display: flex;
     z-index: 2;
+
 }
 .poster{
-    width: 27em;
-    height: 40em;
+    width: 250px;
+    height: 350px;
     object-fit: cover;
-    margin: 0.5em;
+
     border-radius: 5px;
 }
 #infBox{
@@ -555,48 +559,47 @@ section.movies{
 
 
 /*Mov Inf of Characters*/
-#showCharacters{
+.show{
     background-color: #1D3354;
     border-radius: 25px;
     cursor: pointer;
-    position: relative;
-    top: -30vh;
-    margin-left: auto;
-    margin-right: auto;
+
     height: 3.2em;
-    width: 85%;
+    width: 80%;
+    margin: 20px auto;
     z-index: 3;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-#showCharacters h3{
+
+.show h3{
     line-height: 32px;
     font-size: 15px;
     color: #EEF5DB;
     margin-left: 3em;
 }
-#showCharacters #icon-arrow{
+.show .arrow-down{
     color: #EEF5DB;
     margin-right: 3em;
     font-size: 18px;
 }
-#showCharacters:hover{
+.show:hover{
     background-color: #42bdf7;
 }
-#showCharacters:hover h3{
+.show:hover h3{
     color: #1D3354;
 }
-#showCharacters:hover #icon-arrow{
+.show:hover #icon-arrow{
     transform: rotate(0deg);
     color: #1D3354;
 }
 
-#contPeopleInf{
+.cont{
     display: none;
 }
 #peopleInf{
-    position: relative;
+
     top: -30vh;
     width: 85%;
     height: auto;   
@@ -608,7 +611,7 @@ section.movies{
     padding: 20px 0;
 }
 .character{
-    position: relative;
+
     width: 160px;
     height: 235px;
     margin: 3%;
@@ -688,7 +691,34 @@ hr{
 .category p{
     font-size: 11px;
 }
-
+/*Mov Inf of Locations*/
+.card-location{
+    margin: 15px auto;
+    display: flex;
+    width: 60%;
+    background: #D6E7A9;
+    border-radius: 8px;
+}
+.card-image-location {
+    width: 280px;
+    height: 170px;
+}
+.card-image-location img{
+    width: 100%;
+    height: 100%;
+}
+.card-text-location{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    font-size: 1.3em;
+    color: #1D3354;
+}
+.card-text-location span{
+    font-weight: 600;
+    
+}
 /*------Footer------*/
 footer{
     background-color: #1D3354;
