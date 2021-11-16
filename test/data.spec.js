@@ -1,6 +1,6 @@
 
-import {filterDataDirector,filterDataScore, filterDataYear} from '../src/data';
 
+import {filterDataDirector,filterDataScore, filterDataYear} from '../src/data';
 
 
 describe('filterDataDirector', ()=>{

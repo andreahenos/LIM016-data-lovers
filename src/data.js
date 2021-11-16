@@ -1,7 +1,6 @@
 // estas funciones son de ejemplo
 
 
-
 export const filterDataDirector = (data, condition) => {
         const movieDirector = data.filter(movieItem=>{
             if(movieItem.director === condition){
@@ -12,6 +11,7 @@ export const filterDataDirector = (data, condition) => {
             return movieDirector;
         
 };
+
 export const filterDataScore = (data, conditionMayor, conditionMenor) => {
 
     const movieScore = data.filter(movieItem=>{
@@ -23,6 +23,7 @@ export const filterDataScore = (data, conditionMayor, conditionMenor) => {
         return movieScore
  
 };
+
 export const filterDataYear = (data, condition) => {
     const movieYear = data.filter(movieItem=>{
         if(movieItem.release_date === condition){
