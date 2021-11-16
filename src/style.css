@@ -451,8 +451,22 @@ section.movies{
 } 
 
 /*Movies Inf Section*/
+.btn-close{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    color: #D64045;
+    transition: all 0.3s linear;
+    z-index: 2;
+}
+.btn-close:hover{
+    transform: rotate(180deg);
+    cursor: pointer;
+}
 #movInfSection{
     display: none;
+    position: relative;
 }
 #movGeneralInf{
     width: 100%;

@@ -1,3 +1,4 @@
+
 import { filterDataDirector, filterDataScore, filterDataYear} from './data.js';
 import data from './data/ghibli/ghibli.js';
 
@@ -8,6 +9,13 @@ const movSection = document.getElementById("movSection");
 const movInfSection = document.getElementById("movInfSection");
 const movCarrousel = document.querySelector(".slide-track");
 const sectionMovies = document.querySelector('.movies');
+
+window.addEventListener('DOMContentLoaded', ()=>{
+    
+    sectionMovies.innerHTML = showDataMain(data.films);
+    movSection.style.display = "none";
+    movCarrousel.innerHTML = showMovieCarrousel(data.films)
+})
 
 document.getElementById("navHome").addEventListener("click", function(){
     movSection.style.display="none";
@@ -24,9 +32,41 @@ document.getElementById("btnViewAll").addEventListener("click", ()=>{
     movInfSection.style.display="none";
     movSection.style.display="block";
 })
+/*Cargar Peliculas */
+function showDataMain(menuItems) {
+    
+    let displayMovies = menuItems.map((movie)=>{
+    
+    return `
+    <article class="movie">
+        <div class="figure">
+            <img src="${movie.poster}" class="img-movie">
+            <div class="capa">
+                <div class="cont-title">
+                <h3>${movie.title}</h3>
+                </div>
+                
+                <div class="cont-span">
+                    <p>⭐ ${movie.rt_score}</p>
+                    <p>🎥 ${movie.release_date}</p>
+                </div>
+                <div class="description">
+                <p>${movie.description}</p>
+                </div>
+                <a class="btn-mas">See more</a>
+            </div>    
+        </div>
+    </article>
+    ` 
+    
+}); 
 
+displayMovies = displayMovies.join(""); 
+ return displayMovies
+    
+}
 
-/*Images Carrousel */
+/*Carrousel Home Arriba */
 document.addEventListener('DOMContentLoaded', ()=>{
 
     const imagenes = ['./images/portada1.jpg', './images/portada2.jpg', './images/portada3.jpg', './images/portada4.jpg', './images/portada5.jpg']
@@ -68,7 +108,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
 /*Carousel of poster movies*/
-const showMovieCarrousel = (data)=>{
+function showMovieCarrousel(data){
     let displayMovies = data.map((movie)=>{
         return `
             <div class="slide">
@@ -125,6 +165,7 @@ sectionMovies.addEventListener('click', (e)=>{
         let movInf = data.films.map((movie)=>{
             if(movie.title === titleMovieSelected){
                     return `
+                    <i class="fas fa-times btn-close"></i>
                     <img class="background" src="${movie.background}">
                     <section id="infContent">
                      <img class="poster" src="${movie.poster}">
@@ -225,6 +266,14 @@ sectionMovies.addEventListener('click', (e)=>{
         movSection.style.display="none";
         movInfSection.style.display="block";    
     }
+
+/*Cerrar Detalles pelicula */
+const btnClose = document.querySelector('.btn-close');
+btnClose.addEventListener('click', ()=>{
+    movInfSection.style.display = "none";
+
+    movSection.style.display="block";
+})
 })
 
 /*Get People Data*/
@@ -248,8 +297,10 @@ filterBtnsDirector.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const condition = e.currentTarget.dataset.director;
 
+
         const filterDirector = filterDataDirector(data.films, condition);
         sectionMovies.innerHTML = showData(filterDirector);    
+
     })
 })
 
@@ -257,19 +308,23 @@ filterBtnsScore.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const conditionMayor = e.currentTarget.dataset.mayor;
         const conditionMenor = e.currentTarget.dataset.menor;
+
         
         const filterScore = filterDataScore(data.films, conditionMayor, conditionMenor);
         sectionMovies.innerHTML = showData(filterScore);
+
         
     })
 })
 
 filterBtnsYear.forEach((btn)=>{
     btn.addEventListener('click', e=>{
+
         const condition = e.currentTarget.dataset.year;
         
         const filterYear = filterDataYear(data.films, condition);
         sectionMovies.innerHTML = showData(filterYear);
+
     })
 })
 
