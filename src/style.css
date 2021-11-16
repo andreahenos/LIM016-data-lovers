@@ -234,7 +234,7 @@ section.portada{
 
 .slider::before,
 .slider::after{
-    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0)100%);
+    background: linear-gradient(to right, #D6E7A9 0%, rgba(255,255,255,0)100%);
     content: '';
     height: 100%;
     position: absolute;

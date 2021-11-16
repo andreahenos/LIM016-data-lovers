@@ -1,5 +1,5 @@
 
-import { filterDataDirector, filterDataScore, filterDataYear, showData, showMovieCarrousel } from './data.js';
+import { filterDataDirector, filterDataScore, filterDataYear} from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 /*Nav*/
@@ -9,7 +9,8 @@ const movInfSection = document.getElementById("movInfSection");
 const movCarrousel = document.querySelector(".slide-track");
 const sectionMovies = document.querySelector('.movies');
 window.addEventListener('DOMContentLoaded', ()=>{
-    sectionMovies.innerHTML = showData(data.films);
+    
+    sectionMovies.innerHTML = showDataMain(data.films);
     movSection.style.display = "none";
     movCarrousel.innerHTML = showMovieCarrousel(data.films)
 })
@@ -28,9 +29,56 @@ document.getElementById("btnViewAll").addEventListener("click", ()=>{
     movInfSection.style.display="none";
     movSection.style.display="block";
 })
+/*Cargar Peliculas */
+function showDataMain(menuItems) {
+    
+    let displayMovies = menuItems.map((movie)=>{
+    
+    return `
+    <article class="movie">
+        <div class="figure">
+            <img src="${movie.poster}" class="img-movie">
+            <div class="capa">
+                <div class="cont-title">
+                <h3>${movie.title}</h3>
+                </div>
+                
+                <div class="cont-span">
+                    <p>⭐ ${movie.rt_score}</p>
+                    <p>🎥 ${movie.release_date}</p>
+                </div>
+                <div class="description">
+                <p>${movie.description}</p>
+                </div>
+                <a class="btn-mas">See more</a>
+            </div>    
+        </div>
+    </article>
+    ` 
+    
+}); 
 
+displayMovies = displayMovies.join(""); 
+ return displayMovies
+    
+}
+/*Carrousel Home Abajo */
+function showMovieCarrousel (data){
+    let displayMovies = data.map((movie)=>{
+    
+        return `
 
-/*Images Carrousel */
+            <div class="slide">
+                <img src=${movie.poster} alt=${movie.title}>
+            </div>
+
+        `         
+    }); 
+    
+    displayMovies = displayMovies.join(""); 
+     return displayMovies
+}
+/*Carrousel Home Arriba */
 document.addEventListener('DOMContentLoaded', ()=>{
 
     const imagenes = ['./images/portada1.jpg', './images/portada2.jpg', './images/portada3.jpg', './images/portada4.jpg', './images/portada5.jpg']
@@ -130,7 +178,14 @@ sectionMovies.addEventListener('click', (e)=>{
 filterBtnsDirector.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const condition = e.currentTarget.dataset.director;
-        sectionMovies.innerHTML = filterDataDirector(data.films, condition);
+        if(condition == "all"){
+            sectionMovies.innerHTML = showDataMain(data.films);
+        }
+        else{
+
+            let directorsMovies = filterDataDirector(data.films, condition);
+            sectionMovies.innerHTML = showDataMain(directorsMovies);
+        }
         
     })
 });
@@ -139,15 +194,31 @@ filterBtnsScore.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const conditionMayor = e.currentTarget.dataset.mayor;
         const conditionMenor = e.currentTarget.dataset.menor;
-        
-        sectionMovies.innerHTML = filterDataScore(data.films, conditionMayor, conditionMenor);
+        if(conditionMayor == "all"){
+            sectionMovies.innerHTML = showDataMain(data.films);
+        }
+        else{
+
+            let scoreMovies = filterDataScore(data.films, conditionMayor, conditionMenor)
+            sectionMovies.innerHTML = showDataMain(scoreMovies);
+        }
+
         
     })
 });
 filterBtnsYear.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const condition = e.currentTarget.dataset.anio;
-        sectionMovies.innerHTML = filterDataYear(data.films, condition)
+
+        if(condition == "all"){
+            sectionMovies.innerHTML = showDataMain(data.films);
+        }
+        else{
+
+            let yearMovies = filterDataYear(data.films, condition);
+
+            sectionMovies.innerHTML = showDataMain(yearMovies);
+        }
     })
 })
 
