@@ -30,7 +30,7 @@ export const filterDataScore = (data, conditionMayor, conditionMenor) => {
 };
 
 export const filterDataYear = (data, condition) => {
-    const movieYear = data.filter(movieItem=>{
+    const movieYear = data.filter(movieItem =>{
         if(movieItem.release_date === condition){
             return movieItem
         }

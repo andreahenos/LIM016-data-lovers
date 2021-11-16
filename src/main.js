@@ -263,10 +263,11 @@ filterBtnsScore.forEach((btn)=>{
         
     })
 })
+
 filterBtnsYear.forEach((btn)=>{
     btn.addEventListener('click', e=>{
-        const condition = e.currentTarget.dataset.anio;
-
+        const condition = e.currentTarget.dataset.year;
+        
         const filterYear = filterDataYear(data.films, condition);
         sectionMovies.innerHTML = showData(filterYear);
     })

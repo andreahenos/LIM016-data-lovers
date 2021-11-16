@@ -23,24 +23,14 @@ describe('anotherExample', () => {
 }); 
  */
 
-import {filterDataDirector,filterDataScore, filterDataYear, showData} from '../src/data';
-
-describe('showData', ()=>{
-  it('is a function', ()=>{
-    expect(typeof showData).toBe('function');
-  });
-  it('should return string ', ()=>{
-    expect(showData([])).toBe("");
-  })
-  
-})
+import {filterDataDirector,filterDataScore, filterDataYear} from '../src/data';
 
 describe('filterData', ()=>{
   it('is a function', ()=>{
     expect(typeof filterDataDirector).toBe('function');
   });
   it('should return string ', ()=>{
-    expect(filterDataDirector([])).toBe("");
+    expect(filterDataDirector([])).toStrictEqual([]);
   })
   
 })
@@ -50,17 +40,18 @@ describe('filterData', ()=>{
     expect(typeof filterDataScore).toBe('function');
   });
   it('should return string ', ()=>{
-    expect(filterDataScore([])).toBe("");
+    expect(filterDataScore([])).toStrictEqual([]);
   })
   
 })
 
 describe('filterData', ()=>{
-  it('is a function', ()=>{
+  it('should be a function', ()=>{
     expect(typeof filterDataYear).toBe('function');
   });
+
   it('should return string ', ()=>{
-    expect(filterDataYear([])).toBe("");
+    expect(filterDataYear([])).toStrictEqual([]);
   })
   
 })
