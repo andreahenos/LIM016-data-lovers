@@ -7,6 +7,8 @@ import data from './data/ghibli/ghibli.js';
 const homeSection = document.getElementById("homeSection");
 const movSection = document.getElementById("movSection");
 const movInfSection = document.getElementById("movInfSection");
+const aboutSection = document.getElementById("aboutSection");
+
 const movCarrousel = document.querySelector(".slide-track");
 const sectionMovies = document.querySelector('.movies');
 
@@ -21,16 +23,25 @@ document.getElementById("navHome").addEventListener("click", function(){
     movSection.style.display="none";
     movInfSection.style.display="none";
     homeSection.style.display="block";
+    aboutSection.style.display = "none"
 })
 document.getElementById("navMovies").addEventListener("click", function(){
     homeSection.style.display="none";
     movInfSection.style.display="none";
     movSection.style.display="block";
+    aboutSection.style.display = "none"
+})
+document.getElementById("navAbout").addEventListener("click", function(){
+    homeSection.style.display="none";
+    movInfSection.style.display="none";
+    movSection.style.display="none";
+    aboutSection.style.display = "block"
 })
 document.getElementById("btnViewAll").addEventListener("click", ()=>{
     homeSection.style.display="none";
     movInfSection.style.display="none";
     movSection.style.display="block";
+    aboutSection.style.display = "none"
 })
 /*Cargar Peliculas */
 function showDataMain(menuItems) {
@@ -165,7 +176,9 @@ sectionMovies.addEventListener('click', (e)=>{
         let movInf = data.films.map((movie)=>{
             if(movie.title === titleMovieSelected){
                     return `
-                    <i class="fas fa-times btn-close"></i>
+                    <div class="cont-btn-close">
+                        <i class="fas fa-times btn-close"></i>
+                    </div>
                     <img class="background" src="${movie.background}">
                     <section id="infContent">
                      <img class="poster" src="${movie.poster}">
@@ -346,6 +359,7 @@ filterBtnsScore.forEach((btn)=>{
 
         
         const filterScore = filterDataScore(data.films, conditionMayor, conditionMenor);
+        console.log(filterScore)
         sectionMovies.innerHTML = showData(filterScore);
 
         
@@ -389,8 +403,31 @@ iconClose.forEach((icon)=>{
          })
     })
 })
-    
+/*Input Search */
+const formulario = document.querySelector('#formulario');
+const boton = document.querySelector('#btn-search')
 
+const capturarInput = ()=>{
+    const inputText = formulario.value.toLowerCase();
+    filtrar(inputText)
+}
+boton.addEventListener('click', capturarInput);
+    
+const filtrar = (condition) => {
+    
+    const searchedMovie = data.films.filter(movieItem =>{
+        let nameMovie = movieItem.title.toLowerCase();
+        if(nameMovie.indexOf(condition) !== -1){
+            return movieItem
+        }
+        
+    })
+    sectionMovies.innerHTML = showData(searchedMovie); 
+    if(sectionMovies.innerHTML === ''){
+        sectionMovies.innerHTML = `<p>Movie not found</p>`
+    }
+
+}
 
 
 

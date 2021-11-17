@@ -451,14 +451,19 @@ section.movies{
 } 
 
 /*Movies Inf Section*/
-.btn-close{
+.cont-btn-close{
     position: absolute;
+    background: #d8e7a98c;
+    z-index: 2;
     top: 20px;
     left: 20px;
+    border-radius: 50%;
+}
+.btn-close{
     font-size: 2rem;
     color: #D64045;
     transition: all 0.3s linear;
-    z-index: 2;
+    padding: 5px 10px;
 }
 .btn-close:hover{
     transform: rotate(180deg);
@@ -466,7 +471,7 @@ section.movies{
 }
 #movInfSection{
     display: none;
-    overflow: scroll;
+
     position: relative;
 }
 #movGeneralInf{
@@ -718,6 +723,10 @@ hr{
 .card-text-location span{
     font-weight: 600;
     
+}
+/*--About Section---*/
+#aboutSection{
+    display: none;
 }
 /*------Footer------*/
 footer{
