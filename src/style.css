@@ -5,6 +5,17 @@
     box-sizing: border-box;
 }
 
+/*Scroll Top Btn*/
+.scrollToTop{
+    background-color: #9cc42d;
+    width: 50px;
+    height: 50px;
+}
+.btnToTop{
+    font-size: 30px;
+    color: #ff252c;
+}
+
 /*------Carrousel images------*/
 #slideshow-principal{
     position: relative;

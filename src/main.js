@@ -25,24 +25,28 @@ document.getElementById("navHome").addEventListener("click", function(){
     homeSection.style.display="block";
     aboutSection.style.display = "none"
 })
+
 document.getElementById("navMovies").addEventListener("click", function(){
     homeSection.style.display="none";
     movInfSection.style.display="none";
     movSection.style.display="block";
     aboutSection.style.display = "none"
 })
+
 document.getElementById("navAbout").addEventListener("click", function(){
     homeSection.style.display="none";
     movInfSection.style.display="none";
     movSection.style.display="none";
     aboutSection.style.display = "block"
 })
+
 document.getElementById("btnViewAll").addEventListener("click", ()=>{
     homeSection.style.display="none";
     movInfSection.style.display="none";
     movSection.style.display="block";
     aboutSection.style.display = "none"
 })
+
 /*Cargar Peliculas */
 function showDataMain(menuItems) {
     
@@ -69,12 +73,10 @@ function showDataMain(menuItems) {
         </div>
     </article>
     ` 
-    
-}); 
+    }); 
 
-displayMovies = displayMovies.join(""); 
- return displayMovies
-    
+    displayMovies = displayMovies.join(""); 
+    return displayMovies 
 }
 
 /*Carrousel Home Arriba */
@@ -304,14 +306,29 @@ sectionMovies.addEventListener('click', (e)=>{
         movInfSection.style.display="block";    
     }
 
-/*Cerrar Detalles pelicula */
-const btnClose = document.querySelector('.btn-close');
-btnClose.addEventListener('click', ()=>{
-    movInfSection.style.display = "none";
+    /*Cerrar Detalles pelicula */
+    const btnClose = document.querySelector('.btn-close');
+    btnClose.addEventListener('click', ()=>{
+        movInfSection.style.display = "none";
 
-    movSection.style.display="block";
+        movSection.style.display="block";
+    })
 })
-})
+
+/*Scroll Top Button*/
+const scrollTopBtn = document.querySelectorAll(".scrollToTop");
+
+for(let i=0; i<scrollTopBtn.length; i++){
+    scrollTopBtn[i].addEventListener("click", function(){
+        //window.scrollTo(0, 0);
+        window.scrollTo({
+            top:0,
+            left: 0,
+            behaivor: "smooth"
+        });
+    })
+}
+
 
 /*Get People Data*/
 document.getElementById("showCharacters").addEventListener("click", function() {
