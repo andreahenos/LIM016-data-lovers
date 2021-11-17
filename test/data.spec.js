@@ -17,7 +17,9 @@ describe('filterDataDirector', ()=>{
   it('should return string ', ()=>{
     expect(filterDataDirector([])).toStrictEqual([]);
   })
-  
+  it('should return fares ', ()=>{
+    expect(filterDataDirector([{director:"fares"}, {director:"fares"}, {director:"isabel"}],"fares")).toMatchObject([{director:"fares"}, {director:"fares"}]);
+  })
 })
 
 
