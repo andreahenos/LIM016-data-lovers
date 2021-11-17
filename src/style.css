@@ -21,7 +21,6 @@
     position: relative;
     overflow: hidden;
 }
-
 #slideshow{
     position: relative;
     z-index: 998;
@@ -165,9 +164,7 @@ section.portada{
     border-radius: 3px;
     transition: all 0.3s ease-in-out;
 }
-/* .dato:hover{
-    transform: translateY(-10px) scale(1.03);
-} */
+
 
 .dato i{
     padding: 10px;
@@ -186,7 +183,6 @@ section.portada{
 }
 
 /* ------Movies slider------*/
-
 .slider {
     display: flex;
     flex-direction: column;
@@ -265,7 +261,6 @@ section.portada{
 
 
 /*------Movies.html------*/
-
 #cont-filter{
     background-color: #D64045;
     width: 99.1vw;
@@ -482,13 +477,12 @@ section.movies{
 }
 #movInfSection{
     display: none;
-
     position: relative;
 }
 #movGeneralInf{
     width: 100%;
-
-    height: 600px;
+    height: auto;
+    margin-bottom: -30vh;
 }
 .background{
     width: 100%;
@@ -496,7 +490,6 @@ section.movies{
     object-fit: cover;
     z-index: 1;
     mix-blend-mode: multiply;
-
 }
 #infContent{
     position: relative;
@@ -506,7 +499,6 @@ section.movies{
     margin: 5px auto;
     display: flex;
     z-index: 2;
-
 }
 .poster{
     width: 250px;
@@ -579,10 +571,9 @@ section.movies{
     background-color: #1D3354;
     border-radius: 25px;
     cursor: pointer;
-
     height: 3.2em;
     width: 80%;
-    margin: 20px auto;
+    margin: 50px auto;
     z-index: 3;
     display: flex;
     align-items: center;
@@ -615,7 +606,6 @@ section.movies{
     display: none;
 }
 #peopleInf{
-
     top: -30vh;
     width: 85%;
     height: auto;   
@@ -707,6 +697,7 @@ hr{
 .category p{
     font-size: 11px;
 }
+
 /*Mov Inf of Locations*/
 .card-location{
     margin: 15px auto;
@@ -845,7 +836,6 @@ footer .container{
         flex-direction: column;
     }
     footer .container{
-
         text-align: center;
         flex-direction: column; 
     }
