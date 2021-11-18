@@ -316,18 +316,28 @@ sectionMovies.addEventListener('click', (e)=>{
 })
 
 /*Scroll Top Button*/
-const scrollTopBtn = document.querySelectorAll(".scrollToTop");
+window.addEventListener("scroll", () => {
+    if(window.scrollY < 220) {
+        scrollTopMov.style.visibility = "hidden";
+    } else {
+        scrollTopMov.style.visibility = "visible";
+    }    
+})
+const scrollTopMov = document.getElementById("topBtnMov");
+scrollTopMov.addEventListener("click", function(){
+    window.scrollTo({
+        top:0,
+        left: 0,
+        behavior: "smooth"
+    });
+})
 
-for(let i=0; i<scrollTopBtn.length; i++){
-    scrollTopBtn[i].addEventListener("click", function(){
-        //window.scrollTo(0, 0);
-        window.scrollTo({
-            top:0,
-            left: 0,
-            behaivor: "smooth"
-        });
-    })
-}
+
+const scrollTopPeople = document.getElementById("topBtnPeople");
+scrollTopPeople.addEventListener("click", function(){
+    const peopleInf = document.getElementById("contPeopleInf");
+    peopleInf.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+})
 
 
 /*Get People Data*/
