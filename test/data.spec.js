@@ -14,10 +14,12 @@ describe('filterDataDirector', ()=>{
     expect(() => filterDataDirector(0, 0)).toThrow(TypeError);
   });
 
-  it('should return string ', ()=>{
+  it('should return array ', ()=>{
     expect(filterDataDirector([])).toStrictEqual([]);
   })
-  
+  it('should return item director ', ()=>{
+    expect(filterDataDirector([{director:"uzumaki"}, {director:"uzumaki"}, {director:"isabel"}],"uzumaki")).toMatchObject([{director:"uzumaki"}, {director:"uzumaki"}]);
+  })
 })
 
 
@@ -33,9 +35,12 @@ describe('filterDataScore', ()=>{
     expect(() => filterDataScore(null, [])).toThrow(TypeError);
     expect(() => filterDataScore(0, 0)).toThrow(TypeError);
   });
-  it('should return string ', () => {
+  it('should return array ', () => {
     expect(filterDataScore([])).toStrictEqual([]);
-  }); 
+  });
+  it('should return item rt_score ', ()=>{
+    expect(filterDataScore([{rt_score:"10"}, {rt_score:"10"}, {rt_score:"isabel"}],"20", "10")).toMatchObject([{rt_score:"10"}, {rt_score:"10"}]); 
+  }) 
 })
 describe('filterDataYear', ()=>{
   it('is a function', ()=>{
@@ -51,6 +56,8 @@ describe('filterDataYear', ()=>{
   it('should return string ', () => {
     expect(filterDataYear([])).toStrictEqual([]);
   });
- 
+  it('should return item year ', ()=>{
+     expect(filterDataYear([{release_date:"1852"}, {release_date:"1852"}, {release_date:"2000"}],"1852")).toMatchObject([{release_date:"1852"}, {release_date:"1852"}]); 
+  })
 })
 

@@ -283,7 +283,7 @@ sectionMovies.addEventListener('click', (e)=>{
                     return `
                      <div class="card-location">
                         <div class="card-image-location">
-                            <img src=${location.img}/>
+                            <img src=${location.img} >
                         </div>
                         <div class="card-text-location">
                             <h3>${location.name}</h3>
