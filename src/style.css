@@ -10,7 +10,6 @@
     position: relative;
     overflow: hidden;
 }
-
 #slideshow{
     position: relative;
     z-index: 998;
@@ -153,9 +152,7 @@ section.portada{
     border-radius: 3px;
     transition: all 0.3s ease-in-out;
 }
-/* .dato:hover{
-    transform: translateY(-10px) scale(1.03);
-} */
+
 
 .dato i{
     padding: 10px;
@@ -174,7 +171,6 @@ section.portada{
 }
 
 /* ------Movies slider------*/
-
 .slider {
     display: flex;
     flex-direction: column;
@@ -254,9 +250,50 @@ section.portada{
 
 /*------Movies.html------*/
 
+#searchBox{
+    padding: 1em 0 0.5em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#formulario{
+    border-style: none;
+    border-radius: 6px;
+    height: 2.5em;
+    width: 40%;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+#formulario:focus{
+    outline: none;
+    box-shadow: 0px 0px 0.5px 6px rgba(255, 255, 255, 0.2);
+}
+#formulario:hover{
+    box-shadow: 0px 0px 0.5px 6px rgba(255, 255, 255, 0.2);
+}
+
+#btn-search{
+    border-radius: 50%;
+    border-style: none;
+    width: 45px;
+    height: 45px;
+    margin: 1em;
+    background-color: #f1f2f6;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+#searchIcon{
+    font-size: 14px;
+    color: #D64045;
+}
+#btn-search:hover{
+    transform: scale(1.1);
+}
+
+
 #cont-filter{
     background-color: #D64045;
-    width: 99.1vw;
+    width: 100vw;
     align-items: center;
     font-size: 1rem;
 }
@@ -267,7 +304,7 @@ section.portada{
     
 }
 .icon-filter{
-    color: #EEF5DB;
+    color: #f1f2f6;
     width: 80px;
     padding: 15px 0;
     margin: 0 auto;
@@ -277,7 +314,7 @@ section.portada{
     border: none;
     font-size: 1rem;
     width: 33.2%;
-    color: #EEF5DB;
+    color: #f1f2f6;
     padding: 5px 0;
 
 }
@@ -299,7 +336,6 @@ section.portada{
     font-size: 1.5em;
     color: #D64045;
     transition: all 0.3s linear;
-
 }
 .icon-close:hover{
     cursor: pointer;
@@ -449,10 +485,57 @@ section.movies{
     background: #EEF5DB;
 } 
 
+
+/*Scroll Top Btn*/
+#topBtnMov{
+    background-color: #D64045;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    position: fixed;
+    padding: 2em;
+    left: 95vw;
+    top: 74vh;
+    transform: translatex(-50%);
+    z-index: 5;
+    visibility: hidden;
+}
+#topBtnMov > i{
+    font-size: 22px;
+    color: #F1F2F6;
+}
+
+#topBtnPeople{
+    background-color: #D64045;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    position: relative;
+    padding: 2em;
+    left: 50vw;
+    transform: translatex(-50%);
+    z-index: 5;
+    visibility: hidden;
+}
+#topBtnPeople > i{
+    font-size: 22px;
+    color: #F1F2F6;
+}
+
 /*Movies Inf Section*/
 .cont-btn-close{
     position: absolute;
-    background: #d8e7a98c;
+    background: #f1f2f6b0;
     z-index: 2;
     top: 20px;
     left: 20px;
@@ -470,13 +553,12 @@ section.movies{
 }
 #movInfSection{
     display: none;
-
     position: relative;
 }
 #movGeneralInf{
     width: 100%;
-
-    height: 600px;
+    height: auto;
+    margin-bottom: -30vh;
 }
 .background{
     width: 100%;
@@ -484,7 +566,6 @@ section.movies{
     object-fit: cover;
     z-index: 1;
     mix-blend-mode: multiply;
-
 }
 #infContent{
     position: relative;
@@ -494,13 +575,11 @@ section.movies{
     margin: 5px auto;
     display: flex;
     z-index: 2;
-
 }
 .poster{
     width: 250px;
     height: 350px;
     object-fit: cover;
-
     border-radius: 5px;
 }
 #infBox{
@@ -564,19 +643,18 @@ section.movies{
 
 /*Mov Inf of Characters*/
 .show{
+    position: relative;
     background-color: #1D3354;
     border-radius: 25px;
     cursor: pointer;
-
     height: 3.2em;
     width: 80%;
-    margin: 20px auto;
+    margin: 50px auto;
     z-index: 3;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 .show h3{
     line-height: 32px;
     font-size: 15px;
@@ -599,23 +677,25 @@ section.movies{
     color: #1D3354;
 }
 
+#movPeopleInf{
+    height: auto;
+}
 .cont{
     display: none;
 }
+#contPeopleInf{
+    height: auto;
+}
 #peopleInf{
-
     top: -30vh;
     width: 85%;
-    height: auto;   
-    margin-left: auto;
-    margin-right: auto;
+    height: auto;
+    margin: 0 auto 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px 0;
 }
 .character{
-
     width: 160px;
     height: 235px;
     margin: 3%;
@@ -663,7 +743,6 @@ section.movies{
     width: 86%;
     height: auto;
     margin: auto;
-    /* background-color: turquoise; */
 }
 .characterData img{
     width: 23px;
@@ -677,7 +756,6 @@ hr{
     color: #EEF5DB;
 }
 .characterData div{
-    /* background-color: rgb(180, 233, 164); */
     display: flex;
     margin: 0.3em;
     width: 86%;
@@ -695,9 +773,16 @@ hr{
 .category p{
     font-size: 11px;
 }
+
 /*Mov Inf of Locations*/
+/* #locationsInf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .card-location{
-    margin: 15px auto;
+    margin: 2em;
     display: flex;
     width: 60%;
     background: #D6E7A9;
@@ -710,6 +795,7 @@ hr{
 .card-image-location img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 .card-text-location{
     display: flex;
@@ -722,7 +808,96 @@ hr{
 .card-text-location span{
     font-weight: 600;
     
+} */
+
+#locationsInf, #vehiclesInf{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2em;
 }
+.card-location{
+    margin: 2em;
+    display: flex;
+    width: 55%;
+    height: 170px;
+}
+.card-vehicles{
+    margin: 2em;
+    display: flex;
+    width: 55%;
+    height: 220px;
+}
+.card-image-location, .card-image-vehicles{
+    width: 50%;
+    height: 100%;
+}
+.card-image-location img, .card-image-vehicles img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 0 0 8px;
+}
+.card-text-location, .card-text-vehicles{
+    background: #D6E7A9;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    padding: 20px;
+    font-size: 1.3em;
+    color: #1D3354;
+}
+.card-text-location h3, .card-text-vehicles h3{
+    text-align: center;
+}
+.card-text-location span, .card-text-vehicles span{
+    font-weight: 600;  
+} 
+
+/* /*Mov Inf Vehicles
+#vehiclesInf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+.card-vehicles{
+    margin: 2em;
+    display: flex;
+    height: 170px;
+}
+.card-image-vehicles{
+    width: 280px;
+    height: 170px;
+}
+.card-image-vehicles img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 0 0 8px;
+}
+.card-text-vehicles{
+    background: #D6E7A9;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 25em;
+    padding: 20px;
+    font-size: 1.3em;
+    color: #1D3354;
+}
+.card-text-vehicles span{
+    font-weight: 600;  
+}  */
+
 /*--About Section---*/
 #aboutSection{
     display: none;
@@ -816,6 +991,7 @@ hr{
     text-align: center;
 
 }
+
 /*------Footer------*/
 footer{
     background-color: #1D3354;
@@ -846,7 +1022,7 @@ footer i{
     margin-left: 15px;
 }
 /*Media Queries*/
-@media only screen and (max-width:1080px) {
+@media only screen and (max-width:1020px) {
     .history .container{
         flex-direction: column;
         align-items: center;
@@ -854,7 +1030,6 @@ footer i{
     }
     .datos{
         width: 100%;
-
         margin-bottom: 30px;
     }
     .dato{
@@ -926,7 +1101,6 @@ footer i{
         flex-direction: column;
     }
     footer .container{
-
         text-align: center;
         flex-direction: column; 
     }
@@ -977,7 +1151,203 @@ footer i{
     }
     #director h3, #producer h3{
         margin: 0.5em 0 0.5em 0;
+    }
+    /*TopBtn*/
+    #topBtnMov{
+        left: 90vw;
+        bottom: 10em;
+    }
+    #topBtnMov, #topBtnPeople{
+        visibility: visible;
+    }
+    /*Locations*/
+    #locationInf, #vehiclesInf{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 2em;
+    }
+     .card-location, .card-vehicles{
+        margin: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        height: auto;
+    }
+    .card-image-location, .card-image-vehicles{
+        width: 280px;
+        height: 170px;
+    }
+    .card-image-location img, .card-image-vehicles img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px 8px 0 0;
+    }
+    .card-text-location, .card-text-vehicles{
+        border-radius: 0 0 8px 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 170px;
+        width: 280px;
+        padding: 20px;
     } 
+ }
+ @media only screen and (max-width:280px){
+     /*datos ghibli*/
+    .datos{
+        flex-direction: column;
+        width: 100%;
+    }
+    .dato{
+        height: auto;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    /*scroll home parte inferior*/
+    main{
+        padding: 0;
+    }
+    #container{
+
+        padding: 2px;
+        height: 250px;
+    }
+    #textInf h2{
+        font-size: 35px;
+        margin: 10px;
+    }
+    .poster{
+        width: 24em;
+        height: 38em;
+        object-fit: cover;
+        margin: 2.5em;
+    }
+    .selectionPoster:hover{
+  
+        width: 160px;
+        height: 200px;
+    }
+    .slideBox{
+        width: 160px;
+        height: 250px;
+    }
+    .movieTitle{
+        width: 153px;
+        height: 30px;
+    }
+    .movieTitle p{
+        padding: 5px;
+    }
+    .moviePoster{
+        width: 153px;
+        height: 180px;
+    }
+    /*scroll parte superior*/
+    #slideshow{
+        height: 300px;
+    }
+    nav .container{
+        flex-direction: column;
+    }
+    footer .container{
+        text-align: center;
+        flex-direction: column; 
+    }
+    /*Sección de información*/
+    #infContent{
+        width: 90vw;
+    }
+    #background{
+        height: 10vh;
+    }
+    #textInf{
+        text-align: center;
+    }
+    #infContent{
+        flex-direction: column;
+        align-items: center;
+    }
+    #infBox{
+        width: 95%;
+        left: 1em;
+        right: 1em;
+        margin: 1em auto 1em auto;
+        text-align: center;
+    }
+    #infIcons{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center; 
+    }
+    #infIcons div{
+        margin: 0 3%;
+        width: 30%;
+        flex-direction: column;
+    }
+    #infIcons p{
+        width: 60px;
+    }
+    #creators{
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+    }
+    #director, #producer{
+        width: 100%;
+        align-items: center;
+        margin-bottom: 1em;  
+    }
+    #director h3, #producer h3{
+        margin: 0.5em 0 0.5em 0;
+    }
+    /*TopBtn*/
+    #topBtnMov{
+        left: 90vw;
+        bottom: 10em;
+    }
+    #topBtnMov, #topBtnPeople{
+        visibility: visible;
+    }
+    /*Locations*/
+    #locationInf, #vehiclesInf{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 2em;
+    }
+     .card-location, .card-vehicles{
+        margin: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        height: auto;
+    }
+    .card-image-location, .card-image-vehicles{
+        width: 250px;
+        height: 170px;
+    }
+    .card-image-location img, .card-image-vehicles img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px 8px 0 0;
+    }
+    .card-text-location, .card-text-vehicles{
+        border-radius: 0 0 8px 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 170px;
+        width: 250px;
+        padding: 20px;
+    }
  }
  @media only screen and (max-width:2560px){
     #infContent{
