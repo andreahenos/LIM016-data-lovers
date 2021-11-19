@@ -13,7 +13,6 @@ const movCarrousel = document.querySelector(".slide-track");
 const sectionMovies = document.querySelector('.movies');
 
 window.addEventListener('DOMContentLoaded', ()=>{
-    
     sectionMovies.innerHTML = showDataMain(data.films);
     movSection.style.display = "none";
     movCarrousel.innerHTML = showMovieCarrousel(data.films)
@@ -171,9 +170,9 @@ sectionMovies.innerHTML = showData(data.films);
 /*More Information Section*/
 sectionMovies.addEventListener('click', (e)=>{
     if(e.target.className.includes('btn-mas')){
-        const movie = e.target.parentElement
+        const movie = e.target.parentElement;
         const title = movie.children[0].innerText;
-        const titleMovieSelected = title.trim()
+        const titleMovieSelected = title.trim();
         
         let movInf = data.films.map((movie)=>{
             if(movie.title === titleMovieSelected){
@@ -274,8 +273,8 @@ sectionMovies.addEventListener('click', (e)=>{
              return characterData;
             }        
         }).join(""); 
-    
         document.getElementById("peopleInf").innerHTML = peopleData;
+
 
         let locationsData =  data.films.map((movie)=>{
             if(movie.title === titleMovieSelected){
@@ -283,10 +282,11 @@ sectionMovies.addEventListener('click', (e)=>{
                     return `
                      <div class="card-location">
                         <div class="card-image-location">
-                            <img src=${location.img} >
+                            <img src=${location.img}>
                         </div>
+
                         <div class="card-text-location">
-                            <h3>${location.name}</h3>
+                            <h3>${location.name}</h3><br>
                             <p><span>Climate: </span>${location.climate}<p/>
                             <p><span>Terrain: </span>${location.terrain}<p/>
                             <p><span>Surface: </span>${location.surface_water}<p/>
@@ -298,21 +298,44 @@ sectionMovies.addEventListener('click', (e)=>{
              return locationData;
             }        
         }).join(""); 
-    
         document.getElementById("locationsInf").innerHTML = locationsData;
 
-        homeSection.style.display="none";
-        movSection.style.display="none";
-        movInfSection.style.display="block";    
+        let vehiclesData =  data.films.map((movie)=>{
+            if(movie.title === titleMovieSelected){
+            let vehicleData = movie.vehicles.map((vehicle)=>{
+                        return `
+                        <div class="card-vehicles">
+                            <div class="card-image-vehicles">
+                                <img src=${vehicle.img}>
+                            </div>
+
+                            <div class="card-text-vehicles">
+                                <h3>${vehicle.name}</h3>
+                                <p>${vehicle.description}</p><br>
+                                <p><span>Class: </span>${vehicle.vehicle_class}</p>
+                                <p><span>Length: </span>${vehicle.length}</p>
+                                <p><span>Pilot: </span>${vehicle.pilot.name}</p>
+                            </div>
+                        </div>
+                        `
+                }).join("");
+                return vehicleData
+            }
+        }).join(""); 
+        document.getElementById("vehiclesInf").innerHTML = vehiclesData;  
     }
+
 
     /*Cerrar Detalles pelicula */
     const btnClose = document.querySelector('.btn-close');
     btnClose.addEventListener('click', ()=>{
         movInfSection.style.display = "none";
-
         movSection.style.display="block";
     })
+
+    homeSection.style.display="none";
+    movSection.style.display="none";
+    movInfSection.style.display="block";
 })
 
 /*Scroll Top Button*/
@@ -351,6 +374,7 @@ document.getElementById("showCharacters").addEventListener("click", function() {
      document.getElementById("icon-arrow").style.transform = "rotate(180deg)";
     }
 })
+
 /*Get Locations Data*/
 document.getElementById("showLocations").addEventListener("click", function() {
     const contLocationsInf = document.getElementById("contLocationsInf");
@@ -360,6 +384,18 @@ document.getElementById("showLocations").addEventListener("click", function() {
     } else {
      contLocationsInf.style.display = "block";
      document.getElementById("icon-arrow-location").style.transform = "rotate(180deg)";
+    }
+})
+
+/*Get Vehicles Data*/
+document.getElementById("showVehicles").addEventListener("click", function() {
+    const contVehiclesInf = document.getElementById("contVehiclesInf");
+    if (contVehiclesInf.style.display === "block") {
+     contVehiclesInf.style.display = "none";
+     document.getElementById("icon-arrow-vehicles").style.transform = "rotate(0deg)";
+    } else {
+    contVehiclesInf.style.display = "block";
+     document.getElementById("icon-arrow-vehicles").style.transform = "rotate(180deg)";
     }
 })
 

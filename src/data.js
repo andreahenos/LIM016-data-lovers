@@ -13,12 +13,7 @@ export const filterDataDirector = (data, condition) => {
         }
         else {
             return movieDirector;
-        }
-
-
-            
-        
-
+        }    
 };
 
 export const filterDataScore = (data, conditionMayor, conditionMenor) => {
@@ -35,11 +30,6 @@ export const filterDataScore = (data, conditionMayor, conditionMenor) => {
     else {
         return movieScore;
     } 
-
-    
-
- 
-
 };
 
 export const filterDataYear = (data, condition) => {
@@ -55,9 +45,6 @@ export const filterDataYear = (data, condition) => {
     else {
         return movieYear;
     }
-
-    
-
 };
 
 /* export const anotherExample = () => {
