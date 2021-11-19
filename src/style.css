@@ -25,7 +25,7 @@
     object-fit: cover;
 }
 #img2{
-    left: 100%;    
+    left: 100%;
 }
 .active {
     left: 0 !important;
@@ -82,7 +82,7 @@ nav .container{
     letter-spacing: 3px;
 }
 .logo img{
-    width: 200px; 
+    width: 200px;
 }
 
 .menu ul{
@@ -90,7 +90,7 @@ nav .container{
 }
 .menu ul li{
     list-style: none;
-    
+
 }
 .menu li:hover a{
     color: #42bdf7;
@@ -264,7 +264,7 @@ section.portada{
     text-align: center;
     display: flex;
     justify-content: space-between;
-    
+
 }
 .icon-filter{
     color: #EEF5DB;
@@ -310,7 +310,7 @@ section.portada{
     width: 99.1vw;
     padding-top: 35px;
     position: relative;
-    
+
 }
 #cont-options-filter .active p{
     padding: 5px 0;
@@ -322,7 +322,7 @@ section.portada{
     transition: all 0.3s ease-in-out;
 }
 #cont-options-filter p:hover{
-    cursor: pointer;   
+    cursor: pointer;
     color: #D64045;
     background-color: #fff;
 }
@@ -366,8 +366,8 @@ section.movies{
     justify-content: center;
     padding: 20px 0;
     width: 100%;
-    height: auto;   
-    margin: 30px 0 30px 0;    
+    height: auto;
+    margin: 30px 0 30px 0;
 }
 .movie{
     display: flex;
@@ -447,7 +447,7 @@ section.movies{
 .capa .btn-mas:hover{
     color: #9cc42d;
     background: #EEF5DB;
-} 
+}
 
 /*Movies Inf Section*/
 .cont-btn-close{
@@ -494,7 +494,7 @@ section.movies{
     margin: 5px auto;
     display: flex;
     z-index: 2;
-
+    font-size: 1.5rem;
 }
 .poster{
     width: 250px;
@@ -533,7 +533,7 @@ section.movies{
 }
 #InfIcons p{
     font-size: 14px;
-} 
+}
 .icon{
     width: 20px;
     height: 20px;
@@ -559,7 +559,7 @@ section.movies{
 #director p, #producer p{
     padding: 0;
     font-size: 12px;
-}  
+}
 
 
 /*Mov Inf of Characters*/
@@ -606,7 +606,7 @@ section.movies{
 
     top: -30vh;
     width: 85%;
-    height: auto;   
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -639,7 +639,7 @@ section.movies{
     border-radius: 0px 0px 4px 4px;
     line-height: 35px;
     text-align: center;
-} 
+}
 .character:hover{
     transform: scale(1.1);
 }
@@ -721,7 +721,7 @@ hr{
 }
 .card-text-location span{
     font-weight: 600;
-    
+
 }
 /*--About Section---*/
 #aboutSection{
@@ -730,7 +730,7 @@ hr{
     margin: 0 auto;
 }
 .infAbout{
- 
+
     display: flex;
     height: 400px;
     width: 400px;
@@ -756,7 +756,7 @@ hr{
     height: 350px;
     background: #D6E7A9;
     border-radius: 50%;
-    
+
 }
 .circle p{
     font-size: 1rem;
@@ -797,7 +797,7 @@ hr{
 }
 .members{
     display: flex;
-    
+
 }
 .members img{
     width: 120px;
@@ -880,7 +880,7 @@ footer i{
     }
     /*scroll home parte inferior*/
     main{
-   
+
         padding: 0;
     }
     #container{
@@ -899,7 +899,7 @@ footer i{
         margin: 2.5em;
     }
     .selectionPoster:hover{
-  
+
         width: 160px;
         height: 200px;
     }
@@ -928,7 +928,7 @@ footer i{
     footer .container{
 
         text-align: center;
-        flex-direction: column; 
+        flex-direction: column;
     }
     /*Sección de información*/
     #infContent{
@@ -955,7 +955,7 @@ footer i{
         width: 100%;
         margin-left: auto;
         margin-right: auto;
-        align-content: center; 
+        align-content: center;
     }
     #infIcons div{
         margin: 0 3%;
@@ -973,11 +973,11 @@ footer i{
     #director, #producer{
         width: 100%;
         align-items: center;
-        margin-bottom: 1em;  
+        margin-bottom: 1em;
     }
     #director h3, #producer h3{
         margin: 0.5em 0 0.5em 0;
-    } 
+    }
  }
  @media only screen and (max-width:2560px){
     #infContent{
@@ -991,5 +991,5 @@ footer i{
     }
     #creators{
         width: 50%;
-    } 
+    }
 }
