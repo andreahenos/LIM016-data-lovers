@@ -417,7 +417,7 @@ section.movies{
     height: 300px;
     border-radius: 3%;
     overflow: hidden;
-    cursor:pointer
+
 }
 .movie .figure .capa{
     position: absolute;
@@ -431,7 +431,9 @@ section.movies{
     text-align: center;
     padding: 15px;
     font-size: 1.3em;
+
 }
+
 .img-movie{
     width: 100%;
     height: 100%;
@@ -440,11 +442,9 @@ section.movies{
 }
 .movie .figure:hover .img-movie{
     transform: scale(1.1);
+
 }
-.movie .figure:active .capa{
-    opacity: 1;
-    visibility: visible;
-}
+
 .movie .figure:hover .capa{
     opacity: 1;
     visibility: visible;

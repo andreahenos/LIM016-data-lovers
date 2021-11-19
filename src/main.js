@@ -13,6 +13,7 @@ const movCarrousel = document.querySelector(".slide-track");
 const sectionMovies = document.querySelector('.movies');
 
 window.addEventListener('DOMContentLoaded', ()=>{
+
     sectionMovies.innerHTML = showDataMain(data.films);
     movSection.style.display = "none";
     movCarrousel.innerHTML = showMovieCarrousel(data.films)
@@ -24,33 +25,29 @@ document.getElementById("navHome").addEventListener("click", function(){
     homeSection.style.display="block";
     aboutSection.style.display = "none"
 })
-
 document.getElementById("navMovies").addEventListener("click", function(){
     homeSection.style.display="none";
     movInfSection.style.display="none";
     movSection.style.display="block";
     aboutSection.style.display = "none"
 })
-
 document.getElementById("navAbout").addEventListener("click", function(){
     homeSection.style.display="none";
     movInfSection.style.display="none";
     movSection.style.display="none";
     aboutSection.style.display = "block"
 })
-
 document.getElementById("btnViewAll").addEventListener("click", ()=>{
     homeSection.style.display="none";
     movInfSection.style.display="none";
     movSection.style.display="block";
     aboutSection.style.display = "none"
 })
-
 /*Cargar Peliculas */
 function showDataMain(menuItems) {
-    
+
     let displayMovies = menuItems.map((movie)=>{
-    
+
     return `
     <article class="movie">
         <div class="figure">
@@ -59,7 +56,7 @@ function showDataMain(menuItems) {
                 <div class="cont-title">
                 <h3>${movie.title}</h3>
                 </div>
-                
+
                 <div class="cont-span">
                     <p>⭐ ${movie.rt_score}</p>
                     <p>🎥 ${movie.release_date}</p>
@@ -68,14 +65,16 @@ function showDataMain(menuItems) {
                 <p>${movie.description}</p>
                 </div>
                 <a class="btn-mas">See more</a>
-            </div>    
+            </div>
         </div>
     </article>
-    ` 
-    }); 
+    `
 
-    displayMovies = displayMovies.join(""); 
-    return displayMovies 
+});
+
+displayMovies = displayMovies.join("");
+ return displayMovies
+
 }
 
 /*Carrousel Home Arriba */
@@ -91,7 +90,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         div.classList.add('circles')
         div.id = index;
         divIndicadores.appendChild(div);
-        
+
     }
     img1.src = imagenes[0];
     const circulos = document.querySelectorAll('.circles');
@@ -104,11 +103,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
         circulo_actual.classList.add('resaltado')
         img2.classList.add('active');
         i++;
-        
-        
+
+
         if(i==imagenes.length){
             i=0;
-            
+
         }
         setTimeout(()=>{
             img1.src = img2.src
@@ -126,10 +125,10 @@ function showMovieCarrousel(data){
             <div class="slide">
                 <img src=${movie.poster} alt=${movie.title}>
             </div>
-        `    
-    }) 
-    
-    displayMovies = displayMovies.join(""); 
+        `
+    })
+
+    displayMovies = displayMovies.join("");
      return displayMovies
 }
 movCarrousel.innerHTML = showMovieCarrousel(data.films)
@@ -146,7 +145,7 @@ const showData = (menuItems) =>{
                 <div class="cont-title">
                 <h3>${movie.title}</h3>
                 </div>
-                
+
                 <div class="cont-span">
                     <p>⭐ ${movie.rt_score}</p>
                     <p>🎥 ${movie.release_date}</p>
@@ -155,14 +154,14 @@ const showData = (menuItems) =>{
                 <p>${movie.description}</p>
                 </div>
                 <a class="btn-mas">See more</a>
-            </div>    
+            </div>
         </div>
     </article>
-    ` 
-    }) 
+    `
+    })
 
-    displayMovies = displayMovies.join(""); 
-    return displayMovies;  
+    displayMovies = displayMovies.join("");
+    return displayMovies;
 }
 sectionMovies.innerHTML = showData(data.films);
 
@@ -170,10 +169,10 @@ sectionMovies.innerHTML = showData(data.films);
 /*More Information Section*/
 sectionMovies.addEventListener('click', (e)=>{
     if(e.target.className.includes('btn-mas')){
-        const movie = e.target.parentElement;
+        const movie = e.target.parentElement
         const title = movie.children[0].innerText;
-        const titleMovieSelected = title.trim();
-        
+        const titleMovieSelected = title.trim()
+
         let movInf = data.films.map((movie)=>{
             if(movie.title === titleMovieSelected){
                     return `
@@ -192,7 +191,7 @@ sectionMovies.addEventListener('click', (e)=>{
                                  <div><img class="icon" src="./images/star.png"><p>${movie.rt_score}</p></div>
                              </div>
                              <p>${movie.description}</p>
-                                
+
 
                              <section id="creators">
                                  <div id="director">
@@ -213,7 +212,7 @@ sectionMovies.addEventListener('click', (e)=>{
         }).join("");
         document.getElementById("movGeneralInf").innerHTML = movInf;
 
-        
+
         let peopleData =  data.films.map((movie)=>{
             if(movie.title === titleMovieSelected){
                 let characterData = movie.people.map((character)=>{
@@ -223,7 +222,7 @@ sectionMovies.addEventListener('click', (e)=>{
                             <img class="photo" src="${character.img}">
                             <h4>${character.name}</h4>
                          </section>
-                        
+
                          <section class="characterData">
                             <section>
                             <div>
@@ -232,7 +231,7 @@ sectionMovies.addEventListener('click', (e)=>{
                                     <h4>Gender</h4>
                                     <p>${character.gender}</p>
                                 </div>
-                            </div>   
+                            </div>
                             <hr/>
                             <div>
                                 <img class="iconInf" src="./images/age.png">
@@ -266,15 +265,15 @@ sectionMovies.addEventListener('click', (e)=>{
                                 </div>
                             </div>
                             </section>
-                         </section> 
+                         </section>
                     </section>
                      `
-                }).join("");     
+                }).join("");
              return characterData;
-            }        
-        }).join(""); 
-        document.getElementById("peopleInf").innerHTML = peopleData;
+            }
+        }).join("");
 
+        document.getElementById("peopleInf").innerHTML = peopleData;
 
         let locationsData =  data.films.map((movie)=>{
             if(movie.title === titleMovieSelected){
@@ -282,11 +281,10 @@ sectionMovies.addEventListener('click', (e)=>{
                     return `
                      <div class="card-location">
                         <div class="card-image-location">
-                            <img src=${location.img}>
+                            <img src=${location.img} >
                         </div>
-
                         <div class="card-text-location">
-                            <h3>${location.name}</h3><br>
+                            <h3>${location.name}</h3>
                             <p><span>Climate: </span>${location.climate}<p/>
                             <p><span>Terrain: </span>${location.terrain}<p/>
                             <p><span>Surface: </span>${location.surface_water}<p/>
@@ -294,74 +292,26 @@ sectionMovies.addEventListener('click', (e)=>{
                         </div>
                      </div>
                      `
-                }).join("");     
+                }).join("");
              return locationData;
-            }        
-        }).join(""); 
+            }
+        }).join("");
+
         document.getElementById("locationsInf").innerHTML = locationsData;
 
-        let vehiclesData =  data.films.map((movie)=>{
-            if(movie.title === titleMovieSelected){
-            let vehicleData = movie.vehicles.map((vehicle)=>{
-                        return `
-                        <div class="card-vehicles">
-                            <div class="card-image-vehicles">
-                                <img src=${vehicle.img}>
-                            </div>
-
-                            <div class="card-text-vehicles">
-                                <h3>${vehicle.name}</h3>
-                                <p>${vehicle.description}</p><br>
-                                <p><span>Class: </span>${vehicle.vehicle_class}</p>
-                                <p><span>Length: </span>${vehicle.length}</p>
-                                <p><span>Pilot: </span>${vehicle.pilot.name}</p>
-                            </div>
-                        </div>
-                        `
-                }).join("");
-                return vehicleData
-            }
-        }).join(""); 
-        document.getElementById("vehiclesInf").innerHTML = vehiclesData;  
+        homeSection.style.display="none";
+        movSection.style.display="none";
+        movInfSection.style.display="block";
     }
 
+/*Cerrar Detalles pelicula */
+const btnClose = document.querySelector('.btn-close');
+btnClose.addEventListener('click', ()=>{
+    movInfSection.style.display = "none";
 
-    /*Cerrar Detalles pelicula */
-    const btnClose = document.querySelector('.btn-close');
-    btnClose.addEventListener('click', ()=>{
-        movInfSection.style.display = "none";
-        movSection.style.display="block";
-    })
-
-    homeSection.style.display="none";
-    movSection.style.display="none";
-    movInfSection.style.display="block";
+    movSection.style.display="block";
 })
-
-/*Scroll Top Button*/
-window.addEventListener("scroll", () => {
-    if(window.scrollY < 220) {
-        scrollTopMov.style.visibility = "hidden";
-    } else {
-        scrollTopMov.style.visibility = "visible";
-    }    
 })
-const scrollTopMov = document.getElementById("topBtnMov");
-scrollTopMov.addEventListener("click", function(){
-    window.scrollTo({
-        top:0,
-        left: 0,
-        behavior: "smooth"
-    });
-})
-
-
-const scrollTopPeople = document.getElementById("topBtnPeople");
-scrollTopPeople.addEventListener("click", function(){
-    const peopleInf = document.getElementById("contPeopleInf");
-    peopleInf.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-})
-
 
 /*Get People Data*/
 document.getElementById("showCharacters").addEventListener("click", function() {
@@ -374,7 +324,6 @@ document.getElementById("showCharacters").addEventListener("click", function() {
      document.getElementById("icon-arrow").style.transform = "rotate(180deg)";
     }
 })
-
 /*Get Locations Data*/
 document.getElementById("showLocations").addEventListener("click", function() {
     const contLocationsInf = document.getElementById("contLocationsInf");
@@ -384,18 +333,6 @@ document.getElementById("showLocations").addEventListener("click", function() {
     } else {
      contLocationsInf.style.display = "block";
      document.getElementById("icon-arrow-location").style.transform = "rotate(180deg)";
-    }
-})
-
-/*Get Vehicles Data*/
-document.getElementById("showVehicles").addEventListener("click", function() {
-    const contVehiclesInf = document.getElementById("contVehiclesInf");
-    if (contVehiclesInf.style.display === "block") {
-     contVehiclesInf.style.display = "none";
-     document.getElementById("icon-arrow-vehicles").style.transform = "rotate(0deg)";
-    } else {
-    contVehiclesInf.style.display = "block";
-     document.getElementById("icon-arrow-vehicles").style.transform = "rotate(180deg)";
     }
 })
 
@@ -410,7 +347,7 @@ filterBtnsDirector.forEach((btn)=>{
 
 
         const filterDirector = filterDataDirector(data.films, condition);
-        sectionMovies.innerHTML = showData(filterDirector);    
+        sectionMovies.innerHTML = showData(filterDirector);
 
     })
 })
@@ -420,12 +357,12 @@ filterBtnsScore.forEach((btn)=>{
         const conditionMayor = e.currentTarget.dataset.mayor;
         const conditionMenor = e.currentTarget.dataset.menor;
 
-        
+
         const filterScore = filterDataScore(data.films, conditionMayor, conditionMenor);
         console.log(filterScore)
         sectionMovies.innerHTML = showData(filterScore);
 
-        
+
     })
 })
 
@@ -433,7 +370,7 @@ filterBtnsYear.forEach((btn)=>{
     btn.addEventListener('click', e=>{
 
         const condition = e.currentTarget.dataset.year;
-        
+
         const filterYear = filterDataYear(data.films, condition);
         sectionMovies.innerHTML = showData(filterYear);
 
@@ -449,20 +386,20 @@ about.addEventListener('click', (e)=>{
     const id = e.target.dataset.id;
     if(id){
         btns.forEach((btn)=>{
-            btn.classList.remove("active"); 
-            e.target.classList.add("active"); 
+            btn.classList.remove("active");
+            e.target.classList.add("active");
         })
         divs.forEach((div)=>{
-           div.classList.remove("active"); 
-        }) 
+           div.classList.remove("active");
+        })
          const element = document.getElementById(id);
-        element.classList.add("active"); 
+        element.classList.add("active");
     }
 })
 iconClose.forEach((icon)=>{
     icon.addEventListener('click', ()=>{
         divs.forEach((div)=>{
-            div.classList.remove("active"); 
+            div.classList.remove("active");
          })
     })
 })
@@ -475,30 +412,19 @@ const capturarInput = ()=>{
     filtrar(inputText)
 }
 boton.addEventListener('click', capturarInput);
-    
+
 const filtrar = (condition) => {
-    
+
     const searchedMovie = data.films.filter(movieItem =>{
         let nameMovie = movieItem.title.toLowerCase();
         if(nameMovie.indexOf(condition) !== -1){
             return movieItem
         }
-        
+
     })
-    sectionMovies.innerHTML = showData(searchedMovie); 
+    sectionMovies.innerHTML = showData(searchedMovie);
     if(sectionMovies.innerHTML === ''){
         sectionMovies.innerHTML = `<p>Movie not found</p>`
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
