@@ -82,7 +82,7 @@
       <main class="slider">
 
         <section class="slide-track">
-          
+          <!----->
         </section>
         <a id="btnViewAll" href="#movSection">View All</a>
       </main>
@@ -90,7 +90,14 @@
     </section>
 
     <section id="movSection">
+      
       <div id="cont-filter">
+
+          <div id="searchBox" class="cont-input-search">
+            <input type="search" id="formulario" placeholder="Search film...">
+            <button id="btn-search"><i class="fas fa-search" id="searchIcon"></i></button>
+          </div>
+
         <p class="icon-filter"><i class="fas fa-filter"></i> Filtros</p>
         <div id="cont-label-filter">
           <button class="tab-btn" data-id="director">Director</button>
@@ -144,13 +151,15 @@
           </div>
         </section>
       </div>
-      <div class="cont-input-search">
-          <input type="search" id="formulario">
-          <button id="btn-search">Search</button>
-      </div>
+
       <section class="movies">
         <!----->
       </section>
+
+      <div id="topBtnMov">
+        <i class="fas fa-chevron-up"></i>   
+      </div>
+      
     </section>
 
     <section id="movInfSection">
@@ -169,10 +178,16 @@
 
         <section class="cont" id="contPeopleInf">
           <div id="peopleInf">
-            <!---->
+            <!----->
+          </div>
+
+          <div id="topBtnPeople">
+            <i class="fas fa-chevron-up"></i>   
           </div>
         </section>
+
       </section>
+      
       <section id="movLocationsInf">
 
         <div class="show" id="showLocations">
@@ -183,12 +198,30 @@
 
         <section class="cont" id="contLocationsInf">
           <div id="locationsInf">
-            <!---->
+            <!----->
           </div>
         </section>
+        
+      </section>
+
+      <section id="movVehiclesInf">
+
+        <div class="show" id="showVehicles">
+          <h3>Vehicles</h3>
+          <i class="fas fa-chevron-down arrow-down" id="icon-arrow-vehicles"></i>  
+        </div>
+        
+
+        <section class="cont" id="contVehiclesInf">
+          <div id="vehiclesInf">
+            <!----->
+          </div>
+        </section>
+        
       </section>
 
     </section>
+
     <section id="aboutSection">
       <div class="infAbout">
         <img src="https://i.blogs.es/d219bd/chihiro-ghibli/1366_521.jpg" alt="ghibli">
@@ -224,13 +257,14 @@
         </div>
       </div>
     </section>
+
     <footer>
       <div class="container">
-        <p>© 2021 Ghibli Proyect</p>
+        <p>© 2021 Ghibli Corner</p>
 
         <div>
-          <a href="" target="_blank"><i class="far fa-envelope"></i></a>
-          <a href="" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="mailto:isabeltellohuaripata@gmail.com?cc=henostroza.andrea@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
+          <a href="https://github.com/Isabel957/LIM016-data-lovers" target="_blank"><i class="fab fa-github"></i></a>
         </div>
       </div>
     </footer>
