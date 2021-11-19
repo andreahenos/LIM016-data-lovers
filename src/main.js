@@ -310,8 +310,26 @@ btnClose.addEventListener('click', ()=>{
     movInfSection.style.display = "none";
 
     movSection.style.display="block";
+
 })
+
 })
+window.addEventListener("scroll", () => {
+  if (window.scrollY < 220) {
+    scrollTopMov.style.visibility = "hidden";
+  } else {
+    scrollTopMov.style.visibility = "visible";
+  }
+})
+const scrollTopMov = document.getElementById("topBtnMov");
+scrollTopMov.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth"
+  });
+})
+
 
 /*Get People Data*/
 document.getElementById("showCharacters").addEventListener("click", function() {
