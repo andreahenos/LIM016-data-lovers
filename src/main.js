@@ -62,7 +62,7 @@ function showDataMain(menuItems) {
                     <p>🎥 ${movie.release_date}</p>
                 </div>
                 <div class="description">
-                <p>${movie.description}</p>
+                <p>${movie.description.split(".", 1)}</p>
                 </div>
                 <a class="btn-mas">See more</a>
             </div>
