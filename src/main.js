@@ -7,7 +7,7 @@ import data from './data/ghibli/ghibli.js';
 const homeSection = document.getElementById("homeSection");
 const movSection = document.getElementById("movSection");
 const movInfSection = document.getElementById("movInfSection");
-const aboutSection = document.getElementById("aboutSection");
+
 
 const movCarrousel = document.querySelector(".slide-track");
 const sectionMovies = document.querySelector('.movies');
@@ -22,25 +22,26 @@ document.getElementById("navHome").addEventListener("click", function(){
     movSection.style.display="none";
     movInfSection.style.display="none";
     homeSection.style.display="block";
-    aboutSection.style.display = "none"
+
 })
 document.getElementById("navMovies").addEventListener("click", function(){
     homeSection.style.display="none";
     movInfSection.style.display="none";
     movSection.style.display="block";
-    aboutSection.style.display = "none"
+    /*Refrescar */
+    sectionMovies.innerHTML = showData(data.films);
+    menuFilter.style.display = "none";
+    iconClose.forEach((icon) => {
+      icon.click();
+    })
+
 })
-document.getElementById("navAbout").addEventListener("click", function(){
-    homeSection.style.display="none";
-    movInfSection.style.display="none";
-    movSection.style.display="none";
-    aboutSection.style.display = "block"
-})
+
 document.getElementById("btnViewAll").addEventListener("click", ()=>{
     homeSection.style.display="none";
     movInfSection.style.display="none";
     movSection.style.display="block";
-    aboutSection.style.display = "none"
+
 })
 
 /*Carrousel Home Arriba */
@@ -129,7 +130,7 @@ const showData = (menuItems) =>{
     displayMovies = displayMovies.join("");
     return displayMovies;
 }
-sectionMovies.innerHTML = showData(data.films);
+
 
 
 /*More Information Section*/
@@ -348,6 +349,7 @@ filterBtnsScore.forEach((btn)=>{
 
 filterBtnsYear.forEach((btn)=>{
     btn.addEventListener('click', e=>{
+
         const condition = e.currentTarget.dataset.year;
 
         const filterYear = filterDataYear(data.films, condition);
@@ -356,10 +358,22 @@ filterBtnsYear.forEach((btn)=>{
 })
 
 /*---Filter bottons---*/
+const btnFilter = document.querySelector('.icon-filter');
+const menuFilter = document.querySelector('.menu-filtros');
+btnFilter.addEventListener('click', mostrarBotones);
+function mostrarBotones() {
+  if (menuFilter.style.display == "block"){
+    menuFilter.style.display = "none";
+  }else{
+    menuFilter.style.display = "block"
+  }
+}
 const btns = document.querySelectorAll('.tab-btn');
 const about = document.querySelector('#cont-filter');
 const divs = document.querySelectorAll('.btns');
 const iconClose = document.querySelectorAll('.icon-close');
+
+
 about.addEventListener('click', (e)=>{
     const id = e.target.dataset.id;
     if(id){
@@ -383,15 +397,20 @@ iconClose.forEach((icon)=>{
     })
 })
 
+
 /*Input Search */
 const formulario = document.querySelector('#formulario');
-const boton = document.querySelector('#btn-search')
-
+const btnSearch = document.querySelector('#btn-search');
+formulario.addEventListener("keyup",() =>{
+  if(event.keyCode === 13){
+    document.querySelector('#btn-search').click();
+  }
+})
 const capturarInput = ()=>{
     const inputText = formulario.value.toLowerCase();
     filtrar(inputText)
 }
-boton.addEventListener('click', capturarInput);
+btnSearch.addEventListener('click', capturarInput);
 
 const filtrar = (condition) => {
     const searchedMovie = data.films.filter(movieItem =>{
@@ -405,4 +424,43 @@ const filtrar = (condition) => {
     if(sectionMovies.innerHTML === ''){
         sectionMovies.innerHTML = `<p>Movie not found</p>`
     }
+    formulario.value = "";
 }
+/*ChartJS */
+import dataRecaudation from './dataMoviePopular.js'
+
+
+function totalCasesChar(ctx) {
+new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: dataRecaudation.movies.map(item => item.name),
+      datasets: [
+        {
+          label: "Recaudations",
+          data: dataRecaudation.movies.map(item => item.recaudation),
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }
+      ]
+    }
+  })
+}
+function renderCharts() {
+  const ctx = document.querySelector('#chart').getContext('2d');
+  totalCasesChar(ctx)
+}
+renderCharts();

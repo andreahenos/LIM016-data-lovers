@@ -49,7 +49,24 @@
     background-color: #D64045;
     transition: background-color 0.8s;
 }
-
+/*Ghibli ABout*/
+.ghibli-about{
+  background: rgba(255,255,255,.7);
+  font-size: 1rem;
+  width: 350px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+  padding: 5px 15px;
+  font-weight: 100;
+  border-radius: 5px 5px 0 0;
+  text-align: justify;
+  color: #1d3354;
+}
+.ghibli-about span{
+  font-weight: 400;
+}
 /* ------Body------ */
 body{
     font-family: 'Assistant', sans-serif;
@@ -235,6 +252,10 @@ section.portada{
 
 
 /*------Movies.html------*/
+/*Menu Filtros*/
+.menu-filtros{
+  display: none;
+}
 
 #searchBox{
     padding: 1em 0 0.5em 0;
@@ -247,8 +268,8 @@ section.portada{
     border-radius: 6px;
     height: 2.5em;
     width: 40%;
-    margin: 0.5em;
-    padding: 0.5em;
+
+    padding: 5px 10px;
 }
 #formulario:focus{
     outline: none;
@@ -259,22 +280,11 @@ section.portada{
 }
 
 #btn-search{
-    border-radius: 50%;
-    border-style: none;
-    width: 45px;
-    height: 45px;
-    margin: 1em;
-    background-color: #f1f2f6;
-    cursor: pointer;
-    transition: all 0.2s linear;
+
+    display: none;
 }
-#searchIcon{
-    font-size: 14px;
-    color: #D64045;
-}
-#btn-search:hover{
-    transform: scale(1.1);
-}
+
+
 
 
 #cont-filter{
@@ -282,6 +292,7 @@ section.portada{
     width: 100vw;
     align-items: center;
     font-size: 1rem;
+    padding-bottom: 3px;
 }
 #cont-filter #cont-label-filter{
     text-align: center;
@@ -290,10 +301,20 @@ section.portada{
 
 }
 .icon-filter{
-    color: #f1f2f6;
-    width: 80px;
-    padding: 15px 0;
-    margin: 0 auto;
+
+  text-align: center;
+  color: #fff;
+  border: 2px solid #fff;
+  width: 130px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin: 10px auto;
+  transition: all 0.3s linear;
+}
+.icon-filter:hover{
+  background: #fff;
+  color:#D64045;
+  cursor: pointer;
 }
 .tab-btn{
     background: #D64045;
@@ -317,8 +338,8 @@ section.portada{
 }
 .icon-close{
     position: absolute;
-    top: 5px;
-    right: 15px;
+    top: 15px;
+    right: 25px;
     font-size: 1.5em;
     color: #D64045;
     transition: all 0.3s linear;
@@ -351,14 +372,14 @@ section.portada{
 .btns:not(.active){
     display: none;
 }
-.cont-year{
+.cont-btn-filter{
     margin: 0 auto;
     width: 50%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
-.cont-year button{
+.cont-btn-filter button{
     background: #fff;
     font-size: 1rem;
     border: 1.5px solid rgb(170, 170, 170);
@@ -368,13 +389,18 @@ section.portada{
     margin: 5px;
     transition:all 0.3s linear;
 }
-.cont-year button:hover{
+.cont-btn-filter .filter-btn{
+  width: 200px;
+
+  margin: 5px 25px;
+}
+.cont-btn-filter button:hover{
     cursor: pointer;
     background: #D64045;
     border: #D64045;
     color:#fff;
 }
-.cont-year .active{
+.cont-btn-filter .active{
     display: inline-block;
     width: 100px;
     background: #D6E7A9;
@@ -408,7 +434,7 @@ section.movies{
 .movie .figure .capa{
     position: absolute;
     top: 0;
-    background-color: #42bdf7;
+    background-color: #69cbf8;
     color: #EEF5DB;
     height: 100%;
     transition: all 0.3s linear;
@@ -888,99 +914,7 @@ hr{
     font-weight: 600;
 }  */
 
-/*--About Section---*/
-#aboutSection{
-    display: none;
-    width: 80vw;
-    margin: 0 auto;
-}
-.infAbout{
 
-    display: flex;
-    height: 400px;
-    width: 400px;
-    margin: 0 auto;
-    align-items: center;
-    position: relative;
-
-}
-.infAbout img{
-    position: absolute;
-    left: -230px;
-    width: 500px;
-    height: 230px;
-    z-index: 2;
-}
-.circle{
-    position: absolute;
-    right: -150px;
-    display: flex;
-    align-items: center;
-    padding: 10px 30px 10px 120px;
-    width: 350px;
-    height: 350px;
-    background: #D6E7A9;
-    border-radius: 50%;
-
-}
-.circle p{
-    font-size: 1rem;
-    color: #1D3354;
-    letter-spacing: 2px;
-    font-weight: 400;
-}
-.phrase-team{
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-    margin: 50px auto;
-}
-.phrase{
-    width: 400px;
-
-    padding: 20px;
-    background: #D6E7A9;
-    font-size: 1rem;
-    font-weight: 100;
-    border-radius: 5px;
-}
-.phrase .autor{
-    text-align: right;
-    font-style: italic;
-}
-.team{
-    font-size: 1rem;
-    text-align: center;
-}
-.team .title-team{
-    background: #1D3354;
-    width: 200px;
-    margin: 15px auto;
-    color: #fff;
-    font-weight: 600;
-    border-radius: 15px;
-}
-.members{
-    display: flex;
-
-}
-.members img{
-    width: 120px;
-    height: 120px;
-    background: #42bdf7;
-    border-radius: 50%;
-    margin: 5px;
-    border: 3px solid transparent;
-    transition: all 0.3s ease-in;
-}
-.members img:hover{
-    border:3px solid #D64045;
-    background: #D64045;
-}
-.member{
-    text-align: center;
-
-}
 
 /*------Footer------*/
 footer{
@@ -1000,6 +934,12 @@ footer .container{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+footer .contacto {
+  display: flex;
+  justify-content: center;
+  width: 180px;
+  align-items: center;
 }
 .footerIcon{
     width: 40px;
