@@ -349,7 +349,20 @@ section.portada{
     cursor: pointer;
     transform: rotate(180deg);
 }
-
+.btn-all {
+  padding: 5px 25px;
+  font-size: 1rem;
+  margin: 10px;
+  background: #D64045;
+  color: #D6E7A9;
+  border-radius: 5px;
+  border: 1px solid #D64045;
+  transition: all 0.3s linear;
+}
+.btn-all:hover{
+  background: transparent;
+  color: #D64045;
+}
 #cont-options-filter .active{
     width: 100vw;
     padding-top: 35px;
