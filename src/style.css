@@ -13,7 +13,7 @@
 #slideshow{
     position: relative;
     z-index: 998;
-    height: 538px;
+    height: 562px;
 }
 #slideshow img{
     position: absolute;
@@ -77,7 +77,11 @@ body{
 /* ------Nav------ */
 nav{
     background: #1d3354;
-
+    width: 100vw;
+    height: 14.5vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 nav .container{
     width: 85vw;
@@ -86,19 +90,10 @@ nav .container{
     justify-content: space-between;
     align-items: center;
 }
-.logo{
-    display: flex;
-    align-items: center;
+
+nav h1{
+    font-size: 3.8em;
     color: #EEF5DB;
-}
-.logo h2{
-    margin-left: 50px;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 3px;
-}
-.logo img{
-    width: 200px;
 }
 
 .menu ul{
@@ -115,7 +110,7 @@ nav .container{
     text-decoration: none;
     color: #EEF5DB;
     transition: color 0.3s linear;
-    font-size: 1.8em;
+    font-size: 2em;
     margin: 0 20px;
     font-weight: 400;
 }
@@ -140,7 +135,8 @@ section.portada{
     justify-content: space-between;
 }
 .author{
-    height: 250px;
+    width: 200px;
+    height: 270px;
     margin: 30px;
 }
 .author img{
@@ -166,19 +162,22 @@ section.portada{
 
 
 .dato i{
-    padding: 10px;
+    padding: 7px;
     font-size: 2.3rem;
     color: #1d3354;
     transition: all 0.3s linear;
 }
 .dato p{
-    font-size: 1.1rem;
-    font-weight: 400;
+    font-size: 17px;
+    font-weight: 450;
+    margin: 0.5em;
 }
 .dato p span{
     display: block;
     text-transform: uppercase;
     font-weight: 700;
+    margin: 0.5em;
+    text-align: center;
 }
 
 /* ------Movies slider------*/
@@ -284,8 +283,6 @@ section.portada{
 
     display: none;
 }
-
-
 
 
 #cont-filter{
@@ -457,7 +454,6 @@ section.movies{
     text-align: center;
     padding: 15px;
     font-size: 1.3em;
-
 }
 
 .img-movie{
@@ -619,6 +615,7 @@ section.movies{
 #textInf{
     margin: 1em;
     width: auto;
+    text-align: justify;
 }
 #textInf h2{
     padding: 0.2em;
@@ -966,7 +963,12 @@ footer i{
     margin-left: 15px;
 }
 /*Media Queries*/
-@media only screen and (max-width:1020px) {
+@media only screen and (max-width:1080px) {
+    .author img, .dato{
+        margin: 0 5px;
+    }
+}
+@media only screen and (max-width:1024px) {
     .history .container{
         flex-direction: column;
         align-items: center;
@@ -980,30 +982,38 @@ footer i{
         height: 250px;
         margin: 0;
     }
-    .dato p{
-        font-size: 1.1rem;
-        font-weight: 100;
-    }
  }
  @media only screen and (max-width:768px){
+     /*Nav*/
+    nav{
+        width: 100%;
+        height: auto;
+        justify-content: center;
+    } 
+    nav .menu{
+        margin: 0.5em 0 1em 0;
+    }
+    nav h1{
+        margin: 0.5em 0 0.5em 0;
+    }
      /*datos ghibli*/
     .datos{
         flex-direction: column;
         width: 100%;
-
     }
     .dato{
         height: auto;
         margin-bottom: 20px;
         width: 100%;
     }
+    .dato p span{
+        font-weight: 700;
+    }
     /*scroll home parte inferior*/
     main{
-
         padding: 0;
     }
     #container{
-
         padding: 2px;
         height: 250px;
     }
@@ -1143,6 +1153,20 @@ footer i{
 
  }
  @media only screen and (max-width:280px){
+     /*Nav*/
+    nav{
+        height: auto;
+    }
+    nav .menu{
+        margin: 1em 0 0.5em 0;
+    }
+    nav h1{
+        margin: 0.5em 0 1em 0;
+    }
+    .dato p{
+        font-weight: 450;
+        margin: 0.5em;
+    }
      /*datos ghibli*/
     .datos{
         flex-direction: column;
@@ -1158,7 +1182,6 @@ footer i{
         padding: 0;
     }
     #container{
-
         padding: 2px;
         height: 250px;
     }
