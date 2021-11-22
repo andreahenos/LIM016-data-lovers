@@ -150,7 +150,7 @@ const showData = (menuItems) =>{
                 <div class="description">
                 <p>${movie.description.split(".", 1)}</p>
                 </div>
-                <a class="btn-mas">See more</a>
+                <a class="btn-mas">More Details</a>
             </div>
         </div>
     </article>
