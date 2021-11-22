@@ -13,7 +13,7 @@
 #slideshow{
     position: relative;
     z-index: 998;
-    height: 538px;
+    height: 562px;
 }
 #slideshow img{
     position: absolute;
@@ -60,7 +60,10 @@ body{
 /* ------Nav------ */
 nav{
     background: #1d3354;
-
+    width: 100vw;
+    height: 14.5vh;
+    display: flex;
+    align-content: center;
 }
 nav .container{
     width: 85vw;
@@ -69,19 +72,10 @@ nav .container{
     justify-content: space-between;
     align-items: center;
 }
-.logo{
-    display: flex;
-    align-items: center;
+
+nav h1{
+    font-size: 3.8em;
     color: #EEF5DB;
-}
-.logo h2{
-    margin-left: 50px;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 3px;
-}
-.logo img{
-    width: 200px;
 }
 
 .menu ul{
@@ -98,7 +92,7 @@ nav .container{
     text-decoration: none;
     color: #EEF5DB;
     transition: color 0.3s linear;
-    font-size: 1.8em;
+    font-size: 2em;
     margin: 0 20px;
     font-weight: 400;
 }
