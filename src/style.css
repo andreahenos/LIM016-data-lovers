@@ -193,9 +193,6 @@ section.portada{
     animation: scroll 28s linear infinite;
     margin-bottom: 20px;
 }
-.slide-track:hover{
-    animation-play-state:paused ;
-}
 @keyframes scroll{
     0%{
         transform: translateX(0);
@@ -215,11 +212,7 @@ section.portada{
 .slide img{
     width: 100%;
     height: 100%;
-    transition: transform 1s;
     border-radius: 5px;
-}
-.slide img:hover{
-    transform: translateZ(10px);
 }
 
 .slider::before,
