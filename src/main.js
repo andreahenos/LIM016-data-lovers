@@ -13,8 +13,7 @@ const movCarrousel = document.querySelector(".slide-track");
 const sectionMovies = document.querySelector('.movies');
 
 window.addEventListener('DOMContentLoaded', ()=>{
-
-    sectionMovies.innerHTML = showDataMain(data.films);
+    sectionMovies.innerHTML = showData(data.films);
     movSection.style.display = "none";
     movCarrousel.innerHTML = showMovieCarrousel(data.films)
 })
@@ -43,9 +42,9 @@ document.getElementById("btnViewAll").addEventListener("click", ()=>{
     movSection.style.display="block";
     aboutSection.style.display = "none"
 })
-/*Cargar Peliculas */
-function showDataMain(menuItems) {
 
+/*Cargar Peliculas */
+/* function showDataMain(menuItems) {
     let displayMovies = menuItems.map((movie)=>{
 
     return `
@@ -62,20 +61,18 @@ function showDataMain(menuItems) {
                     <p>🎥 ${movie.release_date}</p>
                 </div>
                 <div class="description">
-                <p>${movie.description}</p>
+                <p>${movie.description.split(".", 1)}</p>
                 </div>
                 <a class="btn-mas">See more</a>
             </div>
         </div>
     </article>
     `
-
 });
 
 displayMovies = displayMovies.join("");
  return displayMovies
-
-}
+} */
 
 /*Carrousel Home Arriba */
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -151,7 +148,7 @@ const showData = (menuItems) =>{
                     <p>🎥 ${movie.release_date}</p>
                 </div>
                 <div class="description">
-                <p>${movie.description}</p>
+                <p>${movie.description.split(".", 1)}</p>
                 </div>
                 <a class="btn-mas">See more</a>
             </div>
@@ -304,16 +301,15 @@ sectionMovies.addEventListener('click', (e)=>{
         movInfSection.style.display="block";
     }
 
-/*Cerrar Detalles pelicula */
-const btnClose = document.querySelector('.btn-close');
-btnClose.addEventListener('click', ()=>{
-    movInfSection.style.display = "none";
-
-    movSection.style.display="block";
-
-})
+    /*Cerrar Detalles pelicula */
+    const btnClose = document.querySelector('.btn-close');
+    btnClose.addEventListener('click', ()=>{
+        movInfSection.style.display = "none";
+        movSection.style.display="block";
+    })
 
 })
+
 window.addEventListener("scroll", () => {
   if (window.scrollY < 220) {
     scrollTopMov.style.visibility = "hidden";
@@ -321,6 +317,7 @@ window.addEventListener("scroll", () => {
     scrollTopMov.style.visibility = "visible";
   }
 })
+
 const scrollTopMov = document.getElementById("topBtnMov");
 scrollTopMov.addEventListener("click", function () {
   window.scrollTo({
@@ -342,6 +339,7 @@ document.getElementById("showCharacters").addEventListener("click", function() {
      document.getElementById("icon-arrow").style.transform = "rotate(180deg)";
     }
 })
+
 /*Get Locations Data*/
 document.getElementById("showLocations").addEventListener("click", function() {
     const contLocationsInf = document.getElementById("contLocationsInf");
@@ -363,10 +361,8 @@ filterBtnsDirector.forEach((btn)=>{
     btn.addEventListener('click', e=>{
         const condition = e.currentTarget.dataset.director;
 
-
         const filterDirector = filterDataDirector(data.films, condition);
         sectionMovies.innerHTML = showData(filterDirector);
-
     })
 })
 
@@ -375,23 +371,18 @@ filterBtnsScore.forEach((btn)=>{
         const conditionMayor = e.currentTarget.dataset.mayor;
         const conditionMenor = e.currentTarget.dataset.menor;
 
-
         const filterScore = filterDataScore(data.films, conditionMayor, conditionMenor);
-        console.log(filterScore)
+        // console.log(filterScore)
         sectionMovies.innerHTML = showData(filterScore);
-
-
     })
 })
 
 filterBtnsYear.forEach((btn)=>{
     btn.addEventListener('click', e=>{
-
         const condition = e.currentTarget.dataset.year;
 
         const filterYear = filterDataYear(data.films, condition);
         sectionMovies.innerHTML = showData(filterYear);
-
     })
 })
 
@@ -414,6 +405,7 @@ about.addEventListener('click', (e)=>{
         element.classList.add("active");
     }
 })
+
 iconClose.forEach((icon)=>{
     icon.addEventListener('click', ()=>{
         divs.forEach((div)=>{
@@ -421,6 +413,7 @@ iconClose.forEach((icon)=>{
          })
     })
 })
+
 /*Input Search */
 const formulario = document.querySelector('#formulario');
 const boton = document.querySelector('#btn-search')
@@ -432,17 +425,15 @@ const capturarInput = ()=>{
 boton.addEventListener('click', capturarInput);
 
 const filtrar = (condition) => {
-
     const searchedMovie = data.films.filter(movieItem =>{
         let nameMovie = movieItem.title.toLowerCase();
         if(nameMovie.indexOf(condition) !== -1){
             return movieItem
         }
-
     })
+
     sectionMovies.innerHTML = showData(searchedMovie);
     if(sectionMovies.innerHTML === ''){
         sectionMovies.innerHTML = `<p>Movie not found</p>`
     }
-
 }

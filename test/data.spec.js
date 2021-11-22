@@ -13,9 +13,6 @@ describe('filterDataDirector', ()=>{
     expect(() => filterDataDirector(0, 0)).toThrow(TypeError);
   });
 
-  it('should return array ', ()=>{
-    expect(filterDataDirector([])).toStrictEqual([]);
-  })
   it('should return item director ', ()=>{
     expect(filterDataDirector([{director:"uzumaki"}, {director:"uzumaki"}, {director:"isabel"}],"uzumaki")).toMatchObject([{director:"uzumaki"}, {director:"uzumaki"}]);
   })

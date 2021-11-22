@@ -129,13 +129,7 @@ section.portada{
 .author img{
     width: 100%;
     height: 100%;
-    cursor: pointer;
     border-radius: 5px;
-    filter: grayscale(100%);
-    transition: all 0.3s ease;
-}
-.author img:hover{
-    filter: grayscale(0%);
 }
 .datos{
     display: flex;
@@ -343,7 +337,7 @@ section.portada{
 }
 
 #cont-options-filter .active{
-    width: 99.1vw;
+    width: 100vw;
     padding-top: 35px;
     position: relative;
 
@@ -457,20 +451,20 @@ section.movies{
     justify-content: space-around;
 }
 .capa .description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    height: 158px;
-    overflow: scroll;
-    overflow-y: visible;
-    overflow-x: hidden;
+    height: 58%;
 }
 .capa .description p{
     text-align: justify;
-    margin-right: 15px;
+    margin: 8px;
 }
 .capa .btn-mas{
     text-decoration: none;
     display: inline-block;
-    margin: 20px 0;
+    margin: 16px 0;
     padding: 5px 15px;
     font-weight: 700;
     color: #EEF5DB;
@@ -689,14 +683,10 @@ section.movies{
 }
 #peopleInf{
     top: -30vh;
-    width: 85%;
+    width: 84%;
     height: auto;
-
     margin-left: auto;
     margin-right: auto;
-
-
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -736,7 +726,7 @@ section.movies{
 .characterData{
     position: absolute;
     top: 0;
-    width: 100%;
+    width: 160px;
     height: 235px;
     display: flex;
     align-content: center;
@@ -1077,7 +1067,7 @@ footer i{
     }
     .poster{
         width: 24em;
-        height: 38em;
+        height: 38em;;
         object-fit: cover;
         margin: 2.5em;
     }
@@ -1170,32 +1160,32 @@ footer i{
         visibility: visible;
     }
     /*Locations*/
-    #locationInf, #vehiclesInf{
+    #locationInf{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         margin-bottom: 2em;
     }
-     .card-location, .card-vehicles{
+     .card-location{
         margin: 2em;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 60%;
+        width: auto;
         height: auto;
     }
-    .card-image-location, .card-image-vehicles{
+    .card-image-location{
         width: 280px;
         height: 170px;
     }
-    .card-image-location img, .card-image-vehicles img{
+    .card-image-location img{
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 8px 8px 0 0;
     }
-    .card-text-location, .card-text-vehicles{
+    .card-text-location{
         border-radius: 0 0 8px 8px;
         display: flex;
         flex-direction: column;
@@ -1231,10 +1221,10 @@ footer i{
         margin: 10px;
     }
     .poster{
-        width: 24em;
-        height: 38em;
+        width: 20em;
+        height: 30em;
         object-fit: cover;
-        margin: 2.5em;
+        margin: 0.5em;
     }
     .selectionPoster:hover{
 
@@ -1331,7 +1321,7 @@ footer i{
         flex-direction: column;
         margin-bottom: 2em;
     }
-     .card-location, .card-vehicles{
+     .card-location{
         margin: 2em;
         display: flex;
         flex-direction: column;
@@ -1339,23 +1329,23 @@ footer i{
         width: 60%;
         height: auto;
     }
-    .card-image-location, .card-image-vehicles{
-        width: 250px;
+    .card-image-location{
+        width: 160px;
         height: 170px;
     }
-    .card-image-location img, .card-image-vehicles img{
+    .card-image-location img{
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 8px 8px 0 0;
     }
-    .card-text-location, .card-text-vehicles{
+    .card-text-location{
         border-radius: 0 0 8px 8px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         height: 170px;
-        width: 250px;
+        width: 160px;
         padding: 20px;
     }
  }
