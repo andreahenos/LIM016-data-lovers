@@ -372,7 +372,7 @@ const btns = document.querySelectorAll('.tab-btn');
 const about = document.querySelector('#cont-filter');
 const divs = document.querySelectorAll('.btns');
 const iconClose = document.querySelectorAll('.icon-close');
-
+const btnsAll = document.querySelectorAll('.btn-all');
 
 about.addEventListener('click', (e)=>{
     const id = e.target.dataset.id;
@@ -395,6 +395,13 @@ iconClose.forEach((icon)=>{
             div.classList.remove("active");
          })
     })
+})
+btnsAll.forEach((btnAll) => {
+  btnAll.addEventListener('click', () => {
+
+    sectionMovies.innerHTML = showData(data.films);
+
+  })
 })
 
 
@@ -426,41 +433,3 @@ const filtrar = (condition) => {
     }
     formulario.value = "";
 }
-/*ChartJS */
-import dataRecaudation from './dataMoviePopular.js'
-
-
-function totalCasesChar(ctx) {
-new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: dataRecaudation.movies.map(item => item.name),
-      datasets: [
-        {
-          label: "Recaudations",
-          data: dataRecaudation.movies.map(item => item.recaudation),
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)'
-          ],
-          borderWidth: 1
-        }
-      ]
-    }
-  })
-}
-function renderCharts() {
-  const ctx = document.querySelector('#chart').getContext('2d');
-  totalCasesChar(ctx)
-}
-renderCharts();
