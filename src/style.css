@@ -52,20 +52,20 @@
 /*Ghibli ABout*/
 .ghibli-about{
   background: rgba(255,255,255,.7);
-  font-size: 1rem;
-  width: 350px;
+  font-size: 1.1rem;
+  width: 390px;
   position: absolute;
   top: 15px;
   left: 15px;
   z-index: 2;
   padding: 5px 15px;
-  font-weight: 100;
+  font-weight: 400;
   border-radius: 5px 5px 0 0;
   text-align: justify;
   color: #1d3354;
 }
 .ghibli-about span{
-  font-weight: 400;
+  font-weight: 600;
 }
 /* ------Body------ */
 body{
