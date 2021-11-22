@@ -1,6 +1,5 @@
 // estas funciones son de ejemplo
 
-
 export const filterDataDirector = (data, condition) => {
         const movieDirector = data.filter(movieItem=>{
             if(movieItem.director === condition){
