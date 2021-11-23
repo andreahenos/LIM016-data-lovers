@@ -104,7 +104,7 @@ nav h1{
 
 }
 .menu li:hover a{
-    color: #42bdf7;
+    color: #0196E9;
 }
 .menu ul li a {
     text-decoration: none;
@@ -196,12 +196,12 @@ section.portada{
 .slider a{
     text-decoration: none;
     color: #1d3354;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     transition: all 0.3s linear;
 }
 .slider a:hover{
     cursor: pointer;
-    color: #42bdf7;
+    color: #0196E9;
 }
 .slide-track{
     display: flex;
@@ -470,7 +470,7 @@ section.movies{
 .movie .figure .capa{
     position: absolute;
     top: 0;
-    background-color: #69cbf8;
+    background-color: #0196E9;
     color: #EEF5DB;
     height: 100%;
     transition: all 0.3s linear;
@@ -520,16 +520,16 @@ section.movies{
     margin: 16px 0;
     padding: 5px 15px;
     font-weight: 700;
-    color: #EEF5DB;
-    background: #9cc42d;
+    color: #0196E9;
+    background: #f1f2f6;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s linear;
 }
 .capa .btn-mas:hover{
-    color: #9cc42d;
-    background: #EEF5DB;
+    color: #f1f2f6;
+    background: #1d3354;
 }
 
 
@@ -717,7 +717,7 @@ section.movies{
     font-size: 18px;
 }
 .show:hover{
-    background-color: #42bdf7;
+    background-color: #0196E9;
 }
 .show:hover h3{
     color: #1D3354;
@@ -785,7 +785,7 @@ section.movies{
     height: 235px;
     display: flex;
     align-content: center;
-    background-color: #42bdf7;
+    background-color: #D6E7A9;
     border-radius: 4px;
     visibility: hidden;
     transition: all 0.3s linear;
@@ -819,9 +819,10 @@ hr{
 }
 .category h4{
     font-size: 13px;
-    color: #EEF5DB;
+    color: #1D3354;
 }
 .category p{
+    color: #1D3354;
     font-size: 11px;
 }
 
