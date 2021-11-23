@@ -429,7 +429,7 @@ const filtrar = (condition) => {
 
     sectionMovies.innerHTML = showData(searchedMovie);
     if(sectionMovies.innerHTML === ''){
-        sectionMovies.innerHTML = `<p>Movie not found</p>`
+      sectionMovies.innerHTML = `<p class="message-not-found">😨 Movie not found</p>`
     }
     formulario.value = "";
 }
