@@ -231,8 +231,7 @@ section.portada{
     border-radius: 5px;
 }
 
-.slider::before,
-.slider::after{
+.slider::before, .slider::after{
     background: linear-gradient(to right, #D6E7A9 0%, rgba(255,255,255,0)100%);
     content: '';
     height: 100%;
@@ -257,19 +256,26 @@ section.portada{
   display: none;
 }
 
-#searchBox{
-    padding: 1em 0 0.5em 0;
+#searchOptions{
+    width: 100%;
+    height: 5em;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#searchBox{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.8em 10% 0.8em 0.8em; 
 }
 #formulario{
     border-style: none;
     border-radius: 6px;
     height: 2.5em;
-    width: 40%;
-
-    padding: 5px 10px;
+    width: 50vw;
+    padding: 5px 5px;
 }
 #formulario:focus{
     outline: none;
@@ -280,14 +286,14 @@ section.portada{
 }
 
 #btn-search{
+    width: 38px;
+    height: 38px;
     font-size: 1.1rem;
     background: #fff;
     border-radius: 50%;
-    padding: 7px;
-    margin: 5px 15px;
+    margin-left: 1em;
     border: none;
     color: #D64045;
-    /* display: none; */
 }
 #btn-search:hover{
   cursor: pointer;
@@ -300,30 +306,28 @@ section.portada{
 
 }
 
-
-
 #cont-filter{
     background-color: #D64045;
-    width: 100vw;
+    width: 100%;
     align-items: center;
     font-size: 1rem;
-    padding-bottom: 3px;
 }
 #cont-filter #cont-label-filter{
     text-align: center;
     display: flex;
     justify-content: space-between;
-
 }
-.icon-filter{
 
-  text-align: center;
+.icon-filter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8em;
   color: #fff;
   border: 2px solid #fff;
   width: 130px;
-  padding: 5px 15px;
+  height: 35px;
   border-radius: 5px;
-  margin: 10px auto;
   transition: all 0.3s linear;
 }
 .icon-filter:hover{
@@ -1084,6 +1088,13 @@ footer i{
     footer .container{
         text-align: center;
         flex-direction: column;
+    }
+    /*Search*/
+    #searchBox{
+        margin: 0.8em 5% 0.8em 0.8em;
+    }
+    #btn-search{
+        margin: 0.5em;
     }
     /*Sección de información*/
     #infContent{
