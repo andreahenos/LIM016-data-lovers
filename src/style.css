@@ -280,9 +280,26 @@ section.portada{
 }
 
 #btn-search{
-
-    display: none;
+    font-size: 1.1rem;
+    background: #fff;
+    border-radius: 50%;
+    padding: 7px;
+    margin: 5px 15px;
+    border: none;
+    color: #D64045;
+    /* display: none; */
 }
+#btn-search:hover{
+  cursor: pointer;
+}
+#btn-search i{
+  transition: all 0.3s ease;
+}
+#btn-search:hover i{
+  transform: scale(1.1);
+
+}
+
 
 
 #cont-filter{
@@ -313,6 +330,9 @@ section.portada{
   background: #fff;
   color:#D64045;
   cursor: pointer;
+}
+.message-not-found{
+  font-size: 1rem;
 }
 .tab-btn{
     background: #D64045;
@@ -347,9 +367,10 @@ section.portada{
     transform: rotate(180deg);
 }
 .btn-all {
+  text-align: center;
   padding: 5px 25px;
   font-size: 1rem;
-  margin: 10px;
+  margin: 10px auto;
   background: #D64045;
   color: #D6E7A9;
   border-radius: 5px;
@@ -370,7 +391,10 @@ section.portada{
     padding: 5px 0;
     font-size: 1rem;
 }
+.btns{
 
+  text-align: center;
+}
 #cont-options-filter p{
     text-align: center;
     transition: all 0.3s ease-in-out;
@@ -385,6 +409,7 @@ section.portada{
 }
 .cont-btn-filter{
     margin: 0 auto;
+
     width: 50%;
     display: flex;
     flex-wrap: wrap;
@@ -678,6 +703,7 @@ section.movies{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: all 0.3s ease;
 }
 .show h3{
     line-height: 32px;
@@ -990,7 +1016,7 @@ footer i{
         width: 100%;
         height: auto;
         justify-content: center;
-    } 
+    }
     nav .menu{
         margin: 0.5em 0 1em 0;
     }
