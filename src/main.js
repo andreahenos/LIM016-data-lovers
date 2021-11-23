@@ -7,7 +7,7 @@ import data from './data/ghibli/ghibli.js';
 const homeSection = document.getElementById("homeSection");
 const movSection = document.getElementById("movSection");
 const movInfSection = document.getElementById("movInfSection");
-
+const movGraphics = document.getElementById('movGraphics');
 
 const movCarrousel = document.querySelector(".slide-track");
 const sectionMovies = document.querySelector('.movies');
@@ -15,18 +15,21 @@ const sectionMovies = document.querySelector('.movies');
 window.addEventListener('DOMContentLoaded', ()=>{
     sectionMovies.innerHTML = showData(data.films);
     movSection.style.display = "none";
+    movGraphics.style.display = "none";
     movCarrousel.innerHTML = showMovieCarrousel(data.films)
 })
 
 document.getElementById("navHome").addEventListener("click", function(){
     movSection.style.display="none";
     movInfSection.style.display="none";
+    movGraphics.style.display = "none";
     homeSection.style.display="block";
 
 })
 document.getElementById("navMovies").addEventListener("click", function(){
     homeSection.style.display="none";
     movInfSection.style.display="none";
+  movGraphics.style.display = "none";
     movSection.style.display="block";
     /*Refrescar */
     sectionMovies.innerHTML = showData(data.films);
@@ -34,6 +37,13 @@ document.getElementById("navMovies").addEventListener("click", function(){
     iconClose.forEach((icon) => {
       icon.click();
     })
+
+})
+document.getElementById("navGraphics").addEventListener("click", function () {
+  movSection.style.display = "none";
+  movInfSection.style.display = "none";
+  homeSection.style.display = "none";
+  movGraphics.style.display = "block";
 
 })
 
