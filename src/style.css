@@ -956,7 +956,10 @@ hr{
     font-weight: 600;
 }  */
 
-
+/*Mov Graphics*/
+#movGraphics{
+  display: none;
+}
 
 /*------Footer------*/
 footer{

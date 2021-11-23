@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -20,6 +20,7 @@
           <ul>
             <li><a id="navHome" href="#homeSection">Home</a></li>
             <li><a id="navMovies" href="#movSection">Movies Details</a></li>
+            <li><a id="navGraphics" href="#movGraphics">Graphics</a></li>
           </ul>
         </div>
       </div>
@@ -43,13 +44,13 @@
       <!-- <section class="portada" >
           <img src="./images/portada1.jpg" alt="">
       </section> -->
-  
+
       <section class="history">
         <div class="container">
           <div class="author">
             <img src="images/creador.jpg" alt="">
           </div>
-  
+
           <div class="datos">
             <div class="dato">
               <i class="fas fa-book"></i>
@@ -58,7 +59,7 @@
                 Studio Ghibli was founded in 1985 by directors Isao Takahata, Hayao Miyazaki, and Toshio Suzuki.
               </p>
             </div>
-  
+
             <div class="dato">
               <i class="fas fa-bookmark"></i>
               <p>
@@ -67,7 +68,7 @@
                 considered to be Miyazaki's first film.
               </p>
             </div>
-  
+
             <div class="dato">
               <i class="fas fa-award"></i>
               <p>
@@ -75,11 +76,11 @@
                 6 of his films are the highest grossing in Japanese cinema and 5 have been nominated for an Oscar.
               </p>
             </div>
-  
+
           </div>
-        </div>    
+        </div>
       </section>
-  
+
 
       <main class="slider">
 
@@ -92,7 +93,7 @@
     </section>
 
     <section id="movSection">
-      
+
       <div id="cont-filter">
 
         <div id="searchOptions">
@@ -170,13 +171,13 @@
       </section>
 
       <div id="topBtnMov">
-        <i class="fas fa-chevron-up"></i>   
+        <i class="fas fa-chevron-up"></i>
       </div>
-      
+
     </section>
 
     <section id="movInfSection">
-      
+
       <section id="movGeneralInf">
         <!----->
       </section>
@@ -185,9 +186,9 @@
 
         <div class="show" id="showCharacters">
           <h3>Characters</h3>
-          <i class="fas fa-chevron-down arrow-down" id="icon-arrow"></i>  
+          <i class="fas fa-chevron-down arrow-down" id="icon-arrow"></i>
         </div>
-        
+
 
         <section class="cont" id="contPeopleInf">
           <div id="peopleInf">
@@ -196,27 +197,27 @@
         </section>
 
       </section>
-      
+
       <section id="movLocationsInf">
 
         <div class="show" id="showLocations">
           <h3>Locations</h3>
-          <i class="fas fa-chevron-down arrow-down" id="icon-arrow-location"></i>  
+          <i class="fas fa-chevron-down arrow-down" id="icon-arrow-location"></i>
         </div>
-        
+
 
         <section class="cont" id="contLocationsInf">
           <div id="locationsInf">
             <!----->
           </div>
         </section>
-        
+
       </section>
 
     </section>
 
 
-    <section class="chartSection">
+    <section id="movGraphics">
       <canvas id="chart" width="300" height="200"></canvas>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
       <script type="module">
