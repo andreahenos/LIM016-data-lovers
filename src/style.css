@@ -977,6 +977,36 @@ footer i{
     font-size: 1.7rem;
     margin-left: 15px;
 }
+
+/*Grafics*/
+#movGraphics{
+    width: 100vw;
+    height: auto;
+}
+#contGrafic{
+    width: 85%;
+    height: auto;
+    margin: 5em auto;
+}
+#contGrafic h2{
+    text-align: center;
+    margin-top: 5em; 
+    margin-bottom: 1em;
+    color: #1d3354;
+    font-size: 26px;
+    font-weight: 2000;
+}
+#chart, #chart2{
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
+#contGrafic p{
+    font-size: 12px;
+    text-align: center;
+    margin: 1em;
+}
+
 /*Media Queries*/
 @media only screen and (max-width:1080px) {
     .author img, .dato{

@@ -26,6 +26,7 @@ document.getElementById("navHome").addEventListener("click", function(){
     homeSection.style.display="block";
 
 })
+
 document.getElementById("navMovies").addEventListener("click", function(){
     homeSection.style.display="none";
     movInfSection.style.display="none";
@@ -39,6 +40,7 @@ document.getElementById("navMovies").addEventListener("click", function(){
     })
 
 })
+
 document.getElementById("navGraphics").addEventListener("click", function () {
   movSection.style.display = "none";
   movInfSection.style.display = "none";
@@ -140,7 +142,6 @@ const showData = (menuItems) =>{
     displayMovies = displayMovies.join("");
     return displayMovies;
 }
-
 
 
 /*More Information Section*/
@@ -406,6 +407,7 @@ iconClose.forEach((icon)=>{
          })
     })
 })
+
 btnsAll.forEach((btnAll) => {
   btnAll.addEventListener('click', () => {
 
@@ -450,12 +452,11 @@ import dataRecaudation from './dataMoviePopular.js'
 
 function totalCasesChar(ctx) {
   new Chart(ctx, {
-    type: 'doughnut',
+    type: 'pie',
     data: {
       labels: dataRecaudation.movies.map(item => item.name),
       datasets: [
         {
-          label: "Recaudations",
           data: dataRecaudation.movies.map(item => item.recaudation),
           backgroundColor: [
             'rgba(255, 99, 132, 0.3)',
@@ -471,7 +472,7 @@ function totalCasesChar(ctx) {
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)'
           ],
-          borderWidth: 1
+          borderWidth: 1,
         }
       ]
     },
@@ -487,3 +488,45 @@ function renderCharts() {
   totalCasesChar(ctx)
 }
 renderCharts();
+
+
+function totalCasesChar2(ctx) {
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: dataRecaudation.ranking.map(item => item.score),
+        datasets: [
+          {
+            data: dataRecaudation.ranking.map(item => item.cant),
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.3)',
+              'rgba(75, 192, 192, 0.3)',
+              'rgba(255, 61, 193, 0.3)',
+              'rgba(153, 102, 255, 0.3)',
+              'rgba(255, 206, 86, 0.3)',
+              'rgba(54, 162, 235, 0.3)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(255, 61, 193, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1,
+          }
+        ]
+      },
+      options:{
+        responsive: true,
+        maintainAspecRatio: false,
+      }
+    })
+  }
+  
+  function renderCharts2() {
+    const ctx = document.querySelector('#chart2').getContext('2d');
+    totalCasesChar2(ctx)
+  }
+  renderCharts2();
