@@ -502,27 +502,35 @@ section.movies{
     visibility: visible;
 }
 .capa .cont-title{
-    height: 45px;
+    font-size: 14px;
+    width: 100%;
+    height: 10%;
+    margin: 0.5em;
 }
 .capa .cont-span{
     display: flex;
     justify-content: space-around;
+    height: 10%;
+    align-items: center;
 }
 .capa .description{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 58%;
+    height: 60%;
 }
 .capa .description p{
+    overflow: hidden;
     text-align: justify;
-    margin: 8px;
+    font-size: 14px;
+    width: 100%;
+    padding: 0.5em;
+    height: 100%;
 }
 .capa .btn-mas{
     text-decoration: none;
     display: inline-block;
-    margin: 16px 0;
     padding: 5px 15px;
     font-weight: 700;
     color: #0196E9;
@@ -531,6 +539,9 @@ section.movies{
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s linear;
+    width: 8em;
+    height: 10%;
+    margin: 1em;
 }
 .capa .btn-mas:hover{
     color: #f1f2f6;

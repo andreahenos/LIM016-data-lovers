@@ -120,7 +120,7 @@ const showData = (menuItems) =>{
             <img src="${movie.poster}" class="img-movie">
             <div class="capa">
                 <div class="cont-title">
-                <h3>${movie.title}</h3>
+                    <h3>${movie.title}</h3>
                 </div>
 
                 <div class="cont-span">
@@ -128,7 +128,7 @@ const showData = (menuItems) =>{
                     <p>🎥 ${movie.release_date}</p>
                 </div>
                 <div class="description">
-                <p>${movie.description.split(".", 1)}</p>
+                    <p>${movie.description}</p>
                 </div>
                 <a class="btn-mas">More details</a>
             </div>
