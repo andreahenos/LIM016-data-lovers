@@ -13,7 +13,7 @@
 #slideshow{
     position: relative;
     z-index: 998;
-    height: 562px;
+    height: 520px;
 }
 #slideshow img{
     position: absolute;
@@ -49,24 +49,25 @@
     background-color: #D64045;
     transition: background-color 0.8s;
 }
-/*Ghibli ABout*/
-.ghibli-about{
-  background: rgba(255,255,255,.7);
-  font-size: 1.1rem;
-  width: 390px;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  z-index: 2;
-  padding: 5px 15px;
-  font-weight: 400;
-  border-radius: 5px 5px 0 0;
-  text-align: justify;
-  color: #1d3354;
+/*Description*/
+#description{
+    width: 100vw;
+    height: auto;
+    background-color: #D6E7A9;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4em;
 }
-.ghibli-about span{
-  font-weight: 600;
+#description p{
+    font-size: 17px;
+    font-weight: 450;
+    text-align: justify;
+    color: #1d3354;
 }
+#description span{
+    font-weight: 600;
+}
+
 /* ------Body------ */
 body{
     font-family: 'Assistant', sans-serif;
