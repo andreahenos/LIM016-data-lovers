@@ -440,6 +440,7 @@ const filtrar = (condition) => {
     sectionMovies.innerHTML = showData(searchedMovie);
     if(sectionMovies.innerHTML === ''){
       sectionMovies.innerHTML = `<p class="message-not-found">😨 Movie not found</p>`
+      sectionMovies.style.height="50vh"
     }
     formulario.value = "";
 }
@@ -480,6 +481,7 @@ function totalCasesChar(ctx) {
     }
   })
 }
+
 function renderCharts() {
   const ctx = document.querySelector('#chart').getContext('2d');
   totalCasesChar(ctx)
