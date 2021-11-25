@@ -1,7 +1,6 @@
-
 import { filterDataDirector, filterDataScore, filterDataYear} from './data.js';
 import data from './data/ghibli/ghibli.js';
-
+import dataRecaudation from './dataMoviePopular.js'
 
 /*Nav items*/
 const homeSection = document.getElementById("homeSection");
@@ -420,11 +419,13 @@ btnsAll.forEach((btnAll) => {
 /*Input Search */
 const formulario = document.querySelector('#formulario');
 const btnSearch = document.querySelector('#btn-search');
+
 formulario.addEventListener("keyup",() =>{
   if(event.keyCode === 13){
     document.querySelector('#btn-search').click();
   }
 })
+
 const capturarInput = ()=>{
     const inputText = formulario.value.toLowerCase();
     filtrar(inputText)
@@ -441,15 +442,17 @@ const filtrar = (condition) => {
 
     sectionMovies.innerHTML = showData(searchedMovie);
     if(sectionMovies.innerHTML === ''){
-      sectionMovies.innerHTML = `<p class="message-not-found">😨 Movie not found</p>`
-      sectionMovies.style.height="50vh"
+      sectionMovies.innerHTML = `
+      <div id="notFound">
+      <p class="message-not-found">😨 Movie not found</p>
+      </div>
+      `
     }
     formulario.value = "";
 }
 
 
-import dataRecaudation from './dataMoviePopular.js'
-
+/*Grafics*/
 function totalCasesChar(ctx) {
   new Chart(ctx, {
     type: 'pie',

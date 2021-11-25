@@ -525,7 +525,7 @@ section.movies{
 .capa .description p{
     overflow: hidden;
     text-align: justify;
-    font-size: 14px;
+    font-size: 12px;
     width: 100%;
     padding: 0.5em;
     height: 100%;
@@ -597,6 +597,13 @@ section.movies{
     color: #F1F2F6;
 }
 
+#notFound{
+    text-align: center;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+}
+
 /*Movies Inf Section*/
 .cont-btn-close{
     position: absolute;
@@ -635,7 +642,7 @@ section.movies{
 #infContent{
     position: relative;
     top: -30vh;
-    width: 90%;
+    width: 100%;
     height: auto;
     margin: 5px auto;
     display: flex;
@@ -678,7 +685,7 @@ section.movies{
     width: 100%;
 }
 #InfIcons p{
-    font-size: 14px;
+    font-size: 15px;
 }
 .icon{
     width: 20px;
