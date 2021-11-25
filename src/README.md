@@ -54,4 +54,4 @@ El logo que se incluyó fue cambiando debido a que, según las respuestas de nue
 
 También, recibimos una recomendación de incluir una breve descripción que indique que la página es sólo informativa, pues a primera vista daba la idea de que se trataba de una plataforma en la cual se podían ver las películas. Su ubicación en la página varió para que fuese de fácil lectura y aclare desde el comienzo la finalidad de la página.  
 
-Para ver más detalles, visitar Ghibli Corner en [Figma] (https://www.figma.com/file/1P8peylXeF4AbBvO9NYd8y/Ghibli-Corner?node-id=0%3A1).
+Para ver más detalles, visitar Ghibli Corner en [Figma](https://www.figma.com/file/1P8peylXeF4AbBvO9NYd8y/Ghibli-Corner?node-id=0%3A1).
