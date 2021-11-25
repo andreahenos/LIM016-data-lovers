@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { filterDataDirector, filterDataScore, filterDataYear} from './data.js';
 import data from './data/ghibli/ghibli.js';
 import dataRecaudation from './dataMoviePopular.js'

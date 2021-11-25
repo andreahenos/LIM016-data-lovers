@@ -13,14 +13,13 @@ En desarrollo.
 ***
 
 ## Introducción
-Ghibli Corner es una página web informativa que contiene datos relevantes sobre las animaciones del estudio japonés Ghibli. 
+Ghibli Corner es una página web informativa de animaciones del estudio japonés Ghibli. 
 
-Los largometrajes del Estudio Ghibli actuamente cuentan con un gran número de fanáticos, de los cuales un grupo desea poder interactuar y ver la información de las animaciones y sus personajes.
+Los largometrajes del Estudio Ghibli actuamente cuentan con un gran número de fanáticos, de los cuales un grupo desea poder interactuar y ver información de las animaciones.
 
-Pensando en ellos, Ghibli Corner busca poder satisfacer dicho deseo brindando una interfaz amigable e interactiva en la cual los datos de las películas estén ordenados y sean de fácil lectura.
+Pensando en ellos, Ghibli Corner busca poder satisfacer dicho deseo brindando una interfaz amigable, interactiva, ordenada y de fácil lectura.
 
 ***
-
 
 ## Tecnologías
 El proyecto fue creado haciendo uso, principalmente, de:
@@ -47,8 +46,12 @@ El proyecto fue creado haciendo uso, principalmente, de:
 ***
 
 ## Proceso de diseño
-Durante el desarrollo del proyecto realizamos Test de Usabilidad y recibimos muchas retroalimentaciones y recomendaciones de distintas personas sobre el diseño de Ghibli Corner.
+Durante el desarrollo del proyecto realizamos dos Test de Usabilidad en los  cuales recibimos retroalimentaciones y recomendaciones de distintas personas sobre el diseño de Ghibli Corner.
 
-Se hicieron los cambios pertinentes en base a sus opiniones y pensando en los usuarios objetivos.
+Tomando esto en cuenta, se hicieron los cambios pertinentes en base a sus opiniones y pensando en nuestro usuario objetivo. Por ejemplo, se usó una paleta que incluyera los colores más usados o resaltantes de las películas del Estudio Ghibli resultando así una interfaz más agradable para los usuarios y fácil de relacionar con la temática.
+
+El logo que se incluyó fue cambiando debido a que, según las respuestas de nuestro Test de Usabilidad, no se visualizaba correctamente, pasaba desapercibido o no concordaba con el  diseño de la página. 
+
+También, recibimos una recomendación de incluir una breve descripción que indique que la página es sólo informativa, pues a primera vista daba la idea de que se trataba de una plataforma en la cual se podían ver las películas. Su ubicación en la página varió para que fuese de fácil lectura y aclare desde el comienzo la finalidad de la página.  
 
 Para ver más detalles, visitar Ghibli Corner en [Figma] (https://www.figma.com/file/1P8peylXeF4AbBvO9NYd8y/Ghibli-Corner?node-id=0%3A1).
